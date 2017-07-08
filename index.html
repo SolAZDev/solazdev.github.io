@@ -15,11 +15,11 @@
     <nav class="navbar navbar-default MainMenu" role="navigation">
       <div class="container-fluid">
         <ul class="nav navbar-nav">
-          <li style="left:3%"><a id="HomeBtn" onclick="ChangeScreens(1)">SolAZDev</a></li>
-          <li style="left:23%"><a id="ResBtn" onclick="ChangeScreens(2)">Resume</a></li>
-          <li style="left:42%"><a id="PortBtn" onclick="ChangeScreens(3)">Portfolio</a></li>
-          <li style="right:23%"><a id="ProjBtn" onclick="ChangeScreens(4)">Projects</a></li>
-          <li style="right:3%"><a id="ReachBtn" onclick="ChangeScreens(5)">Contact</a></li>
+          <li><a id="HomeBtn" onclick="ChangeScreens(1)">SolAZDev</a></li>
+          <li><a id="ResBtn" onclick="ChangeScreens(2)">Resume</a></li>
+          <li><a id="PortBtn" onclick="ChangeScreens(3)">Portfolio</a></li>
+          <li><a id="ProjBtn" onclick="ChangeScreens(4)">Projects</a></li>
+          <li><a id="ReachBtn" onclick="ChangeScreens(5)">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -47,7 +47,7 @@
           <div class="text-center"><h4>Current Carrer Objective</h4></div>
           <div class="row">
             <div class="col-sm-4">
-              <div class="text-center">As an Individual</div></br>
+              <div class="text-center" style="font-">As an Individual</div></br>
               Lorem Impus to something goes here, that's the point.
             </div>
             <div class="col-sm-4">
@@ -80,7 +80,7 @@
           <div class="col-sm-6 RightSide">
             <h5>Set Of Tools</h5>
             <ul>
-              <li>Visual Studio, MonoDevelop, Atom</li>
+              <li>Visual Studio, MonoDevelop, Atom, Linux</li>
               <li>Maya, Blender</li>
               <li>After Effects, kdenlive</li>
               <li>Photoshop, Illustrator, Gimp, Krita, Inkscape</li>
@@ -115,11 +115,24 @@
     </div>
     <!-- Portfolio Screen -->
     <div id="MainPortfolio">
-      Complex Menu goes here.
+      <nav class="navbar navbar-default MainMenu">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li style="width:33%"><a id="PFLDesign">Level Desgin</a></li>
+            <li style="width:33%"><a id="PF3DArt">3D Art</a></li>
+            <li style="width:33%"><a id="PFCSS">CSS Styles</a></li>
+          </ul>
+        </div>
+        </nav>
     </div>
     <!-- Projects Screen -->
     <div id="ProjectsPage">
-      Another Complex Menu goes here.
+      <div class="container-fluid">
+        <div class="text-center">
+          <h4>Projects</h4>
+          These are projects that I have worked on alone or have done collaborately.
+        </div>
+      </div>
     </div>
     <!-- Contact Screen -->
     <div id="ContactScreen" style="text-align:center;">

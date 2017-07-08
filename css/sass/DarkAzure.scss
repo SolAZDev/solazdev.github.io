@@ -28,12 +28,12 @@ body {
   border-radius: 0px;
   .navbar-nav{
     width: 100%;
+    margin: 0;
     text-align: center;
     li{
-      transform-origin: center;
-      position: absolute;
-      float: none;
-      display: inline-block;
+      width: 20%;
+      padding-top: 0;
+      text-align: center;
       a{
         transition: all, .5s;
         color: $PipText;
@@ -58,7 +58,7 @@ body {
 
 .jumbotron, .page-header{
   background: $FGCol;
-  height: 25%;
+  height: 100px;
   padding-top: 10px;
   margin-bottom: 20px;
 }
@@ -78,7 +78,7 @@ body {
   }
   .h5, h5{
     font-size: 16px;
-    color: lighten($PipText, 50);
+    color: $PipSel;
     padding: 5px 0;
     text-align:center;
     background: linear-gradient(to right,$BGCol, $BGCol, transparentize($PipText,.5),$BGCol, $BGCol);
@@ -93,18 +93,16 @@ body {
     padding: 1px;
     line-height: 1.5;
     margin-bottom: 5px;
-    color: black;
-    background: transparentize($PipText, .5);
+    color: $PipSel;
+    background: transparentize($PipText, .8);
     transition: all, .8s;
     &:hover, &:active{
-      background: transparentize($PipText, .25);
+      background: transparentize($PipText, .35);
     }
   }
-/*  .RightSide{
-    li{
-      text-align: center;
-    }
-  }*/
+}
+
+#ProjectsPage{
 }
 
 form{
