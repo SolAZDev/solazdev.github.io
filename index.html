@@ -5,29 +5,113 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/sass/DarkAzure.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/SolAZDev.js"></script>
+    <link rel="stylesheet" href="css/sass/DarkAzure.min.css" />
   </head>
   <body>
     <!-- Main Menu -->
-    <nav class="navbar navbar-default MainMenu">
-      <ul class="nav navbar-nav">
-        <li style="left:13%"><a id="HomeBtn" onclick="ChangeScreens(1)">SolAZDev</a></li>
-        <li style="left:30%"><a id="ResBtn" onclick="ChangeScreens(2)">Online Resume</a></li>
-        <li style="left:47%"><a id="PortBtn" onclick="ChangeScreens(3)">Portfolio</a></li>
-        <li style="right:30%"><a id="ProjBtn" onclick="ChangeScreens(4)">Projects</a></li>
-        <li style="right:13%"><a id="ReachBtn" onclick="ChangeScreens(5)">Contact</a></li>
-      </ul>
+    <nav class="navbar navbar-default MainMenu" role="navigation">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li style="left:3%"><a id="HomeBtn" onclick="ChangeScreens(1)">SolAZDev</a></li>
+          <li style="left:23%"><a id="ResBtn" onclick="ChangeScreens(2)">Resume</a></li>
+          <li style="left:42%"><a id="PortBtn" onclick="ChangeScreens(3)">Portfolio</a></li>
+          <li style="right:23%"><a id="ProjBtn" onclick="ChangeScreens(4)">Projects</a></li>
+          <li style="right:3%"><a id="ReachBtn" onclick="ChangeScreens(5)">Contact</a></li>
+        </ul>
+      </div>
     </nav>
     <!-- Home Screen -->
     <div id="HomeScreen">
-      Home
+      <div class="jumbotron PageHead text-center">
+        <h2>SolAZDev</h2>
+        <p>Indie Game Developer & Web Designer</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            Gallery Goes Here
+          </div>
+          <div class="col-sm-6 text-center">
+            Hello and welcome!
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Resume Screen -->
     <div id="ResumePage">
-      Resume Goes here
+      <div class="container-fluid">
+        <div class="container" style="text-align:justify">
+          <div class="text-center"><h4>Current Carrer Objective</h4></div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="text-center">As an Individual</div></br>
+              Lorem Impus to something goes here, that's the point.
+            </div>
+            <div class="col-sm-4">
+              <div class="text-center">As a Developer</div></br>
+              Lorem Impustosomething goes here, that's the point.
+            </div>
+            <div class="col-sm-4">
+              <div class="text-center">As an Artist</div></br>
+              Lorem Impustosomething goes here, that's the point.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <h5>Skillset</h5>
+            <ul>
+              <li>C++, C#, HTML5, SASS, jQuery</li>
+              <li>Wix, Wordpress</li>
+              <li>3D Modeling and Sculpting</li>
+              <li>Video Editing and Key-frame Animation</li>
+              <li>Level and Set Design</li>
+            </ul>
+            <h5>Minor Skills</h5>
+            <ul>
+              <li>Bootstrap</li>
+              <li>UI/UX Design</li>
+              <li>Story Writing, Storyboarding</li>
+            </ul>
+          </div>
+          <div class="col-sm-6 RightSide">
+            <h5>Set Of Tools</h5>
+            <ul>
+              <li>Visual Studio, MonoDevelop, Atom</li>
+              <li>Maya, Blender</li>
+              <li>After Effects, kdenlive</li>
+              <li>Photoshop, Illustrator, Gimp, Krita, Inkscape</li>
+              <li>Unity 5, Game Maker Studio, RPG Maker (XP,VXA,MV)</li>
+            </ul>
+            <h5>Education</h5>
+            <ul>
+              <li>Boy Scouts of America - 2006-2014 - Eagle Rank (Troop 432)</li>
+              <li>Atlantic University College - 2011-2015 - BA Video Game Design</li>
+              <li>Self-thought - 2013-Now - Self Thought Programming</li>
+            </ul>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="text-center"><h5>Work Experience</h5></div>
+          <ul>
+            <li>
+              Video Game Design Instructor - Feb-Apr 2016<br />
+              I worked as a Video Game Design Instrctor (3pm to 5pm) at Escuela Mariano Abril Intermedia. My Work involved teaching students the principles of 3D Modeling, Level Desgin and Game Programming.
+            </li>
+            <li>
+              Head Programmer - August 2016 - Feburary 2017<br />
+              I was the Head for Game & App Programming in a starting company called Axiom Horizon. Most of the work was done with Unity and HTML5.
+            </li>
+            <li>
+              Enviroment Designer & VR Interactive Programmer - December 2016 - Feburary 2017<br />
+              I worked as a Level Designer, Animator and Programmer at SI3D Media to create a VR Environment for some of their projects, including commercials, interactive environments and promotional assets.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <!-- Portfolio Screen -->
     <div id="MainPortfolio">
@@ -38,8 +122,7 @@
       Another Complex Menu goes here.
     </div>
     <!-- Contact Screen -->
-    <div id="ContactScreen">
-      Mailing Form Goes Here
+    <div id="ContactScreen" style="text-align:center;">
       <div id="EmailNo" class="well well-sm well-no">An error occoured! Please contact me directly via SolAZDev@gmail.com. I apologize for the inconvinience.</div>
       <div id="EmailYes" class="well well-sm well-yes">Message Sent. I'll be returning to you as soon as possible! Thank you for contacting.</div>
       <form id="mailform" style="padding:15px;">

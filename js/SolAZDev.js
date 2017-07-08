@@ -77,6 +77,8 @@ function SendMail(){
   data['text'] = name+" (email : "+email+") Says...\n\n"+message;
 
   $.post('https://postmail.invotes.com/send',data, smoYes()).fail(smoNo());
+  sndbtn.val("Send Mail");
+  sndbtn.prop('disabled',false);
   return false;
 }
 
