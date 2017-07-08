@@ -1,0 +1,92 @@
+$PipText: #17b2ff;
+$PipSel: #e6f7ff;
+$dark-gradient: #025A86;
+$light-gradient: #0075b0;
+$BGCol: #484848;
+$FGCol: #242424;
+$BarBG: #0A0;
+$BarFil: #0F0;
+$transparent: rgba(0,0,0,0);
+
+body {
+  background: $BGCol;
+  color: $PipText;
+  font-family: Helvetica;
+
+}
+.MainMenu{
+  background: $FGCol;
+  color: $PipText;
+  a{color:$PipText;}
+  width: 100%;
+  text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #17b2ff;
+  border-radius: 0px;
+  .navbar-nav{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    li{
+      transform-origin: center;
+      position: absolute;
+      float: none;
+      display: inline-block;
+      a{
+        width: 150%;
+        transition: all, .5s;
+        color: $PipText;
+        transform-origin: center;
+        &:hover {
+          color: $PipSel;
+          transition: all, 1s;
+          background: linear-gradient($FGCol,transparentize($PipText,0.3));
+        }
+      }
+    }
+    a{color: $PipText;}
+  }
+}
+
+
+form{
+  border: 1px solid $PipText;
+  left: 50%;
+  border-radius: 5px;
+  background: $FGCol;
+  width: 50%;
+  text-align: center;
+  input{
+    text-align: center;
+    width: 45.8%;
+    background: $BGCol;
+    color: $PipText;
+    border: 2px solid $BGCol;
+    border-radius: 5px;
+  }
+  textarea{
+    background: $BGCol;
+    height: 45%;
+    width: 95%;
+    color: $PipText;
+    border: 2px solid $BGCol;
+    border-radius: 5px;
+    text-align: center;
+  }
+  #Subject input{
+    width: 95%;
+  }
+}
+
+.well-no{
+  background: #ff3030;
+  color: white;
+  border: 1px solid red;
+}
+.well-yes{
+  background: #80ff80;
+  color: white;
+  border: 1px solid green;
+}

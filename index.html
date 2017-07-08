@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SolAZDev</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/sass/DarkAzure.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/SolAZDev.js"></script>
+  </head>
+  <body>
+    <!-- Main Menu -->
+    <nav class="navbar navbar-default MainMenu">
+      <ul class="nav navbar-nav">
+        <li style="left:13%"><a id="HomeBtn" onclick="ChangeScreens(1)">SolAZDev</a></li>
+        <li style="left:30%"><a id="ResBtn" onclick="ChangeScreens(2)">Online Resume</a></li>
+        <li style="left:47%"><a id="PortBtn" onclick="ChangeScreens(3)">Portfolio</a></li>
+        <li style="right:30%"><a id="ProjBtn" onclick="ChangeScreens(4)">Projects</a></li>
+        <li style="right:13%"><a id="ReachBtn" onclick="ChangeScreens(5)">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Home Screen -->
+    <div id="HomeScreen">
+      Home
+    </div>
+    <!-- Resume Screen -->
+    <div id="ResumePage">
+      Resume Goes here
+    </div>
+    <!-- Portfolio Screen -->
+    <div id="MainPortfolio">
+      Complex Menu goes here.
+    </div>
+    <!-- Projects Screen -->
+    <div id="ProjectsPage">
+      Another Complex Menu goes here.
+    </div>
+    <!-- Contact Screen -->
+    <div id="ContactScreen">
+      Mailing Form Goes Here
+      <div id="EmailNo" class="well well-sm well-no">An error occoured! Please contact me directly via SolAZDev@gmail.com. I apologize for the inconvinience.</div>
+      <div id="EmailYes" class="well well-sm well-yes">Message Sent. I'll be returning to you as soon as possible! Thank you for contacting.</div>
+      <form id="mailform" style="padding:15px;">
+        <input type="text" name="name" placeholder="Your Name"/>	&nbsp;
+        <input type="email" name="email" placeholder="Your Email"/><br /><br />
+        <span id="Subject">
+          <input type="text" name="subject" placeholder="Subject"/><br /><br />
+          <textarea type="text" name="message" placeholder="Message here."/></textarea/><br /><br />
+          <input type="submit" name="send" value="Send Mail"/>
+        </span>
+      </form>
+    </div>
+  </body>
+</html>
