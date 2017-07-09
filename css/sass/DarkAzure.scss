@@ -94,15 +94,22 @@ body {
     line-height: 1.5;
     margin-bottom: 5px;
     color: $PipSel;
-    background: transparentize($PipText, .8);
     transition: all, .8s;
     &:hover, &:active{
-      background: transparentize($PipText, .35);
+      background: transparentize($PipText, .9);
     }
   }
 }
 
-#ProjectsPage{
+.panel-body, .panel-header, .panel-footer{
+  background: $FGCol;
+  border-top: none;
+  border-bottom: none;
+}
+.panel-default, .panel{
+  border-color: $PipText;
+  border-width: 2px;
+  border-radius: 5px;
 }
 
 form{
@@ -115,7 +122,7 @@ form{
   text-align: center;
   input{
     text-align: center;
-    width: 45.8%;
+    width: 49%;
     background: $BGCol;
     color: $PipText;
     border: 2px solid $BGCol;
@@ -124,7 +131,7 @@ form{
   textarea{
     background: $BGCol;
     height: 45%;
-    width: 95%;
+    width: 100%;
     color: $PipText;
     border: 2px solid $BGCol;
     border-radius: 5px;
@@ -133,7 +140,7 @@ form{
     display: flex;
   }
   #Subject input{
-    width: 95%;
+    width: 100%;
   }
 }
 
