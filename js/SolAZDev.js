@@ -1,5 +1,6 @@
 var sndbtn;var fid="mailform";
 $(document).ready(function () {
+    DisableAll();
     ChangeScreens(1);
     sndbtn = $("#" + fid + " [name='send']");
     $("#mailform").submit(function(event){
