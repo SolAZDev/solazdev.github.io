@@ -12,45 +12,58 @@ function ChangeScreens(page) {
     switch (page) {
         case 1:
             console.log("Going home");
+            DisableAll();
             $("#HomeScreen").show();
-            $("#ResumePage").hide();
-            $("#MainPortfolio").hide();
-            $("#ProjectsPage").hide();
-            $("#ContactScreen").hide();
             break;
         case 2:
             console.log("Lemme see your resume");
-            $("#HomeScreen").hide();
+            DisableAll();
             $("#ResumePage").show();
-            $("#MainPortfolio").hide();
-            $("#ProjectsPage").hide();
-            $("#ContactScreen").hide();
             break;
         case 3:
             console.log("I'll Explore your portfolio");
-            $("#HomeScreen").hide();
-            $("#ResumePage").hide();
+            DisableAll();
             $("#MainPortfolio").show();
-            $("#ProjectsPage").hide();
-            $("#ContactScreen").hide();
             break;
         case 4:
             console.log("What about your projects?");
-            $("#HomeScreen").hide();
-            $("#ResumePage").hide();
-            $("#MainPortfolio").hide();
+            DisableAll();
             $("#ProjectsPage").show();
-            $("#ContactScreen").hide();
             break;
         case 5:
             console.log("What if I wanna contact you?");
-            $("#HomeScreen").hide();
-            $("#ResumePage").hide();
-            $("#MainPortfolio").hide();
-            $("#ProjectsPage").hide();
+            DisableAll();
             $("#ContactScreen").show();
-            $("#EmailNo").hide();
-            $("#EmailYes").hide();
+            break;
+        case 6:
+            //DisableAll();
+            $("#PortLevel").show();
+            $("#Port3D").hide();
+            $("#PortCSS").hide();
+            break;
+        case 7:
+            //DisableAll();
+            $("#PortLevel").hide();
+            $("#Port3D").show();
+            $("#PortCSS").hide();
+            break;
+        case 8:
+            //DisableAll();
+            $("#PortLevel").hide();
+            $("#Port3D").hide();
+            $("#PortCSS").show();
+            break;
+        case 9:
+            DisableAll();
+            $("#GI-TDP").show();
+            break;
+        case 10:
+            DisableAll();
+            $("#PI-PB16").show();
+            break;
+        case 11:
+            DisableAll();
+            $("#PI-PCLD").show();
             break;
     }
 }
@@ -99,4 +112,21 @@ function ValidateEmail(text){
   }else{
     return false;
   }
+}
+
+function DisableAll(){
+  $("#HomeScreen").hide();
+  $("#ResumePage").hide();
+  $("#MainPortfolio").hide();
+  $("#ProjectsPage").hide();
+  $("#ContactScreen").hide();
+  $("#EmailNo").hide();
+  $("#EmailYes").hide();
+  $("#PortLevel").hide();
+  $("#Port3D").hide();
+  $("#PortCSS").hide();
+  $("#GI-TDP").hide();
+  $("#PI-PB16").hide();
+  $("#PI-PCLD").hide();
+  $("#PI-3DSBP").hide();
 }

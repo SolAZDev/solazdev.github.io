@@ -26,6 +26,13 @@ body {
   border-right: none;
   border-bottom: 1px solid #17b2ff;
   border-radius: 0px;
+  .navbar-header{
+    a{
+      width: 20%;
+      padding-top: 0;
+      text-align: center;
+    }
+  }
   .navbar-nav{
     width: 100%;
     margin: 0;
@@ -101,6 +108,16 @@ body {
   }
 }
 
+#ProjectsPage{
+  img{
+    max-width: 315;
+    max-height: 250px;
+  }
+  .panel{
+    background: $FGCol;
+  }
+}
+
 .panel-body, .panel-header, .panel-footer{
   background: $FGCol;
   border-top: none;
@@ -157,6 +174,22 @@ form{
   border: 1px solid green;
 }
 
-@media (min-width: 1200px) {
-  .container{ max-width: 970px;}
+.GamePage{
+  .h5,h5,.h4,h4{
+    font-weight: bold;
+  }
+  a{
+    color: $PipText;
+    &:hover, &:active{
+      color: $PipSel;
+    }
+  }
+}
+
+.carousel-inner{
+  .item{
+    img{
+      margin: 0 auto;
+    }
+  }
 }

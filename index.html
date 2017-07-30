@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/SolAZDev.js"></script>
     <link rel="stylesheet" href="css/sass/DarkAzure.min.css" />
   </head>
@@ -14,13 +15,22 @@
     <!-- Main Menu -->
     <nav class="navbar navbar-default MainMenu" role="navigation">
       <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li><a id="HomeBtn" onclick="ChangeScreens(1)">SolAZDev</a></li>
-          <li><a id="ResBtn" onclick="ChangeScreens(2)">Resume</a></li>
-          <li><a id="PortBtn" onclick="ChangeScreens(3)">Portfolio</a></li>
-          <li><a id="ProjBtn" onclick="ChangeScreens(4)">Projects</a></li>
-          <li><a id="ReachBtn" onclick="ChangeScreens(5)">Contact</a></li>
-        </ul>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MainNav">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="MainNav">
+          <ul class="nav navbar-nav">
+            <li><a id="HomeBtn" onclick="ChangeScreens(1)">SolAZDev</a></li>
+            <li><a id="ResBtn" onclick="ChangeScreens(2)">Resume</a></li>
+            <li><a id="PortBtn" onclick="ChangeScreens(3)">Portfolio</a></li>
+            <li><a id="ProjBtn" onclick="ChangeScreens(4)">Projects</a></li>
+            <li><a id="ReachBtn" onclick="ChangeScreens(5)">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
     <!-- Home Screen -->
@@ -30,12 +40,21 @@
         <p>Indie Game Developer & Web Designer</p>
       </div>
       <div class="container">
+        <div class="text-center">
+          <h1>Thank you for visiting!!</h1>
+          The Page is currently A Work in Progress but most of the ideal parts are complete!<br />
+          Please do check out the portfolio and Projects Section.<br />
+          Thank you for taking the time to see this web site, and I apologize for the inconvenience.<br />
+          --SolAZDev
+        </div>
+        <br />
         <div class="row">
-          <div class="col-sm-6">
-            Gallery Goes Here
+          <div class="col-sm-6 text-center">
+            Hello and Welcome!<br />
           </div>
           <div class="col-sm-6 text-center">
-            Hello and welcome!
+            G a l l e r y<br>
+            Worthy carousel goes here.
           </div>
         </div>
       </div>
@@ -44,22 +63,23 @@
     <div id="ResumePage">
       <div class="container-fluid">
         <div class="container" style="text-align:justify">
-          <div class="text-center"><h4>Current Carrer Objective</h4></div>
+          <div class="text-center"><h4>Current Career Objective</h4></div>
           <div class="row">
             <div class="col-sm-4">
               <div class="text-center" style="font-">As an Individual</div></br>
-              Lorem Impus to something goes here, that's the point.
+              As a college graduate who expanded his skillset, I'm continously seeking to learn more things about my fields(s) while moving forward with any given task and projects.
             </div>
             <div class="col-sm-4">
               <div class="text-center">As a Developer</div></br>
-              Lorem Impustosomething goes here, that's the point.
+              As a developer, I seek to preform as efficient and as clean as I can make my work. My code will always be readable, efficient and leave as little footprint as possible, to deliver the best experience to the user, and player.
             </div>
             <div class="col-sm-4">
               <div class="text-center">As an Artist</div></br>
-              Lorem Impustosomething goes here, that's the point.
+              As an artist I work from the main idea, upwards. I will make sure the main idea behind the portrayl is clear and as complex as it may need to be, for 3D I specialize in Low to Medium poly for the best performance.
             </div>
           </div>
         </div>
+        <br />
         <div class="row">
           <div class="col-sm-6">
             <h5>Skillset</h5>
@@ -99,14 +119,14 @@
           <ul>
             <li>
               Video Game Design Instructor - Feb-Apr 2016<br />
-              I worked as a Video Game Design Instrctor (3pm to 5pm) at Escuela Mariano Abril Intermedia. My Work involved teaching students the principles of 3D Modeling, Level Desgin and Game Programming.
-            </li>
+              I worked as a Video Game Design Instructor (3pm to 5pm) at Escuela Mariano Abril Intermedia. My Work involved teaching students the principles of 3D Modeling, Level Design and Game Programming.
+            </li><br />
             <li>
-              Head Programmer - August 2016 - Feburary 2017<br />
+              Head Programmer - August 2016 - February 2017<br />
               I was the Head for Game & App Programming in a starting company called Axiom Horizon. Most of the work was done with Unity and HTML5.
-            </li>
+            </li><br />
             <li>
-              Enviroment Designer & VR Interactive Programmer - December 2016 - Feburary 2017<br />
+              Environmental Designer & VR Interactive Programmer - December 2016 - Feburary 2017<br />
               I worked as a Level Designer, Animator and Programmer at SI3D Media to create a VR Environment for some of their projects, including commercials, interactive environments and promotional assets.
             </li>
           </ul>
@@ -118,47 +138,111 @@
       <nav class="navbar navbar-default MainMenu">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
-            <li style="width:33%"><a id="PFLDesign">Level Desgin</a></li>
-            <li style="width:33%"><a id="PF3DArt">3D Art</a></li>
-            <li style="width:33%"><a id="PFCSS">CSS Styles</a></li>
+            <li style="width:33%"><a id="PFLDesign" onclick="ChangeScreens(6)">Level Desgin</a></li>
+            <li style="width:33%"><a id="PF3DArt" onclick="ChangeScreens(7)">3D Art</a></li>
+            <li style="width:33%"><a id="PFCSS" onclick="ChangeScreens(8)">CSS Styles</a></li>
           </ul>
         </div>
         </nav>
+        <div id="PortLevel">
+          <div class='container-fluid'>
+            <div class="text-center"><h3>Level Design Screenshots</h3></div>
+            <div class="row">
+              <div class="col-md-4">
+                <a target="_blank" href="https://scontent.fsig3-1.fna.fbcdn.net/v/t31.0-8/fr/cp0/e15/q65/10403983_856956414349171_5410798642348857845_o.jpg?efg=eyJpIjoidCJ9&oh=591015f1103128e62dc5e934e073787f&oe=59FE2195">
+                <img class="img-responsive" src="https://scontent.fsig3-1.fna.fbcdn.net/v/t31.0-8/fr/cp0/e15/q65/10403983_856956414349171_5410798642348857845_o.jpg?efg=eyJpIjoidCJ9&oh=591015f1103128e62dc5e934e073787f&oe=59FE2195" style="width:100%" /></a>
+              </div>
+              <div class="col-md-4">
+                <a target="_blank" href="https://scontent.fsig3-1.fna.fbcdn.net/v/t31.0-8/fr/cp0/e15/q65/10687492_856956517682494_3112742743045850855_o.jpg?efg=eyJpIjoidCJ9&oh=c05f4bffca45e4c0242ae0be6f99de05&oe=59FE08C3">
+                <img class="img-responsive" src="img/Map1.png" style="width:100%;" /></a>
+            </div>
+            <div class="col-md-4">
+              <a target="_blank" href="https://scontent.fsig3-1.fna.fbcdn.net/v/t31.0-8/fr/cp0/e15/q65/10015001_732963686748445_1051440864_o.jpg?efg=eyJpIjoidCJ9&oh=c4921fee28b7cc86e935b47c2fd0f050&oe=5A00E034">
+              <img class="img-responsive" src="img/Map2.png" style="width:100%;" /></a>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <a target="_blank" href="img/CDMap1.png">
+              <img class="img-responsive" src="img/CDMap1p.png" style="width:100%" /></a>
+            </div>
+            <div class="col-md-4">
+              <a target="_blank" href="img/CDMap2.png">
+              <img class="img-responsive" src="img/CDMap2p.png" style="width:100%" /></a>
+            </div>
+            <div class="col-md-4">
+              <a target="_blank" href="https://68.media.tumblr.com/9b21897249ac105cac0a01d0955fa160/tumblr_o78ylivvrc1v1gts7o10_1280.png">
+              <img class="img-responsive" src="https://68.media.tumblr.com/9b21897249ac105cac0a01d0955fa160/tumblr_o78ylivvrc1v1gts7o10_1280.png" style="width:100%" /></a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div id="Port3D">
+          <div class='container-fluid'>
+            <div class="text-center"><h4>3D Art - WIP</h4><br />More incoming!!</div>
+            <div class='row'>
+              <div class="col-sm-4">
+                <a target="_blank" href="https://68.media.tumblr.com/d578f986668d5f317ea0f0c00b8d3de3/tumblr_oc8c0codgc1v1gts7o2_1280.jpg"><img class="img-responsive" src="https://68.media.tumblr.com/d578f986668d5f317ea0f0c00b8d3de3/tumblr_oc8c0codgc1v1gts7o2_1280.jpg" /></a>
+              </div>
+              <div class="col-sm-4">
+                <a target="_blank" href="https://68.media.tumblr.com/0b2034d0d64704b8b5e338114303c06f/tumblr_oc8c0codgc1v1gts7o1_1280.jpg"><img class="img-responsive" src="https://68.media.tumblr.com/0b2034d0d64704b8b5e338114303c06f/tumblr_oc8c0codgc1v1gts7o1_1280.jpg" /></a>
+              </div>
+              <div class="col-sm-4">
+                <a target="_blank" href="https://scontent.fsig3-1.fna.fbcdn.net/v/t31.0-8/fr/cp0/e15/q65/13923433_1238488076196001_8620402817355867200_o.jpg?efg=eyJpIjoidCJ9&oh=219007ab376e5edc5d835e542f8d877d&oe=59FEAFD6"><img class="img-responsive" src="https://scontent.fsig3-1.fna.fbcdn.net/v/t31.0-8/fr/cp0/e15/q65/13923433_1238488076196001_8620402817355867200_o.jpg?efg=eyJpIjoidCJ9&oh=219007ab376e5edc5d835e542f8d877d&oe=59FEAFD6" /></a>
+              </div>
+              <div class="col-sm-6">
+                <a target="_blank" href="https://68.media.tumblr.com/3a0160681be04b9be6e5f820cf71b61e/tumblr_o4vmhjcmHG1v1gts7o1_1280.png"><img class="img-responsive" src="https://68.media.tumblr.com/3a0160681be04b9be6e5f820cf71b61e/tumblr_o4vmhjcmHG1v1gts7o1_1280.png" /></a>
+              </div>
+              <div class="col-sm-6">
+                <a target="_blank" href="https://68.media.tumblr.com/dcfc2d1a16a8accd9a52bd0db43b2864/tumblr_o4vlub1hU51v1gts7o3_1280.png"><img class="img-responsive" src="https://68.media.tumblr.com/dcfc2d1a16a8accd9a52bd0db43b2864/tumblr_o4vlub1hU51v1gts7o3_1280.png" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="PortCSS">
+          <div class='container '>
+          <div class="text-center">
+            <h1>Work In Progress, This section is coming soon!!</h1>
+          </div>
+          </div>
+        </div>
     </div>
     <!-- Projects Screen -->
     <div id="ProjectsPage">
       <div class="container-fluid">
         <div class="text-center">
           <h4>Projects</h4>
-          These are projects that I have worked on alone or have done collaborately.<br /><br />
+          These are projects that I have worked on alone or have done collaboratively.<br /><br />
           <div class="row">
-            <div class="col-sm-4" id="PrTDC">
+            <div class="col-sm-6" id="PrTDC" onclick="ChangeScreens(9)">
               <div class="panel panel-default">
                 <div class="panel-body">
-                  Image Goes here
+                  <img style="width:315px;height:250px;" src="https://img.itch.zone/aW1hZ2UvMTI4ODQ2LzU5MjU3MS5wbmc=/315x250%23c/aJ8c%2Bt.png" />
                 </div>
                 <div class="panel-footer">
                   The Dreamer's Princess
                 </div>
               </div>
             </div>
-            <div class="col-sm-4" id="PrPB516">
+            <div class="col-sm-6" id="PrPB16" onclick="ChangeScreens(10)">
               <div class="panel panel-default">
                 <div class="panel-body">
-                  Image Goes here
+                  <img src="img/PB16Landing-1.png" style="width:350px;230px;" />
                 </div>
                 <div class="panel-footer">
-                  PiBoy5 2016
+                  PiBoy5 The HTML5 PipBoy
                 </div>
               </div>
             </div>
-            <div class="col-sm-4" id="PrTFC">
+          </div>
+          <div class="row">
+            <div class="col-sm-6" id="PrPCD" onclick="ChangeScreens(11)">
               <div class="panel panel-default">
                 <div class="panel-body">
-                  Image Goes here
+                  <img src="https://img.itch.zone/aW1hZ2UvMTUwNTQ5LzY5MDY0OS5wbmc=/315x250%23c/omVZTU.png" />
                 </div>
                 <div class="panel-footer">
-                  Legacy of Goblins: The First Conflict
+                  Project Color Death
                 </div>
               </div>
             </div>
@@ -168,17 +252,306 @@
     </div>
     <!-- Contact Screen -->
     <div id="ContactScreen" style="text-align:center;">
-      <div id="EmailNo" class="well well-sm well-no">An error occoured! Please contact me directly via SolAZDev@gmail.com. I apologize for the inconvinience.</div>
-      <div id="EmailYes" class="well well-sm well-yes">Message Sent. I'll be returning to you as soon as possible! Thank you for contacting.</div>
-      <form id="mailform" style="padding:15px;">
-        <input type="text" name="name" placeholder="Your Name"/>	&nbsp;
-        <input type="email" name="email" placeholder="Your Email"/><br /><br />
-        <span id="Subject">
-          <input type="text" name="subject" placeholder="Subject"/><br /><br />
-          <textarea type="text" name="message" placeholder="Message here."/></textarea/><br />
-          <input type="submit" name="send" value="Send Mail"/>
-        </span>
-      </form>
+      <div class="container">
+        <div class="text-center">
+          <h1>Something just ain't right...</h1>
+          The Contact Script isn't working that well (sometimes it does, others it doesn't)<br />
+          Please contact me manually, at SolAZDev@gmail.com.<br />
+          I apologize for the inconvenience.
+        </div>
+        <br />
+        <div id="EmailNo" class="well well-sm well-no">An error occoured! Please contact me directly via SolAZDev@gmail.com. I apologize for the inconvinience.</div>
+        <div id="EmailYes" class="well well-sm well-yes">Message Sent. I'll be returning to you as soon as possible! Thank you for contacting.</div>
+        <form id="mailform" style="padding:15px;">
+          <input type="text" name="name" placeholder="Your Name"/>	&nbsp;
+          <input type="email" name="email" placeholder="Your Email"/><br /><br />
+          <span id="Subject">
+            <input type="text" name="subject" placeholder="Subject"/><br /><br />
+            <textarea type="text" name="message" placeholder="Message here."/></textarea/><br />
+            <input type="submit" name="send" value="Send Mail"/>
+          </span>
+        </form>
+      </div>
+    </div>
+    <!-- PROJECT SECTION -->
+    <div id="GI-TDP" class="GamePage">
+      <div class="container-fluid">
+        <div class='container' style="margin-left:5">
+          <h2>The Dreamer's Princess</h2>
+          Ripped from reality, dropped into the unknown.<br /><br />
+        </div>
+        <div class="row">
+          <div class="col-sm-8">
+            <div id="SSTDP" class="carousel slide" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="https://68.media.tumblr.com/2009a8c82797637574541a93a9815d81/tumblr_op7b4yd8I71v1gts7o1_1280.png">
+                  <div class="carousel-caption">In-Engine Game Testing</div>
+                </div>
+                <div class="item">
+                  <img src="https://68.media.tumblr.com/8823311cafbf6c628ccf2b2d7f2ee193/tumblr_op7b4yd8I71v1gts7o2_1280.png">
+                  <div class="carousel-caption">Map Overview</div>
+                </div>
+                <div class="item">
+                  <img src="https://68.media.tumblr.com/6a6a51f3eaacd32b338c28fbb2ebaba3/tumblr_og6rtbp48Z1v1gts7o9_1280.png">
+                  <div class="carousel-caption">Older Version</div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#SSTDP" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#SSTDP" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="text-center"><h5>About</h5></div>
+            <p>A girl who is ripped from her reality and dropped into a dream world.
+            The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently
+          in development for Android, iOS, and the Nintendo 3DS.</p>
+          <div class="text-center"><h5>Features</h5></div>
+          <ul>
+            <li>Randomly Generated Levels where the player must adapt to a play style.</li>
+            <li>Different endings based on multiple factors, not just player choices.</li>
+            <li>Unexpected Mini bosses</li>
+            <li>Surprises waiting on every corner.</li>
+            <li>10 Major areas, with 5 main chapters</li>
+          </ul>
+          <div class="text-center"><h5>Info</h5></div>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Status</td>
+                <td style="text-align:right;">In Development</td>
+              </tr>
+              <tr>
+                <td>Genre</td>
+                <td style="text-align:right;">Dungeon Crawling, Bullet Hell Shooter, RPG</td>
+              </tr>
+              <tr>
+                <td>Plataform</td>
+                <td style="text-align:right;">Android, iOS, 3DS</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center"><h5>Links</h5>
+            <a target="_blank" href="https://solazdev.tumblr.com/tagged/thedreamersprincess">Tumblr DevBlog</a> -
+            <a target="_blank" href="https://twitter.com/search?q=%23TheDreamersPrincess">Twitter Hashtag</a> -
+            <a target="_blank" href="http://www.indiedb.com/games/the-dreamers-princess">IndieDB</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="PI-PB16" class="GamePage">
+      <div class="container-fluid">
+        <div class='container' style="margin-left:5">
+          <h2>PiBoy5</h2>
+          Fan-Made HTML5 Fallout 4 Pip-Boy Demo<br /><br />
+        </div>
+        <div class="row">
+          <div class="col-sm-8">
+            <div id="PB-Carousel" class="carousel slide" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="img/PB16StatsPage.png">
+                  <div class="carousel-caption">Main page</div>
+                </div>
+                <div class="item">
+                  <img src="img/PB16ItemList.png">
+                  <div class="carousel-caption">Lists and Icon</div>
+                </div>
+                <div class="item">
+                  <img src="img/PB16Radio.png">
+                  <div class="carousel-caption">Radio Included!</div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#PB-Carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#PB-Carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="text-center"><h5>About</h5></div>
+            <p>This is an HTML5 Kick-Start Project, and is usable as a cosplay prop. It's made with LESS and jQuery.</p>
+          <div class="text-center"><h5>Features</h5></div>
+          <ul>
+            <li>90% Pip-Boy 3000 Mark IV Interface</li>
+            <li>Map and Radio</li>
+            <li>Open Source!</li>
+          </ul>
+          <div class="text-center"><h5>Info</h5></div>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Status</td>
+                <td style="text-align:right;">V1 Completed</td>
+              </tr>
+              <tr>
+                <td>Genre</td>
+                <td style="text-align:right;">Simulator; Frankly Cosplay prop</td>
+              </tr>
+              <tr>
+                <td>Plataform</td>
+                <td style="text-align:right;">HTML5</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center"><h5>Links</h5>
+            <a target="_blank" href="http://solazdev.github.io/PiBoy5">Main Page</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="PI-PCLD" class="GamePage">
+      <div class="container-fluid">
+        <div class='container' style="margin-left:5">
+          <h2>Project Color Death</h2>
+          GDN Blueberry Jam 2017 Game Jam Entry<br /><br />
+        </div>
+        <div class="row">
+          <div class="col-sm-8">
+            <div id="CLD-Carousel" class="carousel slide" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="https://pbs.twimg.com/media/DCkm5RqVoAA9qdg.jpg:">
+                  <div class="carousel-caption">Gameplay</div>
+                </div>
+                <div class="item">
+                  <img src="https://pbs.twimg.com/media/DCkm5RpVwAAUCs3.jpg">
+                  <div class="carousel-caption">More Gameplay</div>
+                </div>
+                <div class="item">
+                  <img src="https://pbs.twimg.com/media/DCkm5RpVoAAKYeE.jpg">
+                  <div class="carousel-caption">Even More Gameplay!</div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#cCLD-Carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#CLD-Carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="text-center"><h5>About</h5></div>
+            <p>This is a game jam entry for the GDN Blueberry Jam it was completed in a week. The game revolves around an artist with a art block and depression. This was a the first game jam for my companions.</p>
+          <div class="text-center"><h5>Features</h5></div>
+          <ul>
+            <li>Puzzle-like Platforming with traps that affects both the player and their thoughts.</li>
+            <li>2 Levels (demo)</li>
+            <li>Playable on Browser (Mobile version coming later)</li>
+          </ul>
+          <div class="text-center"><h5>Info</h5></div>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Status</td>
+                <td style="text-align:right;">Development Paused</td>
+              </tr>
+              <tr>
+                <td>Genre</td>
+                <td style="text-align:right;">Plataformer, Puzzle</td>
+              </tr>
+              <tr>
+                <td>Plataform</td>
+                <td style="text-align:right;">HTML5</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center"><h5>Links</h5>
+            <a target="_blank" href="https://itch.io/jam/game-dev-network-blueberry-jam/rate/150549">Gamejam Entry</a> -
+            <a target="_blank" href="https://solazdev.itch.io/colordeath">Game (PC)</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="PI-3DSBP" class="GamePage">
+      <div class="container-fluid">
+        <div class='container' style="margin-left:5">
+          <h2>Blaze Project</h2>
+          Arcade Bullet Hell Shooter for the 3DS<br /><br />
+        </div>
+        <div class="row">
+          <div class="col-sm-8">
+            <!--<div id="carousel-generic" class="carousel slide" data-ride="carousel">
+              <!-- Wrapper for slides
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="img/PB16StatsPage.png">
+                  <div class="carousel-caption">Main page</div>
+                </div>
+                <div class="item">
+                  <img src="img/PB16ItemList.png">
+                  <div class="carousel-caption">Lists and Icon</div>
+                </div>
+                <div class="item">
+                  <img src="img/PB16Radio.png">
+                  <div class="carousel-caption">Radio Included!</div>
+                </div>
+              </div>
+
+              <!-- Controls
+              <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#carousel-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>-
+            </div>-->
+            <div class="text-center">
+              <h1>Coming Soon!!</h1>
+              Game Currently In Early Development!!
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="text-center"><h5>About</h5></div>
+            <p>Blaze Project was originally coded to test the waters of 3DS development, but soon thereafter, actual development began. It's a 2 Week development time, Arcade-style bullet hell shooter.</p>
+          <div class="text-center"><h5>Features</h5></div>
+          <ul>
+            <li>3 Main Stages (as of Day 2)</li>
+            <li>Competitive Speedrunning</li>
+            <li>More updates coming!</li>
+          </ul>
+          <div class="text-center"><h5>Info</h5></div>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Status</td>
+                <td style="text-align:right;">Currently in Development</td>
+              </tr>
+              <tr>
+                <td>Genre</td>
+                <td style="text-align:right;">Arcade, Bullet Hell Shooter</td>
+              </tr>
+              <tr>
+                <td>Plataform</td>
+                <td style="text-align:right;">3DS</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center"><h5>Links</h5>None yet.
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </body>
 </html>
