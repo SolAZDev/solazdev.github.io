@@ -37,21 +37,15 @@ function ChangeScreens(page) {
             $("#ContactScreen").show();
             break;
         case 6:
-            //DisableAll();
+            DisableAll();
             $("#PortLevel").show();
-            $("#Port3D").hide();
-            $("#PortCSS").hide();
             break;
         case 7:
-            //DisableAll();
-            $("#PortLevel").hide();
+            DisableAll();
             $("#Port3D").show();
-            $("#PortCSS").hide();
             break;
         case 8:
-            //DisableAll();
-            $("#PortLevel").hide();
-            $("#Port3D").hide();
+            DisableAll();
             $("#PortCSS").show();
             break;
         case 9:

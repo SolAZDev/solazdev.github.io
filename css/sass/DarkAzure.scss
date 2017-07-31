@@ -77,6 +77,7 @@ body {
 }
 
 #ResumePage{
+  color: $PipSel;
   .h4, h4{
     color: lighten($PipText, 50);
     padding: 5px 0;
@@ -89,6 +90,12 @@ body {
     padding: 5px 0;
     text-align:center;
     background: linear-gradient(to right,$BGCol, $BGCol, transparentize($PipText,.5),$BGCol, $BGCol);
+  }
+  td{
+    border-top: none;
+  }
+  .col-sm-4{
+    margin-bottom: 20px;
   }
   ul{
     margin-right: 0;
@@ -107,7 +114,16 @@ body {
     }
   }
 }
-
+#MainPortfolio{
+  a{
+    color: $PipText;
+    line-height: 12px;
+  }
+  h2{
+    margin-bottom: 0;
+    line-height: 0px;
+  }
+}
 #ProjectsPage{
   img{
     max-width: 315;
@@ -115,6 +131,9 @@ body {
   }
   .panel{
     background: $FGCol;
+  }
+  td{
+    border-top: none;
   }
 }
 
@@ -184,6 +203,16 @@ form{
       color: $PipSel;
     }
   }
+  .table{
+    tbody{
+      tr{
+        td{
+          border-top: none;
+        }
+      }
+    }
+  }
+
 }
 
 .carousel-inner{
