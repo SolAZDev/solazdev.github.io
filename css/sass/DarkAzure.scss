@@ -10,7 +10,7 @@ $transparent: rgba(0,0,0,0);
 
 body {
   background: $BGCol;
-  color: $PipText;
+  color: #17b2ff;
   font-family: Helvetica;
 
 }
@@ -28,18 +28,27 @@ body {
   border-radius: 0px;
   .navbar-header{
     a{
-      width: 20%;
-      padding-top: 0;
-      text-align: center;
+      transition: all, .5s;
+      color: $PipText;
+      font-weight: bold;
+      transform-origin: center;
+      z-index: 1;
+      &:after{
+        background: linear-gradient($FGCol,transparentize($PipText,0.3));
+        transition: opacity 1s ease-out;
+        opacity: 0;
+        z-index: 2;
+      }
+      &:hover, &:after {
+        color: $PipSel;
+        transition: all, 1s;
+        opacity: 1;
+      }
     }
   }
   .navbar-nav{
-    width: 100%;
-    margin: 0;
     text-align: center;
     li{
-      width: 20%;
-      padding-top: 0;
       text-align: center;
       a{
         transition: all, .5s;
