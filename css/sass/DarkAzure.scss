@@ -154,8 +154,8 @@ body {
 
 #ProjectsPage {
     img {
-        max-width: 315;
-        max-height: 250px;
+        width: 315px;
+        height: 250px;
     }
     .card {
         background: $FGCol;
@@ -168,7 +168,7 @@ body {
             width: 100%;
             height: 100%;
         }
-        border: 2px $PipText;
+        border:2px $PipText;
         border-radius: 8px;
     }
 }

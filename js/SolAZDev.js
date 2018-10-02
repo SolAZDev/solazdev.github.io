@@ -56,6 +56,9 @@ function ChangeScreens(page) {
         case 13:
             $("#PI-OHTTHT").show();
             break;
+        case 14:
+            $("#PI-GSW").show();
+            break;
     }
 }
 
@@ -121,5 +124,6 @@ function DisableAll() {
     $("#PI-PCLD").hide();
     $("#PI-NSP").hide();
     $("#PI-OHTTHT").hide();
+    $("#PI-GSW").hide();
     $("#PI-3DSBP").hide();
 }

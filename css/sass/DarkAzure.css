@@ -155,8 +155,8 @@ body {
 }
 
 #ProjectsPage img {
-  max-width: 315;
-  max-height: 250px;
+  width: 315px;
+  height: 250px;
 }
 
 #ProjectsPage .card {
