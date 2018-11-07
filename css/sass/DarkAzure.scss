@@ -11,7 +11,7 @@ $transparent: rgba(0, 0, 0, 0);
 body {
     background: $BGCol;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     font-family: Helvetica;
 }
 
@@ -37,6 +37,7 @@ body {
             transition: all, .5s;
             color: $PipText;
             font-weight: bold;
+            font-size: 20px;
             transform-origin: center;
             z-index: 1;
 
