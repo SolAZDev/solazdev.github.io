@@ -1,11 +1,24 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+  div(id="app")
+    b-container
+      b-navbar(toggleable="lg")
+        router-link(to="/")
+          b-nvarbar-brand SolAZDev
+        b-navbar-toggle(target="menuCollapse")
+        b-collapse#menuCollapse(is-nav='')
+          b-navbar-nav
+              b-nav-item(to="/about") About
+              b-nav-item(to="/resume") Resume
+              b-nav-item(to="/porfolio") Portfolio
+              b-nav-item(to="/projects") Projects
+    router-view
+  // <div id="app">
+  //   <div id="nav">
+  //     <router-link to="/">Home</router-link> |
+  //     <router-link to="/about">About</router-link>
+  //   </div>
+  //   <router-view/>
+  // </div>
 </template>
 
 <style lang="scss">
