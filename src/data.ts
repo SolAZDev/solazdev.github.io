@@ -1,19 +1,20 @@
 export default {
     ModelArt: [
         {
-            "file": "./assets/img/3DArt/GlowNight.jpg",
+            "file": "../assets/img/3DArt/GlowNight.jpg",
             "desc": "Glownight"
         }
     ],
     LevelDesign: [
         {
-            "file": "./assets/img/Maps/Esmeron Beach River.png",
+            "file": "../assets/img/Maps/Esmeron Beach River.png",
             "desc": "TL1 Esmeron Beach River"
         }
     ],
     Projects: [
         {
             "name": "The Dreamer's Princess",
+            "id": "TDP",
             "thumb": "https://img.itch.zone/aW1hZ2UvMTI4ODQ2LzU5MjU3MS5wbmc=/315x250%23c/aJ8c%2Bt.png",
             "about": "A girl who is ripped from her reality and dropped into a dream world in a dimension lost in time. The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently in development for Mobile platforms.",
             "features": [
@@ -42,7 +43,8 @@ export default {
         },
         {
             "name": "Genial Skills Web",
-            "thumb": "./assets/img/Thumbnails/GSWTitle.png",
+            "id": "GSW",
+            "thumb": "~@/assets/img/Thumbnails/GSWTitle.png",
             "about": "A girl who is ripped from her reality and dropped into a dream world in a dimension lost in time. The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently in development for Mobile platforms.",
             "features": [
                 "Randomly Generated Levels where the player must adapt to a play style.",
@@ -70,6 +72,7 @@ export default {
         },
         {
             "name": "Oh How the Turns how Tabled!",
+            "id": "OhThT",
             "thumb": "https://img.itch.zone/aW1hZ2UvMzAwNjU5LzE0NzA3MjYucG5n/315x250%23c/A0hq91.png",
             "about": "A girl who is ripped from her reality and dropped into a dream world in a dimension lost in time. The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently in development for Mobile platforms.",
             "features": [
@@ -98,6 +101,7 @@ export default {
         },
         {
             "name": "No Service Provider",
+            "id": "NSP",
             "thumb": "./assets/img/Thumbnails/NSPTitle.png",
             "about": "A girl who is ripped from her reality and dropped into a dream world in a dimension lost in time. The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently in development for Mobile platforms.",
             "features": [
@@ -126,6 +130,7 @@ export default {
         },
         {
             "name": "Project Color Death",
+            "id": "PCD",
             "thumb": "https://img.itch.zone/aW1hZ2UvMTUwNTQ5LzY5MDY0OS5wbmc=/315x250%23c/omVZTU.png",
             "about": "A girl who is ripped from her reality and dropped into a dream world in a dimension lost in time. The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently in development for Mobile platforms.",
             "features": [

@@ -7,7 +7,7 @@
             img(alt="Vue logo" src="../assets/img/Projects/TDP/TDPv0S1.png")
         br
       b-container
-        b-row
+        b-row(v-if="projects!==undefined")
           b-col(v-for="project in projects" sm="12" md="4")
             b-card
               b-card-text
