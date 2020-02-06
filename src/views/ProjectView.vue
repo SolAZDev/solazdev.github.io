@@ -1,34 +1,59 @@
 <template lang="pug">
   div
-      b-container
-        div.text-center
-            h3 Projects
-            span These are projects that I have worked on alone or collaboratively
-            img(alt="Vue logo" src="../assets/img/Projects/TDP/TDPv0S1.png")
-        br
-      b-container
-        b-row(v-if="projects!==undefined")
-          b-col(v-for="project in projects" sm="12" md="4")
-            b-card
-              b-card-text
-                img(:src="project.thumb" width="100%")
-              b-card-text {{project.name}}
+      div.container-fluid
+        div
+          h2 {{$data.project.name}}
+        b-row
+
+          b-col(sm="12" md="8")
+            b-carousel#ScreenshotCarousel(:interval='4000' controls='' indicators='0' height="50%")
+              b-carousel-slide(v-for="img in $data.project.images" :text="img.desc" :img-src="img.file")
+
+          b-col(sm="12" md="4")
+            b About
+            p.text-left.text-wrap {{$data.project.about}}
+            b Features
+            ul.text-left
+              li(v-for="feat in $data.project.features") {{feat}}
+            b Info
+            table(style="width:100%")
+              tr
+                td.text-left
+                  b Status
+                td.text-right
+                  div {{$data.project.status}}
+              tr
+                td.text-left
+                  b Genre
+                td.text-right
+                  div {{$data.project.genre}}
+              tr
+                td.text-left
+                  b Platforms
+                td.text-right
+                  div {{$data.project.platform}}
+            b Links
+
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import  *as SiteMedia from '../data'
+import *as SiteMedia from '../data'
 
 @Component
-export default class Projects extends Vue {
+export default class ProjectView extends Vue {
   data() {
     return {
-      projects: undefined
+      project: undefined
     }
   }
   @Prop() private msg!: string;
   created() {
-    this.$data.projects = SiteMedia.default.Projects
-    alert(this.$data.json[0])
+    this.$data.project = SiteMedia.default.Projects.filter(p => p.id === this.$route.params.id)[0];
+
+    // alert(this.$data.json[0])
+
   }
 }
 </script>
+<style lang="sass">
+</style>

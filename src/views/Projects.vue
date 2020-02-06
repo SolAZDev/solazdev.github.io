@@ -4,19 +4,20 @@
         div.text-center
             h3 Projects
             span These are projects that I have worked on alone or collaboratively
-            img(alt="Vue logo" src="../assets/img/Projects/TDP/TDPv0S1.png")
         br
       b-container
         b-row
           b-col(v-for="project in projects" sm="12" md="4")
-            b-card
-              b-card-text
-                img(:src="project.thumb" width="100%")
-              b-card-text {{project.name}}
+            //- router-link(to="/" + {{project.id}})
+            router-link(:to="'/projects/'+project.id")
+              b-card
+                b-card-text
+                  img(:src="project.thumb" width="100%")
+                b-card-text {{project.name}}
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import  *as SiteMedia from '../data'
+import *as SiteMedia from '../data'
 
 @Component
 export default class Projects extends Vue {
@@ -28,7 +29,7 @@ export default class Projects extends Vue {
   @Prop() private msg!: string;
   created() {
     this.$data.projects = SiteMedia.default.Projects
-    alert(this.$data.json[0])
+    // alert(this.$data.json[0])
   }
 }
 </script>
