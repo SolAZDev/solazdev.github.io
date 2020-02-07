@@ -1,14 +1,66 @@
 export default {
-    ModelArt: [
-        {
-            "file": "../assets/img/3DArt/GlowNight.jpg",
-            "desc": "Glownight"
-        }
-    ],
+    Thumbnails: {
+        "EBRMini": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/EBRMini.png",
+        "GSWTitle": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/GSWTitle.png",
+        "Map1": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/Map1.png",
+        "Map2": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/Map2.png",
+        "NSPTitle": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/NSPTitle.jpeg",
+        "PB16": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/PB16Landing-1.png"
+    },
     LevelDesign: [
         {
-            "file": "../assets/img/Maps/Esmeron Beach River.png",
-            "desc": "TL1 Esmeron Beach River"
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Maps/CDMap1.png',
+            desc: 'CDMap1.png'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Maps/CDMap1p.png',
+            desc: 'CDMap1p.png'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Maps/CDMap2.png',
+            desc: 'CDMap2.png'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Maps/CDMap2p.png',
+            desc: 'CDMap2p.png'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Maps/Esmeron Beach River.png',
+            desc: 'Esmeron Beach River.png'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Maps/Esmeron Forest NW.png',
+            desc: 'Esmeron Forest NW.png'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Maps/Esmeron South River.png',
+            desc: 'Esmeron South River.png'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Maps/TL1MapMountain.jpg',
+            desc: 'TL1MapMountain.jpg'
+        }
+    ],
+    TDArt: [
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/3D Art/67889070_2618701951507933_6316967435723341824_o.jpg',
+            desc: 'empty'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/3D Art/GlowNight.jpg',
+            desc: 'Glownight'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/3D Art/tumblr_o4vlub1hU51v1gts7o3_1280.png',
+            desc: 'empty'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/3D Art/tumblr_oc8c0codgc1v1gts7o1_1280.jpg',
+            desc: 'empty'
+        },
+        {
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/3D Art/tumblr_oc8c0codgc1v1gts7o2_1280.jpg',
+            desc: 'empty'
         }
     ],
     Projects: [
@@ -25,15 +77,15 @@ export default {
             ],
             "images": [
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv0S1.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/TDP/TDPv0S1.png",
                     "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S1.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/TDP/TDPv1S1.png",
                     "desc": "Public Demo 1"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S2.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/TDP/TDPv1S2.png",
                     "desc": "Old Version Test & Map Icon Projection"
                 }
             ],
@@ -44,7 +96,7 @@ export default {
         {
             "name": "Genial Skills Web",
             "id": "GSW",
-            "thumb": "~@/assets/img/Thumbnails/GSWTitle.png",
+            "thumb": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/GSWTitle.png",
             "about": "A girl who is ripped from her reality and dropped into a dream world in a dimension lost in time. The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently in development for Mobile platforms.",
             "features": [
                 "Randomly Generated Levels where the player must adapt to a play style.",
@@ -54,20 +106,36 @@ export default {
             ],
             "images": [
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv0S1.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/GSW/GSW0.jpg",
                     "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S1.png",
-                    "desc": "Public Demo 1"
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/GSW/GSW1.jpg",
+                    "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S2.png",
-                    "desc": "Old Version Test & Map Icon Projection"
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/GSW/GSW2.jpg",
+                    "desc": "Initial Version Prototype"
+                },
+                {
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/GSW/GSW3.jpg",
+                    "desc": "Initial Version Prototype"
+                },
+                {
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/GSW/GSW4.jpg",
+                    "desc": "Initial Version Prototype"
+                },
+                {
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/GSW/GSW5.jpg",
+                    "desc": "Initial Version Prototype"
+                },
+                {
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/GSW/GSW6.png",
+                    "desc": "Initial Version Prototype"
                 }
             ],
-            "status": "Rewrite in Development",
-            "genre": "Dungeon Crawling, Bullet Hell Shooter, RPG",
+            "status": "Released",
+            "genre": "Educational, Arcade",
             "platform": "Mobile**"
         },
         {
@@ -83,16 +151,16 @@ export default {
             ],
             "images": [
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv0S1.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/OHT/OHT0.png",
                     "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S1.png",
-                    "desc": "Public Demo 1"
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/OHT/OHT1.png",
+                    "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S2.png",
-                    "desc": "Old Version Test & Map Icon Projection"
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/OHT/OHT2.png",
+                    "desc": "Initial Version Prototype"
                 }
             ],
             "status": "Rewrite in Development",
@@ -102,7 +170,7 @@ export default {
         {
             "name": "No Service Provider",
             "id": "NSP",
-            "thumb": "./assets/img/Thumbnails/NSPTitle.png",
+            "thumb": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/NSPTitle.jpeg  ",
             "about": "A girl who is ripped from her reality and dropped into a dream world in a dimension lost in time. The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently in development for Mobile platforms.",
             "features": [
                 "Randomly Generated Levels where the player must adapt to a play style.",
@@ -112,15 +180,15 @@ export default {
             ],
             "images": [
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv0S1.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPSCreenshot1.jpeg",
                     "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S1.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPSCreenshot2.jpeg",
                     "desc": "Public Demo 1"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S2.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPSCreenshot3.png",
                     "desc": "Old Version Test & Map Icon Projection"
                 }
             ],
@@ -141,15 +209,15 @@ export default {
             ],
             "images": [
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv0S1.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/PCD/PCD0.jpg",
                     "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S1.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/PCD/PCD1s.jpg",
                     "desc": "Public Demo 1"
                 },
                 {
-                    "file": "../assets/img/Projects/TDP/TPPv1S2.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/PCD/PCD2.jpg",
                     "desc": "Old Version Test & Map Icon Projection"
                 }
             ],

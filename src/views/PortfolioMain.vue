@@ -4,17 +4,18 @@
           h3 Portfolios
           span These are images of works Ive done personally made
       b-row(v-if="SiteMedia!==undefined")
-        b-col
-          // b-card(img-src="SiteMedia.ModelArt[TDImg]")
-          b-card
-            b-card-text
-              img(:src="SiteMedia.ModelArt[TDImg].file")
-            b-card-text Level Design
-        b-col
-          b-card
-            b-card-text
-              img(:src="SiteMedia.LevelDesign[TDImg].file")
-            b-card-text 3D Art
+        router-link(:to="'/mapportfolio'")
+          b-col
+            b-card
+              b-card-text
+                img.catImg(:src="SiteMedia.Thumbnails['EBRMini']")
+              b-card-text Level Design
+        router-link(:to="'/3Dporfolio'")
+          b-col
+            b-card
+              b-card-text
+                img.catImg(:src="SiteMedia.TDArt[0].file")
+              b-card-text 3D Art
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -24,9 +25,7 @@ import * as SiteMediaFile from '../data'
 export default class Portfolio extends Vue {
   data() {
     return {
-      SiteMedia: undefined,
-      TDImg: 0,
-      LDImg: 0
+      SiteMedia: undefined
     }
   }
   @Prop() private msg!: string;
@@ -38,3 +37,12 @@ export default class Portfolio extends Vue {
   }
 }
 </script>
+<style lang="scss">
+$refSize: 50%;
+.catImg {
+  max-height: $refSize;
+  max-width: $refSize;
+  max-height: $refSize;
+  max-width: $refSize;
+}
+</style>
