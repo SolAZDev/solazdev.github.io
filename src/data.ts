@@ -97,12 +97,11 @@ export default {
             "name": "Genial Skills Web",
             "id": "GSW",
             "thumb": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/GSWTitle.png",
-            "about": "A girl who is ripped from her reality and dropped into a dream world in a dimension lost in time. The Dreamer's Princess is a Maze Exploring, Bullet Hell, RPG currently in development for Mobile platforms.",
+            "about": "I worked on the initial Development of Genial Skills Web, and was in charge of the core functionality, such as Server Comunication, Dividing large ammounts of text into a dialogue, making the game entretaining amongs other things. I created Several Quiz Games and the first two minigames, along with the Avatar System, the mutliple scenes and how most of the game is managed.",
             "features": [
-                "Randomly Generated Levels where the player must adapt to a play style.",
-                "Different endings based on multiple factors, not just player choices.",
-                "Optional and Unexpected Mini Bosses",
-                "5 Chapters per Story"
+                "Subscription to Science, Math, Spanish and English from 1st to 9th Grade*",
+                "Pseudo Versus Mode",
+                "Frequent Updates*"
             ],
             "images": [
                 {
@@ -136,7 +135,10 @@ export default {
             ],
             "status": "Released",
             "genre": "Educational, Arcade",
-            "platform": "Mobile**"
+            "platform": "PC, iOS, Android",
+            "links": [
+                { "name": "Official Site", "url": "https://www.genialskills.com/" },
+            ]
         },
         {
             "name": "Oh How the Turns how Tabled!",
@@ -165,7 +167,10 @@ export default {
             ],
             "status": "Rewrite in Development",
             "genre": "Dungeon Crawling, Bullet Hell Shooter, RPG",
-            "platform": "Mobile**"
+            "platform": "PC, Android",
+            "links": [
+                { "name": "Itch.io Page", "url": "https://solazdev.itch.io/ohttht" }
+            ]
         },
         {
             "name": "No Service Provider",
@@ -180,15 +185,15 @@ export default {
             ],
             "images": [
                 {
-                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPSCreenshot1.jpeg",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPScreenshot1.jpeg",
                     "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPSCreenshot2.jpeg",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPScreenshot2.png",
                     "desc": "Public Demo 1"
                 },
                 {
-                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPSCreenshot3.png",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/NSP/NSPScreenshot3.png",
                     "desc": "Old Version Test & Map Icon Projection"
                 }
             ],
@@ -213,7 +218,7 @@ export default {
                     "desc": "Initial Version Prototype"
                 },
                 {
-                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/PCD/PCD1s.jpg",
+                    "file": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Projects/PCD/PCD1.jpg",
                     "desc": "Public Demo 1"
                 },
                 {
