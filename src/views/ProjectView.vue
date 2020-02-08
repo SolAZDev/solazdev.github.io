@@ -33,7 +33,8 @@
                 td.text-right
                   div {{$data.project.platform}}
             b Links
-
+            br
+            a(v-for="link in $data.project.links" :href="link.url" style="padding:5px;") {{link.name}}
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
