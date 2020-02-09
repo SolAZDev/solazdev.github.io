@@ -47,7 +47,7 @@ export default {
             desc: 'The Hallway (PBR Remake) - Blender Cycles'
         },
         {
-            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/3D Art/TheHallWay2.jpg',
+            file: 'https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/3D Art/TheHallway2.jpg',
             desc: 'The Hallway - Fireplace Shot (PBR Remake) - Blender Cycles'
         },
         {

@@ -5,9 +5,7 @@
                 h3 3D Art and   Renders
             b-row
                 b-col(v-for="render in images")
-                  b-card
-                    b-card-text
-                      img(:src="render.file")
+                      b-img(:src="render.file" thumbnail fluid)
 
 </template>
 <script lang="ts">
