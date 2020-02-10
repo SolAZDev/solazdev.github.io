@@ -10,9 +10,7 @@
           b-col(v-for="project in projects" sm="12" md="6" lg="4" style="padding:5px;")
             //- router-link(to="/" + {{project.id}})
             router-link(:to="'/projects/'+project.id")
-              b-card(:title="project.name" :img-src="project.thumb" img-bottom)
-                b-card-text
-                  //- img(:src="project.thumb" width="308" height="244")
+              b-card(:title="project.name" :img-src="project.thumb" img-bottom bg-variant="dark")
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -25,7 +23,6 @@ export default class Projects extends Vue {
       projects: undefined
     }
   }
-  @Prop() private msg!: string;
   created() {
     this.$data.projects = SiteMedia.default.Projects
     // alert(this.$data.json[0])
@@ -36,6 +33,9 @@ export default class Projects extends Vue {
 .card-title {
   font-size: 1em;
   margin-bottom: 0;
+}
+.card {
+  @include aLink;
 }
 .card-body {
   padding: 0.5em;

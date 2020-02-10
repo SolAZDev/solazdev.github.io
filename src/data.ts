@@ -1,4 +1,5 @@
 export default {
+    reel: "https://www.youtube.com/embed/T7E0Ic_mhvU",
     Thumbnails: {
         "EBRMini": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/EBRMini.png",
         "GSWTitle": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/GSWTitle.png",

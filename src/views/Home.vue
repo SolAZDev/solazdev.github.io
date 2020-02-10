@@ -1,21 +1,23 @@
 <template lang="pug">
   div
-    b-jumbotron
+    b-jumbotron(bg-variant="dark")
+      //- img(src="@/assets/solAvatar.svg")
+      div()
       h2 SolAZDev
       h5 Indie Game & Web Developer
 
     b-container
-        iframe(width='720', height='480', src='https://www.youtube.com/embed/T7E0Ic_mhvU', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
+        div.embed-responsive.embed-responsive-16by9
+          iframe(:src="reel", allow='autoplay; encrypted-media; picture-in-picture', allowfullscreen).embed-responsive-item
         br(stlye="padding-top:5px;")
         h5.justify-content-center About
-        br
         b-row
           b-col(cols="1")
           b-col
-            p.text-wrap I'm Carlos E. Orama, alias SolAZDev. I'm an Indie Game Developer and a Web Designer. I specialize in Gameplay programing, Level Design, Web Front End and User Experience.
+            p.text-justify I'm Carlos E. Orama, alias SolAZDev. I'm an Indie Game Developer and a Web Designer. I specialize in Gameplay programing, Level Design, Web Front End and User Experience.
           b-col(cols="1")
           b-col
-            p.text-warp I work primarily with Blender, Unity, C# and Typescript. You can see some of my works in the Projects section, as well as 3D Renders and Levels I've done in the Portfolio section.
+            p.text-justify I work primarily with Blender, Unity, C# and Typescript. You can see some of my works in the Projects section, as well as 3D Renders and Levels I've done in the Portfolio section.
           b-col(cols="1")
         h5.justify-content-center Connect with me
         b-container
@@ -41,26 +43,42 @@
       
 
 </template>
-
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import *as Resume from '../resume'
+import * as Resume from '../resume'
+import * as SiteMediaFile from '../data'
 
 @Component
-export default class About extends Vue {
+export default class Home extends Vue {
   data() {
     return {
-      email: ""
+      email: "",
+      reel: ""
     }
   }
   created() {
     this.$data.email = Resume.default.email;
+    this.$data.reel = SiteMediaFile.default.reel;
   }
 }
 </script>
 <style lang="scss" scoped>
+#aviIcon {
+  width: 80px;
+  height: auto;
+}
 .jumbotron {
-  padding: 1em 2em;
+  padding: 0.5em 2em;
   margin-bottom: 16px;
+}
+.embed-responsive {
+  width: 79%;
+  margin: auto;
+}
+a {
+  color: $PipText;
+  &:hover {
+    color: $PipSel;
+  }
 }
 </style>

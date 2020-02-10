@@ -1,0 +1,50 @@
+$PipText: #17b2ff;
+$PipSel: #e6f7ff;
+$dark-gradient: #025a86;
+$light-gradient: #0075b0;
+$BGCol: #484848;
+$FGCol: #242424;
+$BarBG: #0a0;
+$BarFil: #0f0;
+$transparent: rgba(0, 0, 0, 0);
+
+body {
+  background-color: $BGCol;
+  font-size: 16px;
+  color: white;
+}
+.container-fluid {
+  #MainMenu {
+    width: 100vw;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+  }
+}
+@mixin aNavLink {
+  color: $PipText;
+  &.router-link-exact-active {
+    color: $PipSel;
+  }
+}
+@mixin aLink {
+  color: $PipText;
+  &:hover {
+    color: $PipSel;
+  }
+}
+#MainMenu {
+  background: $FGCol;
+  a {
+    @include aNavLink;
+  }
+  .navbar-brand {
+    color: $PipText;
+    font-weight: bold;
+  }
+  border-bottom: 5px solid $PipText;
+}
+.bg-dark {
+  background-color: $FGCol !important;
+  color: a;
+}

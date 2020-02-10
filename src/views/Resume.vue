@@ -87,6 +87,7 @@ export default class Resume extends Vue {
     padding: 0;
   }
   table {
+    color: $PipSel;
     tr {
       td {
         border-top: none;

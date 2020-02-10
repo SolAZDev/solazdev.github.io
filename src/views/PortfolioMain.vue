@@ -6,10 +6,10 @@
       b-row(v-if="SiteMedia!==undefined")
         b-col(sm="12" lg="6")
           router-link(:to="'/mapportfolio'")
-            b-card(title="Level Design" :img-src="SiteMedia.Thumbnails['Map1']")
+            b-card(title="Level Design" :img-src="SiteMedia.Thumbnails['Map1']"  bg-variant="dark")
         b-col(sm="12" lg="6")
           router-link(:to="'/3Dporfolio'")
-            b-card(title="3D Art" :img-src="SiteMedia.Thumbnails['NightStroll']")
+            b-card(title="3D Art" :img-src="SiteMedia.Thumbnails['NightStroll']" bg-variant="dark")
         //- b-col(sm="12" lg="4")
           router-link(:to="'/projects'")
             b-card(title="Game & Projects" :img-src="SiteMedia.Projects[Project].thumb")
@@ -51,6 +51,9 @@ $refSize: 290;
 .card-title {
   font-size: 1em;
   margin-bottom: 0;
+}
+.card {
+  @include aLink;
 }
 .card-body {
   padding: 0.5em;

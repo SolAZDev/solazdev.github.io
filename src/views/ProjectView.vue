@@ -56,5 +56,8 @@ export default class ProjectView extends Vue {
   }
 }
 </script>
-<style lang="sass">
+<style lang="scss">
+a {
+  @include aLink;
+}
 </style>
