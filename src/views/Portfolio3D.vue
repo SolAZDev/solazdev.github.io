@@ -1,12 +1,12 @@
 <template lang="pug">
     div
-        b-container-fluid
+        b-container
             div.text-center
-                h3 3D Art and   Renders
-            b-row
-                b-col(v-for="render in images")
-                      b-img(:src="render.file" thumbnail fluid)
-
+                h3 Level and Map Design
+            div.gallery
+                div(v-for="render in images")
+                  a(:href="render.file" target="_blank")
+                    b-img(:src="render.file" fluid ).pics
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -24,3 +24,26 @@ export default class Portfolio3D extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.gallery {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width: 33%;
+  column-width: 33%;
+  img {
+    padding: 5px;
+  }
+  .pics {
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
+  }
+  .animation {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+</style>

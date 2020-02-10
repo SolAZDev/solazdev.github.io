@@ -5,12 +5,8 @@
                 h3 Level and Map Design
             div.gallery
                 div(v-for="render in images")
-                  b-img(:src="render.file" fluid).pics
-                div(v-for="render in images")
-                  b-img(:src="render.file" fluid).pics
-            //- b-row
-              b-col(cols="4" v-for="render in images")
-                b-img(:src="render.file" fluid).pics
+                  a(:href="render.file" target="_blank")
+                    b-img(:src="render.file" fluid ).pics
               
 
 </template>
