@@ -1,5 +1,5 @@
 <template lang="pug">
-    div
+    div(style="margin-top:10px;")
         b-container#SkAwEdList
             div.text-center
                 h3(style="margin-bottom: 0px;") {{$data.resume.name}}
@@ -35,10 +35,10 @@
                             br
                             small {{award.from}}
         b-container-fluid#SkAwEdList
-            div.text-center
+            div.text-center(style="width: 95%; margin:auto")
                 h4 Work Experience
                 b-row
-                    b-col(sm="12" lg="4" v-for="job in $data.resume.workExperience")
+                    b-col(sm="12" lg="4" v-for="job in $data.resume.workExperience")#WorkEntry
                         table.table
                             tr
                                 td Position
@@ -73,6 +73,11 @@ export default class Resume extends Vue {
 }
 </script>
 <style lang="scss" scoped>
+#WorkEntry {
+  border-bottom: 1px solid $PipText;
+  // border-radius: 5px;
+  // margin: 1px;
+}
 #SkAwEdList {
   h5,
   h4 {

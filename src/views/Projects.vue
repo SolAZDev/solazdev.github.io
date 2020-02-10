@@ -3,7 +3,7 @@
       b-container
         div.text-center
             h3 Projects
-            span These are projects that I have worked on alone or collaboratively
+            span These are projects that I have worked on alone or collaboratively, including but not limited to, Game Jams, Peronsal Projects, and Employed projects*
         br
       b-container
         b-row
@@ -11,6 +11,8 @@
             //- router-link(to="/" + {{project.id}})
             router-link(:to="'/projects/'+project.id")
               b-card(:title="project.name" :img-src="project.thumb" img-bottom bg-variant="dark")
+      b-container.bottom-row.text-center
+        small ** Employed projects that are in displayed, are shown with permission from the company and/or director
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';

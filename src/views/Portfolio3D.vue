@@ -2,7 +2,7 @@
     div
         b-container
             div.text-center
-                h3 Level and Map Design
+                h3 3D Renders and Art
             div.gallery
                 div(v-for="render in images")
                   a(:href="render.file" target="_blank")
