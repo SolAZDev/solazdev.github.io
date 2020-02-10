@@ -6,7 +6,7 @@ export default {
         "Map2": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/Map2.png",
         "NSPTitle": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/NSPTitle.jpeg",
         "PB16": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/PB16Landing-1.png",
-        "NightStroll": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/Nightstroll.jpg"
+        "NightStroll": "https://raw.githubusercontent.com/SolAZDev/solazdev.github.io/v2/src/assets/img/Thumbnails/NightStroll.jpg"
     },
     LevelDesign: [
         {

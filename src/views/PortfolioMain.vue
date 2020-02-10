@@ -4,12 +4,16 @@
           h3 Portfolios
           span These are images of works Ive done personally made
       b-row(v-if="SiteMedia!==undefined")
-        b-col(sm="12" lg="4")
+        b-col(sm="12" lg="6")
           router-link(:to="'/mapportfolio'")
             b-card(title="Level Design" :img-src="SiteMedia.Thumbnails['Map1']")
-        b-col(sm="12" lg="4")
+        b-col(sm="12" lg="6")
           router-link(:to="'/3Dporfolio'")
-            b-card(title="3D Art" :img-src="SiteMedia.Thumbnails['NightStroll'].file")
+            b-card(title="3D Art" :img-src="SiteMedia.Thumbnails['NightStroll']")
+        //- b-col(sm="12" lg="4")
+          router-link(:to="'/projects'")
+            b-card(title="Game & Projects" :img-src="SiteMedia.Projects[Project].thumb")
+            
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -21,12 +25,14 @@ export default class Portfolio extends Vue {
     return {
       SiteMedia: undefined,
       TDImg: 0,
-      LvImg: 0
+      LvImg: 0,
+      Project: 0
     }
   }
   @Prop() private msg!: string;
   created() {
     this.$data.SiteMedia = SiteMediaFile.default
+    this.$data.Project = Math.floor(Math.random() * SiteMediaFile.default.Projects.length)
   }
 
   destroyed() {
@@ -52,5 +58,9 @@ $refSize: 290;
 .card-img {
   width: 100%;
   height: auto;
+}
+.projectWorkAround {
+  max-width: 350px;
+  max-height: 350px;
 }
 </style>

@@ -7,7 +7,7 @@
         br
       b-container
         b-row
-          b-col(v-for="project in projects" sm="12" md="4" style="padding:5px;")
+          b-col(v-for="project in projects" sm="12" md="6" lg="4" style="padding:5px;")
             //- router-link(to="/" + {{project.id}})
             router-link(:to="'/projects/'+project.id")
               b-card(:title="project.name" :img-src="project.thumb" img-bottom)
@@ -41,6 +41,8 @@ export default class Projects extends Vue {
   padding: 0.5em;
 }
 .card-img-bottom {
+  // min-width: 348px;
+  // min-height: 276px;
   width: 100%;
   height: auto;
 }
