@@ -12,7 +12,7 @@
                 b-nav-item(to="/resume") Resume
                 b-nav-item(to="/portfolio") Portfolio
                 b-nav-item(to="/projects") Projects
-    router-view
+    router-view(style="height:100%;")
 </template>
 
 <style lang="scss">
