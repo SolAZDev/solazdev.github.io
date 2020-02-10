@@ -1,0 +1,326 @@
+$PipText: #17b2ff;
+$PipSel: #e6f7ff;
+$dark-gradient: #025A86;
+$light-gradient: #0075b0;
+$BGCol: #484848;
+$FGCol: #242424;
+$BarBG: #0A0;
+$BarFil: #0F0;
+$transparent: rgba(0, 0, 0, 0);
+
+body {
+    background: $BGCol;
+    color: white;
+    font-size: 16px;
+    font-family: Helvetica;
+}
+.table{
+    td{
+        padding: 5px;
+    }
+    text-align: justify;
+}
+.MainMenu {
+    background: $FGCol;
+    color: $PipText;
+
+    a {
+        color: $PipText;
+    }
+
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 5px solid #17b2ff;
+    border-radius: 0px;
+
+    .navbar-header {
+        a {
+            transition: all, .5s;
+            color: $PipText;
+            font-weight: bold;
+            font-size: 20px;
+            transform-origin: center;
+            z-index: 1;
+
+            &:after {
+                background: linear-gradient($FGCol, transparentize($PipText, 0.3));
+                transition: opacity 1s ease-out;
+                opacity: 0;
+                z-index: 2;
+            }
+
+            &:hover,
+            &:after {
+                color: $PipSel;
+                transition: all, 1s;
+                opacity: 1;
+            }
+        }
+    }
+
+    .navbar-nav {
+        text-align: center;
+
+        li {
+            text-align: center;
+
+            a {
+                transition: all, .5s;
+                color: $PipText;
+                transform-origin: center;
+                z-index: 1;
+
+                &:after {
+                    background: linear-gradient($FGCol, transparentize($PipText, 0.3));
+                    transition: opacity 1s ease-out;
+                    opacity: 0;
+                    z-index: 2;
+                }
+
+                &:hover,
+                &:after {
+                    color: $PipSel;
+                    transition: all, 1s;
+                    opacity: 1;
+                }
+            }
+        }
+
+        a {
+            color: $PipText;
+        }
+    }
+}
+
+.jumbotron,
+.page-header {
+    background: $FGCol;
+    height: 100px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.PageHead {
+
+    .h2,
+    h2 {
+        margin-top: 5px;
+    }
+
+    .jumbotron {
+        margin-bottom: 0;
+    }
+}
+
+#ResumePage {
+    color: $PipSel;
+
+    .h4,
+    h4 {
+        color: lighten($PipText, 50);
+        padding: 5px 0;
+        text-align: center;
+        background: linear-gradient(to right, $BGCol, $BGCol, transparentize($PipText, .5), $BGCol, $BGCol);
+    }
+
+    .h5,
+    h5 {
+        //font-size: 16px;
+        color: $PipSel;
+        padding: 5px 0;
+        text-align: center;
+        background: linear-gradient(to right, $BGCol, $BGCol, transparentize($PipText, .5), $BGCol, $BGCol);
+    }
+
+    tr {
+        border-bottom-width: 5px;
+        border-bottom-color: linear-gradient(to right, $BGCol, $BGCol, transparentize($PipText, .2), $BGCol, $BGCol);
+    }
+
+    td {
+        border-top: none;
+    }
+
+    .col-sm-4 {
+        margin-bottom: 20px;
+    }
+
+    ul {
+        margin-right: 0;
+        padding-left: 0;
+    }
+
+    li {
+        list-style-type: none;
+        text-align: center;
+        padding: 1px;
+        line-height: 1.5;
+        margin-bottom: 5px;
+        color: $PipSel;
+        transition: all, .8s;
+
+        &:hover,
+        &:active {
+            background: transparentize($PipText, .9);
+        }
+    }
+}
+
+#MainPortfolio {
+    a {
+        color: $PipText;
+        line-height: 12px;
+    }
+
+    h2 {
+        margin-bottom: 0;
+        line-height: 0px;
+    }
+}
+
+.card {
+    background: $FGCol;
+}
+.card-body {
+    .img {
+        width: 100%;
+        height: 100%;
+    }
+
+    border:2px $PipText;
+    border-radius: 8px;
+
+}
+#ProjectsPage {
+    img {
+        width: 315px;
+        height: 250px;
+    }
+
+    td {
+        border-top: none;
+    }
+
+}
+
+#Port3D {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.panel-body,
+.panel-header,
+.panel-footer {
+    background: $FGCol;
+    border-top: none;
+    border-bottom: none;
+}
+
+.panel-default,
+.panel {
+    border-color: $PipText;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+form {
+    border: 1px solid $PipText;
+    left: 50%;
+    border-radius: 5px;
+    background: $FGCol;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
+    input {
+        text-align: center;
+        width: 49%;
+        background: $BGCol;
+        color: $PipText;
+        border: 2px solid $BGCol;
+        border-radius: 5px;
+    }
+
+    textarea {
+        background: $BGCol;
+        height: 45%;
+        width: 100%;
+        color: $PipText;
+        border: 2px solid $BGCol;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    #Subject input {
+        width: 100%;
+    }
+}
+
+.well-no {
+    background: #ff3030;
+    text-align: center;
+    color: white;
+    border: 1px solid red;
+}
+
+.well-yes {
+    background: #80ff80;
+    text-align: center;
+    color: white;
+    border: 1px solid green;
+}
+
+.GamePage {
+
+    .h5,
+    h5,
+    .h4,
+    h4 {
+        font-weight: bold;
+    }
+
+    a {
+        color: $PipText;
+
+        &:hover,
+        &:active {
+            color: $PipSel;
+        }
+    }
+
+    .table {
+        tbody {
+            tr {
+                td {
+                    border-top: none;
+                }
+
+                border-bottom-width: 1px;
+                border-bottom: linear-gradient(to right, $BGCol, $BGCol, transparentize($PipText, .2), $BGCol, $BGCol);
+            }
+        }
+    }
+}
+
+#ProjectsPage {
+    .row {
+        margin-top: 25px;
+    }
+}
+
+.carousel-inner {
+    border-radius: 10px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
