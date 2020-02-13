@@ -6,7 +6,7 @@
             div.gallery
                 div(v-for="render in images")
                   a(:href="render.file" target="_blank")
-                    b-img(:src="render.file" fluid ).pics
+                    b-img(:src="imgUrl+render.file" fluid ).pics
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -16,10 +16,12 @@ import *as SiteMedia from '../data'
 export default class Portfolio3D extends Vue {
   data() {
     return {
-      images: []
+      images: [],
+      imgUrl: ''
     }
   }
   created() {
+    this.$data.imgUrl = SiteMedia.default.assetsUrl;
     this.$data.images = SiteMedia.default.TDArt;
   }
 }

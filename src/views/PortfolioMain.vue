@@ -6,10 +6,10 @@
       b-row(v-if="SiteMedia!==undefined")
         b-col(sm="12" lg="6")
           router-link(:to="'/mapportfolio'")
-            b-card(title="Level Design" :img-src="SiteMedia.Thumbnails['Map1']"  bg-variant="dark")
+            b-card(title="Level Design" :img-src="imgUrl+SiteMedia.Thumbnails['Map1']"  bg-variant="dark")
         b-col(sm="12" lg="6")
           router-link(:to="'/3Dporfolio'")
-            b-card(title="3D Art" :img-src="SiteMedia.Thumbnails['NightStroll']" bg-variant="dark")
+            b-card(title="3D Art" :img-src="imgUrl+SiteMedia.Thumbnails['NightStroll']" bg-variant="dark")
         //- b-col(sm="12" lg="4")
           router-link(:to="'/projects'")
             b-card(title="Game & Projects" :img-src="SiteMedia.Projects[Project].thumb")
@@ -24,6 +24,7 @@ export default class Portfolio extends Vue {
   data() {
     return {
       SiteMedia: undefined,
+      imgUrl: '',
       TDImg: 0,
       LvImg: 0,
       Project: 0
@@ -32,6 +33,7 @@ export default class Portfolio extends Vue {
   @Prop() private msg!: string;
   created() {
     this.$data.SiteMedia = SiteMediaFile.default
+    this.$data.imgUrl = SiteMediaFile.default.assetsUrl;
     this.$data.Project = Math.floor(Math.random() * SiteMediaFile.default.Projects.length)
   }
 

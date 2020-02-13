@@ -10,7 +10,7 @@
           b-col(v-for="project in projects" sm="12" md="6" lg="4" style="padding:5px;")
             //- router-link(to="/" + {{project.id}})
             router-link(:to="'/projects/'+project.id")
-              b-card(:title="project.name" :img-src="project.thumb" img-bottom bg-variant="dark")
+              b-card(:title="project.name" :img-src="imgUrl+project.thumb" img-bottom bg-variant="dark")
       b-container.bottom-row.text-center
         small ** Employed projects that are in displayed, are shown with permission from the company and/or director
 </template>
@@ -22,11 +22,13 @@ import *as SiteMedia from '../data'
 export default class Projects extends Vue {
   data() {
     return {
-      projects: undefined
+      projects: undefined,
+      imgUrl: ''
     }
   }
   created() {
-    this.$data.projects = SiteMedia.default.Projects
+    this.$data.projects = SiteMedia.default.Projects;
+    this.$data.imgUrl = SiteMedia.default.assetsUrl;
     // alert(this.$data.json[0])
   }
 }

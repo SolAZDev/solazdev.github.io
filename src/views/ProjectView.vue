@@ -7,7 +7,7 @@
 
           b-col(sm="12" md="8")
             b-carousel#ScreenshotCarousel(:interval='4000' controls='' indicators='0' height="50%")
-              b-carousel-slide(v-for="img in $data.project.images" :text="img.desc" :img-src="img.file")
+              b-carousel-slide(v-for="img in $data.project.images" :text="img.desc" :img-src="imgUrl+img.file")
 
           b-col(sm="12" md="4")
             b About
@@ -44,13 +44,13 @@ import *as SiteMedia from '../data'
 export default class ProjectView extends Vue {
   data() {
     return {
-      project: undefined
+      project: undefined,
+      imgUrl: ''
     }
   }
-  @Prop() private msg!: string;
   created() {
     this.$data.project = SiteMedia.default.Projects.filter(p => p.id === this.$route.params.id)[0];
-
+    this.$data.imgUrl = SiteMedia.default.assetsUrl;
     // alert(this.$data.json[0])
 
   }

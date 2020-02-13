@@ -6,7 +6,7 @@
             div.gallery
                 div(v-for="render in images")
                   a(:href="render.file" target="_blank")
-                    b-img(:src="render.file" fluid ).pics
+                    b-img(:src="imgUrl+render.file" fluid ).pics
               
 
 </template>
@@ -18,11 +18,13 @@ import *as SiteMedia from '../data'
 export default class PortfolioLevels extends Vue {
   data() {
     return {
-      images: []
+      images: [],
+      imgUrl: ''
     }
   }
   created() {
     this.$data.images = SiteMedia.default.LevelDesign;
+    this.$data.imgUrl = SiteMedia.default.assetsUrl;
   }
 }
 </script>
