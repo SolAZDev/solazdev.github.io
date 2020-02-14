@@ -13,37 +13,44 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    meta: { title: "SolAZDev" }
   },
   {
     path: '/resume',
     name: 'resume',
-    component: Resume
+    component: Resume,
+    meta: { title: "SolAZDev - Resume" }
   },
   {
     path: '/portfolio',
     name: 'portfolio',
-    component: Portfolio
+    component: Portfolio,
+    meta: { title: "SolAZDev - Portfolio Selection" }
   },
   {
     path: '/3Dporfolio',
     name: '3Dportfolio',
-    component: Portfolio3D
+    component: Portfolio3D,
+    meta: { title: "SolAZDev - 3D Art Portfolio" }
   },
   {
     path: '/mapportfolio',
     name: 'mapportfolio',
-    component: PortfolioLevels
+    component: PortfolioLevels,
+    meta: { title: "SolAZDev - Level Design Portfolio" }
   },
   {
     path: '/projects',
     name: 'projects',
-    component: Projects
+    component: Projects,
+    meta: { title: "SolAZDev - Projects" }
   },
   {
     path: '/projects/:id',
     // name: 'projects',
-    component: ProjectView
+    component: ProjectView,
+    meta: { title: "SolAZDev - Projects" }
   }
 ]
 

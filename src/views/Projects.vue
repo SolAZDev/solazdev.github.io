@@ -12,7 +12,7 @@
             router-link(:to="'/projects/'+project.id")
               b-card(:title="project.name" :img-src="imgUrl+project.thumb" img-bottom bg-variant="dark")
       b-container.bottom-row.text-center
-        small ** Employed projects that are in displayed, are shown with permission from the company and/or director
+        small * Employed projects that are in displayed, are shown with permission from the company and/or director
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';

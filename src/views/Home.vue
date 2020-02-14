@@ -59,7 +59,7 @@ export default class Home extends Vue {
   created() {
     this.$data.email = Resume.default.email;
     this.$data.reel = SiteMediaFile.default.reel;
-    document.title = "SolAZDev";
+    // document.title = "SolAZDev";
   }
 }
 </script>
