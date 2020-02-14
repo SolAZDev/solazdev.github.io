@@ -1,5 +1,6 @@
 <template lang="pug">
   div#app
+    title SolAZDev
     div#MainMenu
       b-container
         b-navbar(toggleable="md")

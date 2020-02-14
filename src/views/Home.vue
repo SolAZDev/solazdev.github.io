@@ -12,17 +12,17 @@
         br(stlye="padding-top:5px;")
         h5.justify-content-center About
         b-row
-          b-col(cols="1")
+          b-col(md="0" lg="1")
           b-col
             p.text-justify I'm Carlos E. Orama, alias SolAZDev. I'm an Indie Game Developer and a Web Designer. I specialize in Gameplay programing, Level Design, Web Front End and User Experience.
-          b-col(cols="1")
+          b-col(md="0" lg="1")
           b-col
             p.text-justify I work primarily with Blender, Unity, C# and Typescript. You can see some of my works in the Projects section, as well as 3D Renders and Levels I've done in the Portfolio section.
-          b-col(cols="1")
+          b-col(md="0" lg="1")
         h5.justify-content-center Connect with me
         b-container
-        b-row
-          b-col(cols="1")
+        b-row(style="padding-bottom:20px;")
+          b-col(md="0" lg="1")
           b-col
             a(href="https://github.com/SolAZDev/" target="_blank")
               font-awesome-icon(:icon="['fab', 'github']" size="2x")
@@ -59,6 +59,7 @@ export default class Home extends Vue {
   created() {
     this.$data.email = Resume.default.email;
     this.$data.reel = SiteMediaFile.default.reel;
+    document.title = "SolAZDev";
   }
 }
 </script>

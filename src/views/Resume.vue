@@ -68,6 +68,7 @@ export default class Resume extends Vue {
     }
   }
   created() {
+    document.title = "SolAZDev - Resume";
     this.$data.resume = ResumeData.default;
   }
 }

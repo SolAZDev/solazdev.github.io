@@ -4,7 +4,7 @@ export default {
     email: "SolAZDev@gmail.com",
     phone: "939-244-2231",
     address: "PO Box 1126, Gurabo PR, 00778",
-    currentObjective: "Game designer and developer, who’s looking for a position where I can use the best of my abilities to push the projects forward, and meet or even exceed the company’s goals and expectations proficiently. With the ability to reuse existing bases and creating new models, be it for Games, Software, 3D Models, or Web Pages. Looking for opportunities for personal contribution and professional growth",
+    currentObjective: "A Freelance Game designer and web developer, who's looking for a position where I can use the best of my abilities to push the projects forward, and meet or even exceed the company's goals and expectations proficiently. With the ability to reuse existing bases and creating new models, be it for Games, Software, 3D Models, or Web Pages. Looking for opportunities for pers onal contribution and professional growth.",
     majorSkills: [
         "Highly Motivated",
         "Strong Attention to Detail",
