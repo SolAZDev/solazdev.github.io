@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA;;;;;;;;GAQG;AAEH;;;;;;;;;EASE;AAubF,0EAA0E",
-    "sources": [
-        "jquery-mobile.scss"
-    ],
-    "names": [],
-    "file": "jquery-mobile.css"
-}
