@@ -16,6 +16,10 @@ import *as SiteMedia from '../data'
 
 @Component
 export default class PortfolioLevels extends Vue {
+  name = 'PortfolioLevels'
+  metaInfo = {
+    title: "SolAZDev - Levels & Maps Portfolio"
+  }
   data() {
     return {
       images: [],

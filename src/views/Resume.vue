@@ -62,6 +62,10 @@ import * as ResumeData from '../resume';
 
 @Component
 export default class Resume extends Vue {
+  name = 'Resume'
+  metaInfo = {
+    title: "SolAZDev - Resume"
+  }
   data() {
     return {
       resume: null

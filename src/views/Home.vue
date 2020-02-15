@@ -50,6 +50,10 @@ import * as SiteMediaFile from '../data'
 
 @Component
 export default class Home extends Vue {
+  name = 'Home'
+  metaInfo = {
+    title: 'SolAZDev'
+  }
   data() {
     return {
       email: "",

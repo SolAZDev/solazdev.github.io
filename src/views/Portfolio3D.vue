@@ -14,6 +14,11 @@ import *as SiteMedia from '../data'
 
 @Component
 export default class Portfolio3D extends Vue {
+  name = 'Portfolio3D'
+  metaInfo = {
+    title: "SolAZDev - 3D Portfolio"
+  }
+
   data() {
     return {
       images: [],

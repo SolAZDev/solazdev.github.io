@@ -21,6 +21,10 @@ import * as SiteMediaFile from '../data'
 
 @Component
 export default class Portfolio extends Vue {
+  name = 'Portfolio'
+  metaInfo = {
+    title: "SolAZDev - Portfolio Selection"
+  }
   data() {
     return {
       SiteMedia: undefined,

@@ -20,6 +20,10 @@ import *as SiteMedia from '../data'
 
 @Component
 export default class Projects extends Vue {
+  name = 'Projects'
+  metaInfo = {
+    title: "SolAZDev - Projects"
+  }
   data() {
     return {
       projects: undefined,

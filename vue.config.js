@@ -10,7 +10,7 @@ module.exports = {
   },
   pluginOptions: {
     meta: {
-      projectName: 'My project',
+      projectName: 'SolAZDev',
       url: 'https://solazdev.com',
       description: 'Indie Game & Web Developer',
     }

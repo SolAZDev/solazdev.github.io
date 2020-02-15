@@ -42,6 +42,10 @@ import *as SiteMedia from '../data'
 
 @Component
 export default class ProjectView extends Vue {
+  name = "Project"
+  metaInfo = {
+    title: 'SolAZDev - Project'
+  }
   data() {
     return {
       project: undefined,
@@ -51,7 +55,7 @@ export default class ProjectView extends Vue {
   created() {
     this.$data.project = SiteMedia.default.Projects.filter(p => p.id === this.$route.params.id)[0];
     this.$data.imgUrl = SiteMedia.default.assetsUrl;
-    document.title = "SolAZDev - " + this.$data.project.name;
+    this.metaInfo.title = "SolAZDev - " + this.$data.project.name;
     // alert(this.$data.json[0])
 
   }
