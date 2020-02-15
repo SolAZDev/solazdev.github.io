@@ -15,7 +15,14 @@
                 b-nav-item(to="/projects") Projects
     router-view(style="height:100%;")
 </template>
-
+<script>
+export default {
+  name: 'SolAZDev',
+  metaInfo: {
+    title: 'SolAZDev'
+  }
+}
+</script>
 <style lang="scss">
 @import "./scss/theme.scss";
 #app {

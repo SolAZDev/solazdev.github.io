@@ -14,13 +14,33 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
-    meta: { title: "SolAZDev" }
+    meta: {
+      title: "SolAZDev",
+      metaTags: [{
+        name: 'description',
+        content: 'Indie Game & Web Developer'
+      },
+      {
+        name: 'og:description',
+        content: 'Indie Game & Web Developer'
+      }]
+    }
   },
   {
     path: '/resume',
     name: 'resume',
     component: Resume,
-    meta: { title: "SolAZDev - Resume" }
+    meta: {
+      title: "SolAZDev - Resume",
+      metaTags: [{
+        name: 'description',
+        content: 'Indie Game & Web Developer'
+      },
+      {
+        name: 'og:description',
+        content: 'Indie Game & Web Developer'
+      }]
+    }
   },
   {
     path: '/portfolio',
