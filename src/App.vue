@@ -19,7 +19,7 @@
 export default {
   name: 'SolAZDev',
   metaInfo: {
-    // title: 'SolAZDev'
+    title: 'SolAZDev'
   }
 }
 </script>
