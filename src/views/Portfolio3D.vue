@@ -5,7 +5,7 @@
                 h3 3D Renders and Art
             div.gallery
                 div(v-for="render in images")
-                  a(:href="render.file" target="_blank")
+                  a(:href="imgUrl+render.file" target="_blank")
                     b-img(:src="imgUrl+render.file" fluid ).pics
 </template>
 <script lang="ts">

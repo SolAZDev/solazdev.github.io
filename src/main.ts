@@ -4,9 +4,9 @@ import Vue from 'vue'
 import './plugins/fontawesome'
 import './plugins/bootstrap-vue'
 import './plugins/vue-meta'
+import './plugins/class-component-hooks';
 import App from './App.vue'
 import router from './router'
-import * as SiteMedia from './data'
 
 Vue.config.productionTip = false
 
