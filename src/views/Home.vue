@@ -1,97 +1,47 @@
-<template lang="pug">
-  mixin IconLink(link="", icon="", size="1", iconStyle="fab")
-    a(href=(link), target="_blank")
-        font-awesome-icon(icon="["+iconStyle+", "+icon+"]", size=(size))
+<template lang='pug'>
+.p-mx-2.p-mx-lg-6
+  .p-text-center
+    h2 SolAZDev
+    h5 Indie Game & Web Developer
+  .p-grid(v-if="newStyle")
+    .p-lg-6
+      .embed-responsive.embed-responsive-16by9
+        iframe(:src="reel", allow='autoplay; encrypted-media; picture-in-picture', allowfullscreen).embed-responsive-item
+    .p-lg-6
+      h3.p-text-center About
+      p.p-text-justify {{about[0]}}
+      p.p-text-justify {{about[0]}}
 
-  div
-    b-jumbotron(bg-variant="dark")
-      //- img(src="@/assets/solAvatar.svg")
-      h2 SolAZDev
-      h5 Indie Game & Web Developer
 
-    b-container
-      b-row
-        b-col(sm="6" md="12")
-          .embed-responsive.embed-responsive-16by9
-            iframe(:src="reel", allow='autoplay; encrypted-media; picture-in-picture', allowfullscreen).embed-responsive-item
-          br(stlye="padding-top:5px;")
-        b-col(sm="6" md="12")
-          h5.justify-content-center About
-          b-row
-            b-col(sm="12" md="6")
-              p.text-justify I'm Carlos E. Orama, alias SolAZDev. I'm an Indie Game Developer and a Web Designer. I specialize in Gameplay programing, Level Design, Web Front End and User Experience.
-            b-col(sm="12" md="6")
-              p.text-justify I work primarily with Blender, Unity, C# and Typescript. You can see some of my works in the Projects section, as well as 3D Renders and Levels I've done in the Portfolio section.
-            b-col(cols="12")
-              h5.justify-content-center Connect with me
-              b-row(style="padding-bottom:20px;")
-                b-col #[IconLink("https://github.com/SolAZDev/", "2x")]
-                  //- a(href="https://github.com/SolAZDev/" target="_blank")
-                    font-awesome-icon(:icon="['fab', 'github']" size="2x")
-                b-col
-                  a(href="https://twitter.com/SolAZDev" target="_blank")
-                    font-awesome-icon(:icon="['fab', 'twitter']" size="2x")
-                b-col
-                  a(href="https://connect.unity.com/u/carlos-e-orama-de-jesus" target="_blank")
-                    font-awesome-icon(:icon="['fab', 'unity']" size="2x")
-                b-col
-                  a(href="https://www.linkedin.com/in/solazdev/" target="_blank")
-                    font-awesome-icon(:icon="['fab', 'linkedin']" size="2x")
-                b-col
-                  a(:href="'mailto:'+$data.email")
-                    font-awesome-icon(:icon="['fas', 'at']" size="2x")
+  //- <div class="home">
+  //-   <img alt="Vue logo" src="../assets/logo.png">
+  //-   <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  //- </div>
 </template>
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import * as Resume from '../resume'
-import * as SiteMediaFile from '../data'
 
-@Component
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+
+@Options({
+  components: {
+  },
+})
 export default class Home extends Vue {
-  name = 'Home'
-  metaInfo = {
-    title: 'SolAZDev'
-  }
-  data() {
-    return {
-      email: Resume.default.email,
-      reel: ""
-    }
-  }
-  created() {
-    this.$data.email = Resume.default.email;
-    this.$data.reel = SiteMediaFile.default.reel;
-    // document.title = "SolAZDev";
-  }
+  newStyle=true;
+  reel = "https://www.youtube.com/embed/T7E0Ic_mhvU"
+  about = [
+    "Hello! I'm Carlos E. Orama, pen name; SolAZDev. I'm an Indie Game Developer and a Web Designer, with a passion for learning new technologies. I've specialized in, but not limited to, Gameplay Programming, Level Design for Games, Front End, Responsive Design, Server Communications for Web",
+    "My tools of choice include, but are not limited to several proven tools & frameworks such as; Blender, Unity3D, NodeJS, Angular, VueJS and more. You can see some of my works in the Games and Other Works section, as well as some of visual work on the Portfolio section"
+    
+  ]
 }
 </script>
-<style lang="scss" scoped>
-#aviIcon {
-  width: 80px;
-  height: auto;
-}
-.jumbotron {
-  padding: 0.5em 2em;
-  margin-bottom: 16px;
-  border-radius: 0;
-}
-.embed-responsive {
-  width: 79%;
-  margin: auto;
-}
-a {
-  color: $PipText;
-  &:hover {
-    color: $PipSel;
-  }
-}
-.container{
-  min-height: 83.35vh;
-  max-height: 100vh;
-}
-.embed-responsive{
-  @media (max-width:990px) {
-    width:100%;
-  }
-}
+<style lang="scss">
+h2{margin-bottom: 0;}
+h5{margin-top: 0;}
+// iframe{
+//   width: 100%;
+//   height: auto;
+//   margin:auto;
+// }
 </style>
