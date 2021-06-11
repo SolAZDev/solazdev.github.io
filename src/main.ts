@@ -1,16 +1,27 @@
 import '@babel/polyfill'
 import 'mutationobserver-shim'
-import Vue from 'vue'
 import './plugins/fontawesome'
-import './plugins/bootstrap-vue'
-import './plugins/vue-meta'
-import './plugins/class-component-hooks';
+import { createApp } from 'vue'
+import { createMetaManager } from 'vue-meta'
 import App from './App.vue'
 import router from './router'
+import "./plugins/fontawesome";
+import "./plugins/prime";
 
-Vue.config.productionTip = false
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+import 'primevue/resources/themes/arya-blue/theme.css'
+import "primevue/resources/primevue.min.css"
+import "primeicons/primeicons.css"
+import 'primeflex/primeflex.css'; 
+
+// import 'assets/fixes.scss'
+
+import './assets/theme.scss'
+
+createApp(App)
+    .use(router)
+    // .use(createMetaManager())
+    .component("fa", FontAwesomeIcon)
+    .mount('#app')
+

@@ -1,80 +1,33 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
-import Resume from '../views/Resume.vue'
-import Portfolio from '../views/PortfolioMain.vue'
-import Projects from '../views/Projects.vue'
-import ProjectView from '../views/ProjectView.vue'
-import Portfolio3D from '../views/Portfolio3D.vue'
-import PortfolioLevels from '../views/PortfolioLevels.vue'
-Vue.use(VueRouter)
+import PortfolioMenu from '../views/PortfolioMenu.vue'
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
-    meta: {
-      title: "SolAZDev",
-      metaTags: [{
-        name: 'description',
-        content: 'Indie Game & Web Developer'
-      },
-      {
-        name: 'og:description',
-        content: 'Indie Game & Web Developer'
-      }]
-    }
-  },
-  {
-    path: '/resume',
-    name: 'resume',
-    component: Resume,
-    meta: {
-      title: "SolAZDev - Resume",
-      metaTags: [{
-        name: 'description',
-        content: 'Indie Game & Web Developer'
-      },
-      {
-        name: 'og:description',
-        content: 'Indie Game & Web Developer'
-      }]
-    }
+    name: 'Home',
+    component: Home
   },
   {
     path: '/portfolio',
-    name: 'portfolio',
-    component: Portfolio,
-    meta: { title: "SolAZDev - Portfolio Selection" }
+    name: 'Visual Works Portfolio',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/PortfolioMenu.vue')
   },
   {
-    path: '/3Dporfolio',
-    name: '3Dportfolio',
-    component: Portfolio3D,
-    meta: { title: "SolAZDev - 3D Art Portfolio" }
+    path: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
-  {
-    path: '/mapportfolio',
-    name: 'mapportfolio',
-    component: PortfolioLevels,
-    meta: { title: "SolAZDev - Level Design Portfolio" }
-  },
-  {
-    path: '/projects',
-    name: 'projects',
-    component: Projects,
-    meta: { title: "SolAZDev - Projects" }
-  },
-  {
-    path: '/projects/:id',
-    // name: 'projects',
-    component: ProjectView,
-    meta: { title: "SolAZDev - Projects" }
-  }
 ]
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 

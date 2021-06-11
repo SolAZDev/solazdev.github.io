@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500&display=swap');
+@import "./bootstrap-snippets.scss";
+$textColor: white;
+$textSecondaryColor: #17b2ff;
+
+body{
+    margin:0;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    background: #242424;
+}
+
+.blurBg{
+    filter: blur(3px);
+}
+.p-component{
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: .02rem;
+}
+
+/* Stolen from Bootstrap? */
