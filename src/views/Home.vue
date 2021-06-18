@@ -5,8 +5,9 @@
       h2 SolAZDev
       h5 Indie Game & Web Developer
     .p-grid(v-if="newStyle")
-      .p-lg-8
-        .embed-responsive.embed-responsive-16by9
+      .p-lg-8 
+        p Hi!
+        div.embed-responsive.embed-responsive-16by9
           iframe(:src="Data.reel", allow='autoplay; encrypted-media; picture-in-picture', allowfullscreen).embed-responsive-item
       .p-lg-4
         h3.p-text-center About
@@ -37,8 +38,7 @@ export default class Home extends Vue {
   Data = info.default;
   about = [
     "Hello! I'm Carlos  E. Orama, pen name; SolAZDev. I'm an Indie Game Developer and a Web Designer, with a passion for learning new technologies. I've specialized in, but not limited to, Gameplay Programming, Level Design for Games, Front End, Responsive Design, Server Communications for Web",
-    "My tools of choice include, but are not limited to several proven tools & frameworks such as; Blender, Unity3D, NodeJS, Angular, VueJS and more. You can see some of my works in the Games and Other Works section, as well as some of visual work on the Portfolio section"
-    
+    "My tools of choice include, but are not limited to several proven tools & frameworks such as; Blender, Unity3D, NodeJS, Angular, VueJS and more. You can see some of my works in the Games and Other Works section, as well as some of visual work on the Portfolio section"   
   ]
 }
 </script>

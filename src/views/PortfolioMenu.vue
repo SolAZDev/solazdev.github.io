@@ -5,7 +5,8 @@
           h3 Visual Works Portfolio
           h5 Levels Designed & 3D Renders and Game Models
       .p-grid
-          .p-md-6 #[ThumbnailCard(name="Level Design" link="/levels" :image="thumbnails.LevelDesign[0]" )]
+          .p-md-6 #[ThumbnailCard(name="Level Design" link="/portfolio/levels" :image="LevelDesignThumbnail")]
+          .p-md-6 #[ThumbnailCard(name="3D Works" link="/portfolio/renders" :image="RenderThumbnail")]
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
@@ -15,6 +16,11 @@ import * as TData from '../data/thumbnails';
   components:{ThumbnailCard}
 })
 export default class PortfolioMenu extends Vue{
-  thumbnails = TData.default;
+  get LevelDesignThumbnail(){
+    return TData.default.LevelDesign[(Math.floor(Math.random()*TData.default.LevelDesign.length))]
+  }
+  get RenderThumbnail(){
+    return TData.default.Renders[(Math.floor(Math.random()*TData.default.Renders.length))]
+  }
 }
 </script>
