@@ -1,21 +1,21 @@
 <template lang='pug'>
 .p-mx-2.p-mx-lg-6
   .p-fluid
-    .p-text-center
+    .text-center
       h2 SolAZDev
       h5 Indie Game & Web Developer
-    .p-grid(v-if="newStyle")
-      .p-lg-8 
+    .row(v-if="newStyle")
+      .col-lg-8 
         p Hi!
-        div.embed-responsive.embed-responsive-16by9
+        .embed-responsive.embed-responsive-16by9
           iframe(:src="Data.reel", allow='autoplay; encrypted-media; picture-in-picture', allowfullscreen).embed-responsive-item
-      .p-lg-4
-        h3.p-text-center About
-        p.p-text-justify.about {{about[0]}}
-        p.p-text-justify.about {{about[0]}}
+      .col-lg-4
+        h3.text-center About
+        p.text-justify.about {{about[0]}}
+        p.text-justify.about {{about[0]}}
         br
-        h3.p-text-center Connect
-        .p-grid.iconList
+        h3.text-center Connect
+        .row.iconList
           .p-col #[IconLink(link="http://github.com/SolAZDev", :icon="['fab','github']" size="2x")]
           .p-col #[IconLink(link="https://solazdev.itch.io/", :icon="['fab','itch-io']" size="2x")]
           .p-col #[IconLink(link="https://twitter.com/SolAZDev", :icon="['fab','twitter']" size="2x")]

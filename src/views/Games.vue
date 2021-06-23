@@ -1,11 +1,10 @@
 <template lang="pug">
-.container
-  .p-mx-2.p-mx-md-3
-    .p-text-center
+.container.px-2.px-md-3
+    .text-center
         h3 Visual Works Portfolio
         h5 Levels Designed & 3D Renders and Game Models
-    .p-grid
-          .p-md-6.p-lg-4(v-for="game in Games" :key="game.id") 
+    .row
+          .col-6.col-lg-4(v-for="game in Games" :key="game.id") 
             ThumbnailCard(:name="game.name" :link="'/games/'+game.id" :image="game.thumb")
 </template>
 <script lang="ts">

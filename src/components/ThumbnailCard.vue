@@ -3,7 +3,7 @@ router-link(:to="link")
   img(:src="publicPath+'media/img/'+image" ref="img")
   .imgText {{name}}
   //- template(#title)
-    .p-text-center {{name}}
+    .text-center {{name}}
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';

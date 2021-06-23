@@ -10,10 +10,13 @@ import "./plugins/prime";
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
+
 import 'primevue/resources/themes/arya-blue/theme.css'
 import "primevue/resources/primevue.min.css"
 import "primeicons/primeicons.css"
-import 'primeflex/primeflex.css'; 
+import 'primeflex/primeflex.css';
 
 // import 'assets/fixes.scss'
 

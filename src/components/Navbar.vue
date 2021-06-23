@@ -1,9 +1,21 @@
 <template lang="pug">
-Menubar(:model="items")
+nav.navbar.navbar-expand-md.p-lg-5.borderBottom
+  .container-fluid
+    button.navbar-toggler(data-bs-toggle="collapse") #[span.navbar-toggler-icon]
+    .collapse.navbar-collapse#NavMenu
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        li.nav-item.navbar-brand #[router-link(to="/") SolAZDev]
+        li.nav-item #[router-link.nav-link(to="/resume") Resume ]
+        li.nav-item #[router-link.nav-link(to="/portfolio") Visual Portfolios ]
+        li.nav-item #[router-link.nav-link(to="/games") Games]
+        li.nav-item #[router-link.nav-link(to="/other") Other Works]
+
+
+//- Menubar(:model="items")
   //- template(#start)
-    h5(to="/") SolAZDev
+    h5(router-link="/") SolAZDev
   //- template(#item="{item}")
-      (:to="item.to") {{item.label}}
+      (:router-link="item.to") {{item.label}}
 </template>
 <script lang='ts'>
 import { Options, Vue } from 'vue-class-component';
@@ -25,10 +37,18 @@ export default class Navbar extends Vue{
 </script>
 <style lang="scss">
 @import "../assets/theme.scss";
+.nav-link, .navbar-brand, a {
+  font-weight: bold;
+  color: $textSecondaryColor !important; 
+  text-decoration: none !important;
+}
+.borderBottom{
+  border-bottom: 1px solid $textSecondaryColor;
+}
 .brand{
   font-size: 1.2rem;
 }
-.p-menubar{
+.menubar{
   border-radius: 0 !important;
   border-bottom: 5px solid $textSecondaryColor !important;
 }
@@ -38,9 +58,6 @@ export default class Navbar extends Vue{
   &:hover{
     background-color: transparent !important;
   }
-}
-.p-menuitem-text {
-  color: $textSecondaryColor !important; 
 }
 .p-menubar .p-menubar-button {
   @media (max-width:767px) {
