@@ -1,110 +1,61 @@
-<template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+<template lang="pug">
+q-layout view="hHh lpR fFf"
+  q-header.bg-dark.text-main( bordered)
+    q-toolbar
+      q-btn(dense flat round icon="menu" @click="toggleLeftDrawer" v-if="isSmall")
+      q-toolbar-title.text-primary(v-if="isSmall") SolAZDev
+      //- span(v-if="!isSmall")
+        span(to="/reusme") Resume
+        span(to="/visual") Visual Works
+      q-tabs.text-primary(v-model='tab' v-if="!isSmall")
+        q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+  q-drawer(v-model="leftDrawerOpen" side="left" overlay bordered )
+    div Hello!
+    //- !-- drawer content --
 
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+  q-page-container.body-dark
+    router-view
 </template>
 
 <script lang="ts">
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
-
 import { Vue, Options } from 'vue-class-component'
 
-@Options({
-  components: { EssentialLink }
-})
+@Options({})
 export default class MainLayout extends Vue {
-  leftDrawerOpen = false;
-  essentialLinks = linksList;
-  toggleLeftDrawer () {
-    this.leftDrawerOpen = !this.leftDrawerOpen
+	leftDrawerOpen = false;
+	// essentialLinks = linksList;
+  items=[
+          {name:'home', label:'SolAZDev',to:'/', class:"brand"},
+          {name:'resume', label:'Resume',to:'/resume'},
+          {name:'vport', label:'Visual Works Portfolio',to:'/visuals'},
+          {name:'games', label:'Games',to:'/games'},
+          {name:'other', label:'Other works',to:'/other'},
+        ]
+        mounted(){
+          this.$q.dark.set(true)
+        }
+	toggleLeftDrawer () {
+		this.leftDrawerOpen = !this.leftDrawerOpen
+	}
+  activeTab="home";
+
+  get MidSmall(){return (this.$q.screen.sizes.sm+(this.$q.screen.sizes.md/4));}
+
+  get isSmall(){
+    return  this.$q.screen.lt.md;
   }
+
 }
 </script>
+<style lang="sass" scoped>
+.q-drawer
+  max-width:50vw
+
+.q-header
+  border-color: $primary !important
+
+.q-header--bordered
+  border-bottom: 2px solid $primary !important
+
+</style>

@@ -1,47 +1,41 @@
-<template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+<template lang="pug">
+q-page(padding)
+  .text-center
+    .text-h5 SolAZDev
+    .text-subtitle1 Indie Game & Web Developer
+    br
+    .row.q-col-gutter-md
+      .col-12.col-lg-8
+        q-video(:src="Data.reel" :ratio="16/9")
+      .col-12.col-lg-4
+        .text-h6 About
+        p.text-justify.about {{ about[0] }}
+        p.text-justify.about {{ about[0] }}
+        br
+        .text-h6.text-center Connect
+          .row.iconList
+            .col #[IconLink(link="http://github.com/SolAZDev", icon="fab fa-github" size="xl")]
+            .col #[IconLink(link="https://solazdev.itch.io/", icon="fab fa-itch-io" size="xl")]
+            .col #[IconLink(link="https://twitter.com/SolAZDev", icon="fab fa-twitter" size="xl")]
+            .col #[IconLink(link="https://www.linkedin.com/in/solazdev/", icon="fab fa-linkedin" size="xl")]
+            .col #[IconLink(:link="'mailto:'+Data.email", icon="fas fa-at" size="xl")]
+
+
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ClassComponent.vue';
 import { Vue, Options } from 'vue-class-component'
+import IconLink from '../components/IconLink.vue';
+import * as info from '../data/data'
 
 @Options({
-  components: { ExampleComponent }
+  components: { IconLink }
 })
 export default class PageIndex extends Vue {
-  todos: Todo[] = [
-    {
-      id: 1,
-      content: 'ct1'
-    },
-    {
-      id: 2,
-      content: 'ct2'
-    },
-    {
-      id: 3,
-      content: 'ct3'
-    },
-    {
-      id: 4,
-      content: 'ct4'
-    },
-    {
-      id: 5,
-      content: 'ct5'
-    }
-  ];
-  meta: Meta = {
-    totalCount: 1200
-  };
+  Data = info.default;
+  about = [
+    "Hello! I'm Carlos  E. Orama, pen name; SolAZDev. I'm an Indie Game Developer and a Web Designer, with a passion for learning new technologies. I've specialized in, but not limited to, Gameplay Programming, Level Design for Games, Front End, Responsive Design, Server Communications for Web",
+    'My tools of choice include, but are not limited to several proven tools & frameworks such as; Blender, Unity3D, NodeJS, Angular, VueJS and more. You can see some of my works in the Games and Other Works section, as well as some of visual work on the Portfolio section'
+  ]
 };
 </script>

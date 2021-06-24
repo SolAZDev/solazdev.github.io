@@ -1,8 +1,12 @@
-<template>
-  <router-view />
+<template lang="pug">
+router-view
 </template>
 <script lang="ts">
 import { Vue } from 'vue-class-component'
 
 export default class App extends Vue {}
 </script>
+<style lang="sass">
+a
+  text-decoration: none !important
+</style>
