@@ -9,8 +9,8 @@ q-page(padding)
         q-video(:src="Data.reel" :ratio="16/9")
       .col-12.col-lg-4
         .text-h6 About
-        p.text-justify.about {{ about[0] }}
-        p.text-justify.about {{ about[0] }}
+        p.text-justify.text-body1 {{ about[0] }}
+        p.text-justify.text-body1 {{ about[1] }}
         br
         .text-h6.text-center Connect
           .row.iconList

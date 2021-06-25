@@ -1,11 +1,11 @@
 <template lang="pug">
-.q-page(padding)
+q-page(padding)
   .text-center.q-mb-sm
     .text-h5 Visual Works Portfolio
     .text-subtitle1 Levels Designed, 3D Renders & Game Models
   .container
     .row.q-col-gutter-md
-      .col-12.col-md-6 #[ThumbnailCard(name="Level Design" link="/levels" :image="LevelDesignThumbnail")]
+      .col-12.col-md-6 #[ThumbnailCard(name="Level Design" link="/visuals/levels" :image="LevelDesignThumbnail")]
       .col-12.col-md-6 #[ThumbnailCard(name="3D Models & Renders" link="/renders" :image="RenderThumbnail")]
 </template>
 

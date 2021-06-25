@@ -1,12 +1,17 @@
 <template lang="pug">
 q-page(padding)
-  .q-pl-xl.q-pr-xl
+  .text-center
+    .text-h6 Levels
+    .text-subtitle2 Vaious Levels I have designed
+  .q-container
     //- .row.q-col-gutter-sm
       .col-6.col-md-4(v-for="image in images")
         q-img(:src='"/media/"+image.file', spinner-color='primary', spinner-size='82px')
     .gallery
       .pics(v-for="image in images")
-        q-img(:src='"/media/"+image.file', spinner-color='primary', spinner-size='82px')
+        a(:href='"/media/"+image.file', target="_blank")
+          q-img(:src='"/media/"+image.file', spinner-color='primary', spinner-size='82px')
+            .absolute-bottom.text-subtitle1.text-center(v-if="image.desc!=''") {{image.desc}}
 
 
 </template>
@@ -21,26 +26,5 @@ export default class Levels1 extends Vue {
   mounted() {
    this.images=imgData.default.LevelDesign1;
   }
-
-
 }
 </script>
-
-<style lang="sass">
-.gallery
-	-webkit-column-count: 3
-	-moz-column-count: 3
-	column-count: 3
-	-webkit-column-width: 33%
-	-moz-column-width: 33%
-	column-width: 33%
-	img
-		padding: 5px
-.pics
-	-webkit-transition: all 350ms ease
-	transition: all 350ms ease
-.animation
-	-webkit-transform: scale(1)
-	-ms-transform: scale(1)
-	transform: scale(1)
-</style>
