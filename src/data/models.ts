@@ -31,3 +31,10 @@ export interface GameInfo extends ProjectInfo {
   wishlist?: string[]
   plannedFeatures?: string[]
 }
+
+export interface RenderInfo extends BaseProjectInfo {
+  about: string
+  features?: string[]
+  type: string,
+  media: ProjectMedia[],
+}

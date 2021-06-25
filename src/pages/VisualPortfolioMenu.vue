@@ -6,7 +6,7 @@ q-page(padding)
   .container
     .row.q-col-gutter-md
       .col-12.col-md-6 #[ThumbnailCard(name="Level Design" link="/visuals/levels" :image="LevelDesignThumbnail")]
-      .col-12.col-md-6 #[ThumbnailCard(name="3D Models & Renders" link="/renders" :image="RenderThumbnail")]
+      .col-12.col-md-6 #[ThumbnailCard(name="3D Models & Renders" link="/visuals/renders" :image="RenderThumbnail")]
 </template>
 
 <script lang="ts">

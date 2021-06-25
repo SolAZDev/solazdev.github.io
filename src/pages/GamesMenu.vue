@@ -5,7 +5,7 @@ q-page(padding)
       .text-h6 Games
       .text-subtitle2 These are projects that I have worked on alone or collaboratively, including but not limited to, Game Jams, Peronsal Projects, and Employed projects*
     .row.q-col-gutter-md.q-pt-md.q-pb-md.justify-center
-      .col-6.col-lg-4(v-for="game in Games" :key="game.id")
+      .col-12.col-md-6.col-lg-4(v-for="game in Games" :key="game.id")
         ThumbnailCard(:name="game.name" :link="'/games/'+game.id" :image="game.thumb")
     .text-center * Employed projects that are in displayed, are shown with permission from the company and/or director
 </template>

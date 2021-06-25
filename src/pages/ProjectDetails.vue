@@ -6,8 +6,7 @@ q-page(padding v-if="project.name!=''")
     .text-caption {{project.description}}
   .row.q-col-gutter-sm.q-pt-sm.q-pb-sm
     .col-12.col-lg-7
-      //- span Pictures Here
-      q-carousel.text-white.shadow-1.rounded-borders(v-model='slide', swipeable, animated, navigation, padding, arrows, :height="CarouselSize")
+      q-carousel.text-white.shadow-1.rounded-borders(v-model='slide', swipeable, animated, navigation, padding, arrows, height="unset !important")
         q-carousel-slide.column.no-wrap.flex-center(v-for="media in project.media" :key="media.description" :name="media.description")
           q-img(:src='publicPath+media.url', fit="contain", spinner-color='primary', spinner-size='82px')
           .absolute-bottom.custom-caption.text-center

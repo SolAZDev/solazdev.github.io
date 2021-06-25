@@ -4,9 +4,6 @@ q-page(padding)
     .text-h6 Levels
     .text-subtitle2 Vaious Levels I have designed
   .q-container
-    //- .row.q-col-gutter-sm
-      .col-6.col-md-4(v-for="image in images")
-        q-img(:src='"/media/"+image.file', spinner-color='primary', spinner-size='82px')
     .gallery
       .pics(v-for="image in images")
         a(:href='"/media/"+image.file', target="_blank")

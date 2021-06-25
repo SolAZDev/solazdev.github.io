@@ -3,16 +3,17 @@ q-layout view="hHh lpR fFf"
   q-header.bg-dark.text-main( bordered)
     q-toolbar
       q-btn(dense flat round icon="menu" @click="toggleLeftDrawer" v-if="$q.screen.lt.sm")
-      q-toolbar-title.text-primary(v-if="$q.screen.lt.sm") SolAZDev
-      //- span(v-if="!isSmall")
-        span(to="/reusme") Resume
-        span(to="/visual") Visual Works
-      q-tabs.text-primary(v-model='tab' v-if="!$q.screen.lt.sm")
-        q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
+      q-toolbar-title.text-primary(@click="toggleLeftDrawer" v-if="$q.screen.lt.sm") SolAZDev
+      .container(v-if="!$q.screen.lt.sm")
+        q-tabs.text-primary.text-left(v-model='tab')
+          q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
 
-  q-drawer(v-model="leftDrawerOpen" side="left" overlay bordered )
-    div Hello!
+  q-drawer(v-model="leftDrawerOpen" side="left" overlay bordered width="50vw" )
     //- !-- drawer content --
+    .text-h4.text-center.menuText.text-primary Menu
+    q-tabs.text-primary.text-left(v-model='tab' vertical)
+      q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
+
 
   q-page-container.body-dark
     router-view
@@ -58,4 +59,13 @@ export default class MainLayout extends Vue {
 .q-header--bordered
   border-bottom: 2px solid $primary !important
 
+.q-toolbar
+  margin-bottom: -1px
+
+.q-tabs--vertical
+  height: 50vh
+
+.menuText
+  padding-top: 8px
+  height:50px
 </style>
