@@ -1,6 +1,6 @@
 <template lang="pug">
 q-page(padding)
-  .container
+  .container-lg
     .text-center
       .text-h6 Games
       .text-subtitle2 These are projects that I have worked on alone or collaboratively, including but not limited to, Game Jams, Peronsal Projects, and Employed projects*

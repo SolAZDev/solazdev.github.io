@@ -1,6 +1,6 @@
 <template lang="pug">
 q-page(padding)
-  .container
+  .container-lg
     .text-center
       .text-h6 Other Projects
       .text-subtitle2 Other Non-Game related projects that I have worked on.

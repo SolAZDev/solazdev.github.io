@@ -10,6 +10,8 @@ const routes: RouteRecordRaw[] = [
       { path: 'visuals/levels', name: "SolAZDev - Level Design", component: () => import('pages/Levels1.vue') },
       { path: 'games', name: "SolAZDev - Games", component: () => import('pages/GamesMenu.vue') },
       { path: 'games/:id', name: "SolAZDev - Game Info", component: () => import('pages/GameDetails.vue') },
+      { path: 'other/', name: "SolAZDev - Other Projects", component: () => import('pages/OtherProjects.vue') },
+      { path: 'other/:id', name: "SolAZDev - Project Info", component: () => import('pages/ProjectDetails.vue') },
     ],
   },
 
