@@ -19,7 +19,7 @@ q-dialog(v-model="viewerOpen" full-width :full-height="$q.screen.lt.md")
         .text-caption(v-if="renderInfo.description!=''") {{renderInfo.description}}
       q-space
       q-btn(icon="close" flat round dense v-close-popup)
-    q-card-section.row.q-pa-none
+    q-card-section.row.q-col-gutter-md
       .col-12.col-lg-7.q-pb-md
         q-carousel.text-white.shadow-1.rounded-borders(v-model='slide', swipeable, animated, navigation, padding, arrows, infinite, autoplay, height="unset !important")
           q-carousel-slide.q-pa-none.column.no-wrap.flex-center(v-for="media in renderInfo.media" :key="media.description" :name="media.description")
@@ -30,7 +30,7 @@ q-dialog(v-model="viewerOpen" full-width :full-height="$q.screen.lt.md")
         .text-h6.text-center.fade-bottom-edge About
         .text-body1.text-justify {{renderInfo.about}}
         .text-h6.text-center.fade-bottom-edge(v-if="renderInfo.features.length>0") More Information
-        ul.q-pl-md(v-if="renderInfo.features.length>0") #[li.text-body2.text-justify(v-for="feat in renderInfo.features") {{ feat }}]
+        ul.q-pl-md(v-if="renderInfo.features.length>0") #[li.text-body1.text-justify(v-for="feat in renderInfo.features") {{ feat }}]
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
