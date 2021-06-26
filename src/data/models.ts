@@ -3,7 +3,7 @@ export enum MediaType {
 }
 export interface Link {
   name?: string
-  icon?: string[]
+  icon?: string
   url: string
 }
 export class ProjectMedia {

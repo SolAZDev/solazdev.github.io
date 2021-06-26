@@ -7,7 +7,7 @@ q-page(padding v-if="game.name!=''")
   .row.q-col-gutter-sm.q-pt-sm.q-pb-sm
     .col-12.col-lg-7
       //- span Pictures Here
-      q-carousel.text-white.shadow-1.rounded-borders(v-model='slide', swipeable, animated, navigation-icon='radio_button_unchecked', navigation, arrows, infinite, :height="CarouselSize")
+      q-carousel.text-white.shadow-1.rounded-borders(v-model='slide', swipeable, animated, navigation-icon='radio_button_unchecked', navigation, arrows, infinite, height="unset")
         q-carousel-slide.column.no-wrap(v-for="media in game.media" :key="media.description" :name="media.description")
           q-img(:src='media.url', :ratio='16/9', spinner-color='primary', spinner-size='82px' v-if="media.type==mType.Image")
           q-video(:src='media.url' :ratio="16/9" v-if="media.type==mType.Frame")

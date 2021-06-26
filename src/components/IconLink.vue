@@ -20,7 +20,7 @@ export default class IconLink extends Vue {
   link!: string
   icon!:string
   size!:string
-  name=""
+  name!:string
 }
 </script>
 
