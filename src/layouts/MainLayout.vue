@@ -8,12 +8,11 @@ q-layout view="hHh lpR fFf"
         q-tabs.text-primary.text-left(v-model='tab')
           q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
 
-  q-drawer(v-model="leftDrawerOpen" side="left" overlay bordered width="50vw" )
+  q-drawer(v-model="leftDrawerOpen" side="left" overlay bordered width="50vw")
     //- !-- drawer content --
     .text-h4.text-center.menuText.text-primary Menu
     q-tabs.text-primary.text-left(v-model='tab' vertical)
       q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
-
 
   q-page-container.body-dark
     router-view

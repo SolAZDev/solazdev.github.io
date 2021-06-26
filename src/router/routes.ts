@@ -6,6 +6,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', name: "SolAZDev - Home", component: () => import('pages/Index.vue') },
+      { path: 'resume', name: "SolAZDev - Resume", component: () => import('pages/Resume.vue') },
       { path: 'visuals', name: "SolAZDev - Visual Works", component: () => import('pages/VisualPortfolioMenu.vue') },
       { path: 'visuals/levels', name: "SolAZDev - Level Design", component: () => import('pages/Levels1.vue') },
       { path: 'visuals/renders', name: "SolAZDev - 3D Artwork", component: () => import('pages/TDArtGallery.vue') },
