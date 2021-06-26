@@ -1,14 +1,14 @@
 <template lang="pug">
-q-layout view="hHh lpR fFf"
+q-layout(view="hHh lpR fFf")
   q-header.bg-dark.text-main( bordered)
-    q-toolbar
+    q-toolbar.print-hide
       q-btn(dense flat round icon="menu" @click="toggleLeftDrawer" v-if="$q.screen.lt.sm")
       q-toolbar-title.text-primary(@click="toggleLeftDrawer" v-if="$q.screen.lt.sm") SolAZDev
       .container(v-if="!$q.screen.lt.sm")
         q-tabs.text-primary.text-left(v-model='tab')
           q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
 
-  q-drawer(v-model="leftDrawerOpen" side="left" overlay bordered width="50vw")
+  q-drawer.print-hide(v-model="leftDrawerOpen" side="left" overlay bordered width="50vw")
     //- !-- drawer content --
     .text-h4.text-center.menuText.text-primary Menu
     q-tabs.text-primary.text-left(v-model='tab' vertical)

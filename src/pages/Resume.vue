@@ -1,57 +1,55 @@
 <template lang="pug">
-q-page(padding)
+q-page.q-px-md
+  //- .gt-lg.q-pb-lg.print-hide.text-caption.text-left When printing, please select paper: Legal (US), in Landscape, No Margins and 95% Scale
   .row.q-col-gutter-md.resume
     .col-12.col-md-4.col-lg-3.rc
       .row.q-col-gutter-sm
         .col-12.row.justify-center
-          q-img(:src='Resume.icon', :ratio='1', spinner-color='primary', spinner-size='82px', width="40%")
+          q-img(:src='Resume.icon', :ratio='1', spinner-color='primary', spinner-size='82px', width="35%")
         .col-12.text-center
           .text-h6.text-primary.text-center {{Resume.name}}
           .text-subtitle2.text-primary.text-center {{Resume.subtitle}}
           .text-subtitle2 {{Resume.email}} - {{Resume.local}}
       q-space
-
-      .col(v-if="$q.screen.lt.md")
+      .lt-md
         .text-subtitle1.text-primary.smCmdL Current Work Objective
         .text-subtitle2.text-justify {{Resume.objective}}
-      .col
+      div
+        .text-subtitle1.text-primary.smCmdL Major Skills
+        .text-subtitle2 {{listToText(Resume.skills.major)}}
+      div
+        .text-subtitle1.text-primary.smCmdL Minor Skills
+        .text-subtitle2 {{listToText(Resume.skills.minor)}}
+      div
+        .text-subtitle1.text-primary.smCmdL Languages & Frameworks
+        .text-subtitle2 {{listToText(Resume.skills.frameworks)}}
+      div
+        .text-subtitle1.text-primary.smCmdL Software
+        .text-subtitle2 {{listToText(Resume.skills.software)}}
+      div
         .text-subtitle1.text-primary.smCmdL Education
         div(v-for="edu in Resume.education")
-          .text-subtitle1 {{edu.degree}}
-          .text-subtitle2 {{edu.locale}}
-      div
+          .text-subtitle1 {{edu.degree}} - #[small.text-subtitle2 {{edu.locale}}]
         .text-subtitle1.text-primary.smCmdL Awards
         div(v-for="award in Resume.awards")
           .text-subtitle1 {{award.name}} - #[small {{award.by}}]
-      .col
-        .text-subtitle1.text-primary.smCmdL Major Skills
-        .text-subtitle2 {{listToText(Resume.skills.major)}}
-      .col
-        .text-subtitle1.text-primary.smCmdL Minor Skills
-        .text-subtitle2 {{listToText(Resume.skills.minor)}}
-      .col
-        .text-subtitle1.text-primary.smCmdL Languages & Frameworks
-        .text-subtitle2 {{listToText(Resume.skills.frameworks)}}
-      .col
-        .text-subtitle1.text-primary.text-center Software
-        .text-subtitle2 {{listToText(Resume.skills.software)}}
 
     .col-12.col-md-8.col-lg-9
-      div.container(v-if="$q.screen.gt.sm")
+      div.container.gt-sm
         .text-h5.text-primary.text-center Current Work Objective
-        .text-body1 {{Resume.objective}}
+        div.text-justify {{Resume.objective}}
 
       .text-h5.text-primary.q-mb-md.text-center Work Experience
-      .row.q-col-gutter-lg
+      .row.q-col-gutter-xs
         .col-12.col-md-6.col-lg-4(v-for="work in Resume.work")
-          q-card
-            q-card-section.p-qb-none
+          q-card.no-shadow
+            q-card-section.q-pb-none
               .text-center
-                .text-h5.text-primary {{work.position}}
+                .text-h6.text-primary {{work.position}}
                 .text-subtitle2 {{work.employer}} - {{work.duration}}
-            q-card-section.q-pt-none
-              .text-center.text-h6 Responsibilities
-              ul.q-pl-sm.text-justify #[li.text-body2.q-py-sm(v-for="resp in work.responsibilities") {{resp}}]
+            q-card-section.q-pt-sm
+              .text-center.text-body1 Responsibilities
+              ul.q-pl-sm.q-mt-xs.text-justify #[li.text-subtitle2(v-for="resp in work.responsibilities") {{resp}}]
 </template>
 <script lang="ts">
 import * as resume from 'src/data/resume';
@@ -91,4 +89,7 @@ export default class Resume extends Vue {
 
 .q-card
   min-height: 365px
+
+.text-subtitle2
+  font-weight: unset
 </style>
