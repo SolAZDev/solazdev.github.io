@@ -4,11 +4,14 @@ q-page(padding)
     .text-h6 Levels
     .text-subtitle2 Vaious Levels I have designed
   .q-container
-    .gallery
-      .pics(v-for="render in renders")
-        //- a(:href='"/media/"+renders.', target="_blank")
+    .row.q-col-gutter-md.justify-center
+      .col-12.col-md-6.col-lg-4(v-for="render in renders")
         q-img(:src='"/media/"+render.thumb', spinner-color='primary', spinner-size='82px' @click="openViewer(render.id)", fit="cover")
           .absolute-bottom.text-subtitle1.text-center {{render.name}}
+
+    //- .gallery
+      .pics(v-for="render in renders")
+        //- a(:href='"/media/"+renders.', target="_blank")
 
 q-dialog(v-model="viewerOpen" full-width :full-height="$q.screen.lt.md")
   q-card.q-pb-none
