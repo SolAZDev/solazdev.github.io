@@ -15,20 +15,19 @@ q-page(padding v-if="project.name!=''")
     .col-12.col-lg-5
       .text-h6.text-center.fade-bottom-edge About
       .text-body1.text-justify {{project.about}}
-      .text-h6.text-center.fade-bottom-edge Features
-      ul #[li.text-body2.text-justify(v-for="feat in project.features") {{ feat }}]
-      .text-h6.text-center.fade-bottom-edge More Information
-      .row
+      //- .text-h6.text-center.fade-bottom-edge Features
+      //- ul #[li.text-body2.text-justify(v-for="feat in project.features") {{ feat }}]
+      //- .text-h6.text-center.fade-bottom-edge More Information
+      //- .row
         //- .col-6.text-left Status
         //- .col-6.text-right {{project.status}}
         //- .col-6.text-left Genre
         //- .col-6.text-right {{project.genre}}
         //- .col-6.text-left Target Platforms
         //- .col-6.text-right {{project.platform}}
-        //- .col-12.text-center(v-if="project.links!=null") Links
-          //- .row
-            //- .col(v-for="link in project.links")
-            //-   IconLink(:link="link.url" size="lg" :icon="link.icon" :name="link.name")
+      .text-center.text-h6(v-if="project.links!=null") Links
+      .row
+        .col.text-center(v-for="link in project.links") #[IconLink(:link="link.url" size="lg" :icon="link.icon" :name="link.name")]
 </template>
 <script lang="ts">
 import { MediaType, ProjectInfo } from "src/data/models";

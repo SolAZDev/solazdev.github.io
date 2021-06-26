@@ -4,12 +4,12 @@ export default {
   subtitle: "Game & Web Developer",
   local: "Gurabo, Puerto Rico",
   email: "SolAZDev@gmail.com",
-  objective: "As a Developer & Designer, I am looking for a position where I can grow, and use the best of my abilities to push projects forward, and surpass if not meet the goals and expectations, efficiently and effectively. Creating or using modular and reusable bases ",
+  objective: "As a Developer & Designer, I am looking for a position where I can grow, and use the best of my abilities to push projects forward, and surpass if not meet the goals and expectations, efficiently and effectively. Creating or using modular and reusable bases to facilitate development, be it for Games, Software, 3D Models or Web. I hope to find opportunities that may aid in mutual professional growth.",
   skills: {
-    major: ["Strong Attention to Detail", "3D Modeling & 3D 3D Printing", "Modular Set & Level Design", "Video Editing", "Key-frame Animation", "Fully Bilingual; English & Spanish", "Strong "],
-    minor: ["UX & UI Design", "Story Writing", "Storyboarding", "Multi-phase Planning"],
+    major: ["Strong Attention to Detail", "3D Modeling & 3D 3D Printing", "Modular Set & Level Design", "Video Editing", "Key-frame Animation", "Fully Bilingual; English & Spanish",],
+    minor: ["UX & UI Design", "Code Documentation with Doxygen", "Story Writing", "Storyboarding", "Multi-phase Planning"],
     frameworks: ["C#", "Javascript", "TypeScript", "Pug/Jade", "Linux", "Bash", "FiSH", "Vue", "Quasar", "Angular", "Node", "Entity Framework"],
-    software: ["Unity", "VSCode", "Blender", "Material Maker", "Photoshop", "Illustrator", "Inkscape", "Krita", "GIMP", "Audacity", "Game Maker"]
+    software: ["Unity", "VSCode", "Blender", "Material Maker", "Photoshop", "Illustrator", "Inkscape", "Krita", "GIMP", "Audacity", "Game Maker", "Doxygen"]
   },
   education: [{ locale: " Atlantic University College", years: "2011-2015", degree: "BA. Science of Video Game Design" }],
   awards: [{ name: "Eagle Scout Rank", by: "Boy Scouts of America (T432 PR)" }, { name: "Best Use of Themes", by: "Puerto Rico Global Game Jam 2018" }],
