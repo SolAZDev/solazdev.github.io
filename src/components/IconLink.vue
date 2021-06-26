@@ -6,7 +6,6 @@ a.text-primary(:href="link", target="_blank")
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import { Component } from 'vue-property-decorator';
 
 @Options({
   props: {
