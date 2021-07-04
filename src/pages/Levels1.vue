@@ -2,7 +2,7 @@
 q-page(padding)
   .text-center
     .text-h6 Levels
-    .text-subtitle2 Vaious Levels I have designed
+    .text-subtitle2 Various Levels I have designed. Click to Open full sized versions.
   .q-container
     .row.q-col-gutter-md.justify-center
       .col-12.col-md-6.col-lg-4(v-for="image in images")

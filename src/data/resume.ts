@@ -5,8 +5,8 @@ export default {
   local: "Gurabo, Puerto Rico",
   email: "SolAZDev@gmail.com",
   objective: "As a Developer & Designer, I am looking for a position where I can grow, and use the best of my abilities to push projects forward, and surpass if not meet the goals and expectations, efficiently and effectively. Creating or using modular and reusable bases to facilitate development, be it for Games, Software, 3D Models or Web. I hope to find opportunities that may aid in mutual professional growth.",
-  v: ["Over 3 years of experience in game development, and 3 years of web development",],
-  i: ["Implemented Behavior Trees and Utility-based AI systems in Unity and C#", "Rapid Efficient Development & Prototyping and testing for multiple systems.",],
+  v: ["Over 3 years of experience in game development, and 3 years of web development", "Proficient "],
+  i: ["Implemented Behavior Trees and Ut  ility-based AI systems in Unity and C#", "Rapid Efficient Development & Prototyping and testing for multiple systems.",],
   c: ["Lead the development of at least 3 games, some of which have been released.", "Regular back-and-forth conversations to find the most efficient way to solve problems."],
   skills: {
     major: ["Strong Attention to Detail", "3D Modeling & 3D 3D Printing", "Modular Set & Level Design", "Video Editing", "Key-frame Animation", "Fully Bilingual; English & Spanish",],
@@ -34,7 +34,7 @@ export default {
       employer: "PRSoft, Inc",
       duration: "Oct 2019 - Feb 2020",
       responsibilities: [
-        "Developed various new pages of the web app, PRCorp.",
+        "Developed various new pages of the web app, PRCorp. Which was Angular Based",
         "Responsible with translating segments in the backend, from C# to F#.",
         "Developed new segments of a backend server in F# and PostgreSQL.",
         "Extensively tested software to ensure there were no downtimes, cyclic dependencies, or UI and UX inconsistencies."

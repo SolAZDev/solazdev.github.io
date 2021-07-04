@@ -1,8 +1,8 @@
 <template lang="pug">
 q-page(padding)
   .text-center
-    .text-h6 Levels
-    .text-subtitle2 Vaious Levels I have designed
+    .text-h6 3D Works
+    .text-subtitle2 3D Models and Renders I have designed. Click for details.
   .q-container
     .row.q-col-gutter-md.justify-center
       .col-12.col-md-6.col-lg-4(v-for="render in renders")
