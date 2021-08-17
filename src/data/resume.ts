@@ -20,7 +20,7 @@ export default {
     {
       position: "Software Developer",
       employer: "Smartlogix Innovation Labs",
-      duration: "May 2020 - Present",
+      duration: "May 2020 - August 2021",
       responsibilities: [
         "Developed various and pages and web components, and their backend functions for the SmartCare line of applications.",
         "Created an efficient workflow standard for web development for the Operator's Management Portal application",
