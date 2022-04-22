@@ -1,52 +1,51 @@
 <template lang="pug">
-q-page.q-px-xl
-  //- .gt-lg.q-pb-lg.print-hide.text-caption.text-left When printing, please select paper: Legal (US), in Landscape, No Margins and 99% Scale
-  .row.q-col-gutter-md.resume
+div
+  .row.q-col-gutter-md.resume.print-hide.q-px-xl
     .col-12.col-md-4.col-lg-3.rc
       .row.q-col-gutter-sm
         .col-12.text-center.q-mt-lg
-          .text-h4.text-primary.text-center {{Resume.name}}
-          .text-h6.text-primary.text-center {{Resume.subtitle}}
-          .text-body1 {{Resume.email}} - {{Resume.number}}
+          .text-h4.text-primary.text-center {{ Resume.name }}
+          .text-h6.text-primary.text-center {{ Resume.subtitle }}
+          .text-body1 {{ Resume.email }} - {{ Resume.number }}
 
       q-space
       .lt-md.q-my-xl
         .text-subtitle1.text-primary.smCmdL Current Work Objective
-        .text-subtitle2.text-justify {{Resume.objective}}
+        .text-subtitle2.text-justify {{ Resume.objective }}
 
       .column.q-gutter-y-lg.q-mb-sm
         div
           .text-body1.text-primary.smCmdL Major Skills
-          .text-subtitle2 {{listToText(Resume.skills.major)}}
+          .text-subtitle2 {{ listToText(Resume.skills.major) }}
 
         div
           .text-body1.text-primary.smCmdL Minor Skills
-          .text-subtitle2 {{listToText(Resume.skills.minor)}}
+          .text-subtitle2 {{ listToText(Resume.skills.minor) }}
 
         div
           .text-body1.text-primary.smCmdL Languages & Frameworks
-          .text-subtitle2 {{listToText(Resume.skills.frameworks)}}
+          .text-subtitle2 {{ listToText(Resume.skills.frameworks) }}
 
         div
           .text-body1.text-primary.smCmdL Software
-          .text-subtitle2 {{listToText(Resume.skills.software)}}
+          .text-subtitle2 {{ listToText(Resume.skills.software) }}
 
         div
           .text-body1.text-primary.smCmdL Education
           .column.q-gutter-y-sm
             div(v-for="edu in Resume.education")
-              .text-subtitle1 {{edu.degree}} - #[small.text-subtitle2 {{edu.locale}}]
+              .text-subtitle1 {{ edu.degree }} - #[small.text-subtitle2 {{ edu.locale }}]
 
         div
           .text-subtitle1.text-primary.smCmdL Awards
           .column.q-gutter-y-sm
             div(v-for="award in Resume.awards")
-              .text-subtitle1 {{award.name}} - #[small {{award.by}}]
+              .text-subtitle1 {{ award.name }} - #[small {{ award.by }}]
 
     .col-12.col-md-8.col-lg-9
       div.container.gt-sm.q-mt-lg.q-mb-xl
         .text-h5.text-primary.text-center Current Work Objective
-        .text-body1.text-justify {{Resume.objective}}
+        .text-body1.text-justify {{ Resume.objective }}
 
       .text-h5.text-primary.q-mb-md.text-center Work Experience
       .row.q-col-gutter-xs
@@ -54,11 +53,61 @@ q-page.q-px-xl
           q-card.no-shadow.q-card-experience
             q-card-section.q-pb-none
               .text-center
-                .text-h6.text-primary {{work.position}} #[span.text-white.text-subtitle2 at {{work.employer}}]
+                .text-h6.text-primary {{ work.position }} #[span.text-white.text-subtitle2 at {{ work.employer }}]
             q-card-section.q-pt-none
               .text-center.text-body2 Responsibilities
               ul.q-pl-sm.q-mt-xs.q-mb-none.text-justify.q-gutter-y-xs
-                li.text-subtitle2(v-for="resp in work.responsibilities") {{resp}}
+                li.text-subtitle2(v-for="resp in work.responsibilities") {{ resp }}
+
+  //- Print Version
+  .print-only.absolute-full
+    .column.q-col-gutter-xs.q-pa-md
+      .row
+        .col-4.q-pr-sm.text-center
+          .text-h6.text-primary(style="font-size:1.35rem") {{ Resume.name }}
+          .text-subtitle1.text-primary {{ Resume.subtitle }}
+          .text-subtitle1 {{ Resume.email }}
+          .text-subtitle1 {{ Resume.number }}
+        .col.q-pl-sm
+          .text-h6.text-right.rtlGradient Current Work Objective
+          .text-caption.text-justify {{ Resume.objective }}
+      .row
+        .col-4.column.q-gutter-y-md.q-mb-sm.q-pr-sm
+          div
+            .text-body1.centerGradient Major Skills
+            .text-body2 {{ listToText(Resume.skills.major, ", ") }}
+
+          div
+            .text-body1.centerGradient Minor Skills
+            .text-body2 {{ listToText(Resume.skills.minor, ", ") }}
+
+          div
+            .text-body1.centerGradient Languages & Frameworks
+            .text-body2 {{ listToText(Resume.skills.frameworks, ", ") }}
+
+          div
+            .text-body1.centerGradient Software
+            .text-body2 {{ listToText(Resume.skills.software, ", ") }}
+
+          div
+            .text-body1.centerGradient Education
+            .column.q-gutter-y-sm
+              div(v-for="edu in Resume.education")
+                .text-subtitle1 {{ edu.degree }} #[.text-subtitle2 {{ edu.locale }}]
+
+          div
+            .text-subtitle1.text-primary Awards
+            .column.q-gutter-y-sm
+              div(v-for="award in Resume.awards")
+                .text-subtitle1 {{ award.name }} - #[.text-body2 {{ award.by }}]
+
+        .col.column.q-pl-md.q-gutter-y-xs
+          .text-h6.text-right.rtlGradient Work Experience
+          .column.q-gutter-y-xs(v-for="work in WorkExperience")
+            .text-body2.text-weight-bold.ltrGradient {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }}]
+            .text-caption.text-justify {{ listToTextAlt(work.responsibilities) }}
+
+
 </template>
 <script lang="ts">
 import resume from "src/data/resume";
@@ -68,12 +117,21 @@ import { Options, Vue } from "vue-class-component";
 export default class Resume extends Vue {
   Resume = resume;
 
-  listToText(arr: Array<string>) {
-    return arr.toString().replace(/,/g, " | ");
+  listToText(arr: Array<string>, separator = " | ") {
+    return arr.toString().replace(/,/g, separator);
   }
 
-  get WorkExperience(){
-    return resume.work.splice(0,6);
+  listToTextAlt(arr: Array<string>, separator = " | ") {
+    let res = ''
+    for (let i = 0; i < arr.length; i++) {
+      const element = arr[i];
+      res += element + (i == arr.length - 1 ? '' : separator);
+    }
+    return res;
+  }
+
+  get WorkExperience() {
+    return resume.work.splice(0, 6);
   }
 }
 </script>
@@ -107,7 +165,28 @@ export default class Resume extends Vue {
 .q-card-experience
   min-height: 325px
 
-
 .text-subtitle2
   font-weight: unset
+
+.ltrGradient
+  color: white
+  padding-left: 1rem
+  background: rgb(23,178,255)
+  background: linear-gradient(90deg, $primary 35%, transparentize($primary, 1) 90%)
+
+.rtlGradient
+  color: white
+  padding-right: 1rem
+  background: $primary
+  background: linear-gradient(270deg, $primary 35%, transparentize($primary, 1) 80%)
+
+.centerGradient
+  color: white
+  text-align: center
+  background: linear-gradient(90deg, transparentize($primary, 1) 0%, $primary 30%, $primary 65%, transparentize($primary, 1) 100%)
+
+
+// .absolute-full
+//   background-color: white
+//   color: black
 </style>

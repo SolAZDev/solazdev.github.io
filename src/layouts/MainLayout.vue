@@ -1,6 +1,6 @@
 <template lang="pug">
 q-layout(view="hHh lpR fFf")
-  q-header.bg-dark.text-main( bordered)
+  q-header.bg-dark.text-main.print-hide(bordered)
     q-toolbar.print-hide
       q-btn(dense flat round icon="menu" @click="toggleLeftDrawer" v-if="$q.screen.lt.sm")
       q-toolbar-title.text-primary(@click="toggleLeftDrawer" v-if="$q.screen.lt.sm") SolAZDev
@@ -67,4 +67,5 @@ export default class MainLayout extends Vue {
 .menuText
   padding-top: 8px
   height:50px
+
 </style>
