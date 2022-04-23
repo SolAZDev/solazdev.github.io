@@ -3,22 +3,24 @@ export default {
   name: "Carlos E. Orama De Jesus",
   subtitle: "Game, Web & Software Developer",
   email: "SolAZDev@gmail.com", number: "939-244-2231",
-  objective: "As a Developer & Designer, I am looking for a position where I can grow, and use the best of my abilities to push projects forward, and surpass if not meet the goals and expectations, efficiently and effectively. Creating or using modular and reusable bases to facilitate development, be it for Games, Software, 3D Models or Web. I hope to find opportunities that may aid in mutual professional growth.",
+  objective: "At least 5 years of experince in designing and engineering systems for software and videogames. With a knack for efficieny, and modulary and problem solving. With a keen eye for even the smallest details and possible solutions.",
   v: ["Over 3 years of experience in game development, and 3 years of web development", "Proficient "],
   i: ["Implemented Behavior Trees and Utility-based AI systems in Unity and C#", "Rapid Efficient Development & Prototyping and testing for multiple systems.",],
   c: ["Lead the development of at least 3 games, some of which have been released.", "Regular and effective back-and-forth conversations to find the most efficient way to solve problems."],
   skills: {
-    major: ["Strong Attention to Detail", "3D Modeling & 3D 3D Printing", "Modular Set & Level Design", "Video Editing", "Key-frame Animation", "Fully Bilingual; English & Spanish",],
+    major: ["Strong Attention to Detail", "3D Modeling","3D Printing", "Modular Set & Level Design", "Video Editing", "Key-frame Animation", "Fully Bilingual (English & Spanish)",],
     minor: ["UX & UI Design", "Code Documentation with Doxygen", "Story Writing", "Storyboarding", "Multi-phase Planning", "Agile", "Scrum", "Bug Reporting", "Continuous Integration"],
     frameworks: ["C#", "Javascript", "TypeScript","Vue", "Quasar Framework", "Angular", "Node", "Pug/Jade", "Linux", "Bash", "FiSH",  "Entity Framework"],
     software: ["Unity", "VS Code", "Blender", "Material Maker", "Photoshop", "Illustrator", "Inkscape", "Krita", "GIMP", "Audacity", "Game Maker", "Doxygen", "Git", "JIRA", "GitHub"]
   },
-  education: [{ locale: " Atlantic University College", years: "2011-2015", degree: "BA. Science of Video Game Design" }],
+  education: [{ locale: " Atlantic University College", years: "2011-2015", degree: "BA. Science of Video Game Design" }, {locale:"Microsoft", years:"2020", degree:"Azure Developer Associate"}],
   awards: [{ name: "Eagle Scout Rank", by: "Boy Scouts of America (T432 PR)" }, { name: "Best Use of Theme", by: "Puerto Rico Global Game Jam 2018" }],
   work: [
     {
       position: "General Programmer",
       employer: "Gladius Studios",
+      time:"Oct 2021 - Current",
+      type:["game", "software"],
       responsibilities:[
         "Recreated the website using modern web development technologies.",
         "Developed various Apps and Experiences for Client, using web app and game engine development suites.",
@@ -29,6 +31,8 @@ export default {
     {
       position: "Software Developer",
       employer: "Smartlogix Innovation Labs",
+      type:["backend", "software"],
+      time:"May 2020 - Aug 2021",
       responsibilities: [
         "Developed various and pages and web components, and their backend functionality for the SmartCare line of products, and extensively test multiple scenarios to ensure reliability across the ecosystem.",
         "Created a web-based, Remote Desktop Solution for technical support.",
@@ -39,6 +43,8 @@ export default {
     {
       position: "Jr. Software Developer",
       employer: "PRSoft, Inc",
+      type:["backend", "software"],
+      time:"Contract",
       responsibilities: [
         "Developed various new pages and segments of Angular based, PRCorp web app.",
         "Efficiently translated parts of the backend, from C# to F#, & developed new segments in F#, which included communicating with a PostgreSQL database.",
@@ -48,6 +54,8 @@ export default {
     {
       position: "Full Stack Developer",
       employer: "IfIdea, LLC",
+      type:["software", "backend"],
+      time:"Contract",
       responsibilities: [
         "In charge of developing a Full Stack Ecosystem for clients. Which included Administrative and Employee apps",
         "Apps were developed with Angular & Ionic, while the database was made with MariaDB, along with a PHP Server using Slim Framework for communications.",
@@ -56,6 +64,8 @@ export default {
     }, {
       position: "Lead Game Developer",
       employer: "Require Technology PR",
+      type:["game"],
+      time:"Contract",
       responsibilities: [
         "In charge of Development and Quality Assurance, and Documentation of Genial Skills Web, created with the Unity Game Engine.",
         "Developed various mini-games for multiple types of quizzes, an Avatar System, and Integrated an In-App Purchase system.",
@@ -66,6 +76,8 @@ export default {
     {
       position: "Enviroment Designer & VR Interactive Programmer",
       employer: "SI3D Media",
+      type:["game", "promotion"],
+      time:"Contract",
       responsibilities: [
         "In charge of Design and Development for multiple VR Projects.",
         "Created VR commercials and promotional mini-games for clients. As well as assets that were used in production.",
@@ -75,6 +87,8 @@ export default {
     {
       position: "Game Design Instructor",
       employer: "Mariano Abril Jr. High",
+      type:["game"],
+      time:"Contract",
       responsibilities: [
         "In charge of teaching and mentoring groups of students regarding their creative process.",
         "Taught the principles of 3D Modeling and Animation, using Blender. And the principles of programming in C# & JavaScript.",

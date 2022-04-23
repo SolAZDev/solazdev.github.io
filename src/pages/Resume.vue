@@ -1,51 +1,51 @@
 <template lang="pug">
 div
-  .row.q-col-gutter-md.resume.print-hide.q-px-xl
+  .row.q-col-gutter-md.resumeFile.print-hide.q-px-xl
     .col-12.col-md-4.col-lg-3.rc
       .row.q-col-gutter-sm
         .col-12.text-center.q-mt-lg
-          .text-h4.text-primary.text-center {{ Resume.name }}
-          .text-h6.text-primary.text-center {{ Resume.subtitle }}
-          .text-body1 {{ Resume.email }} - {{ Resume.number }}
+          .text-h4.text-primary.text-center {{ resumeFile.name }}
+          .text-h6.text-primary.text-center {{ resumeFile.subtitle }}
+          .text-body1 {{ resumeFile.email }} - {{ resumeFile.number }}
 
       q-space
       .lt-md.q-my-xl
         .text-subtitle1.text-primary.smCmdL Current Work Objective
-        .text-subtitle2.text-justify {{ Resume.objective }}
+        .text-subtitle2.text-justify {{ resumeFile.objective }}
 
       .column.q-gutter-y-lg.q-mb-sm
         div
           .text-body1.text-primary.smCmdL Major Skills
-          .text-subtitle2 {{ listToText(Resume.skills.major) }}
+          .text-subtitle2 {{ listToText(resumeFile.skills.major) }}
 
         div
           .text-body1.text-primary.smCmdL Minor Skills
-          .text-subtitle2 {{ listToText(Resume.skills.minor) }}
+          .text-subtitle2 {{ listToText(resumeFile.skills.minor) }}
 
         div
           .text-body1.text-primary.smCmdL Languages & Frameworks
-          .text-subtitle2 {{ listToText(Resume.skills.frameworks) }}
+          .text-subtitle2 {{ listToText(resumeFile.skills.frameworks) }}
 
         div
           .text-body1.text-primary.smCmdL Software
-          .text-subtitle2 {{ listToText(Resume.skills.software) }}
+          .text-subtitle2 {{ listToText(resumeFile.skills.software) }}
 
         div
           .text-body1.text-primary.smCmdL Education
           .column.q-gutter-y-sm
-            div(v-for="edu in Resume.education")
+            div(v-for="edu in resumeFile.education")
               .text-subtitle1 {{ edu.degree }} - #[small.text-subtitle2 {{ edu.locale }}]
 
         div
           .text-subtitle1.text-primary.smCmdL Awards
           .column.q-gutter-y-sm
-            div(v-for="award in Resume.awards")
+            div(v-for="award in resumeFile.awards")
               .text-subtitle1 {{ award.name }} - #[small {{ award.by }}]
 
     .col-12.col-md-8.col-lg-9
       div.container.gt-sm.q-mt-lg.q-mb-xl
-        .text-h5.text-primary.text-center Current Work Objective
-        .text-body1.text-justify {{ Resume.objective }}
+        .text-h5.text-primary.text-center Summary & Qualifications
+        .text-body1.text-justify {{ resumeFile.objective }}
 
       .text-h5.text-primary.q-mb-md.text-center Work Experience
       .row.q-col-gutter-xs
@@ -64,48 +64,49 @@ div
     .column.q-col-gutter-xs.q-pa-md
       .row
         .col-4.q-pr-sm.text-center
-          .text-h6.text-primary(style="font-size:1.35rem") {{ Resume.name }}
-          .text-subtitle1.text-primary {{ Resume.subtitle }}
-          .text-subtitle1 {{ Resume.email }}
-          .text-subtitle1 {{ Resume.number }}
+          .text-h6.text-primary(style="font-size:1.35rem") {{ resumeFile.name }}
+          .text-subtitle1.text-primary {{ resumeFile.subtitle }}
+          .text-subtitle2 {{ resumeFile.email }} - {{ resumeFile.number }}
+          .text-subtitle2 SolAZDev.com
         .col.q-pl-sm
-          .text-h6.text-right.rtlGradient Current Work Objective
-          .text-caption.text-justify {{ Resume.objective }}
+          .text-h6.text-right.text-primary.text-bold Summary & Qualifications
+          .text-caption {{ resumeFile.objective }}
       .row
         .col-4.column.q-gutter-y-md.q-mb-sm.q-pr-sm
+          q-separator(spaced)
           div
-            .text-body1.centerGradient Major Skills
-            .text-body2 {{ listToText(Resume.skills.major, ", ") }}
+            .text-body1.text-primary.text-bold Major Skills
+            .text-body2 {{ listToText(resumeFile.skills.major, " | ") }}
 
           div
-            .text-body1.centerGradient Minor Skills
-            .text-body2 {{ listToText(Resume.skills.minor, ", ") }}
+            .text-body1.text-primary.text-bold Minor Skills
+            .text-body2 {{ listToText(resumeFile.skills.minor, " | ") }}
 
           div
-            .text-body1.centerGradient Languages & Frameworks
-            .text-body2 {{ listToText(Resume.skills.frameworks, ", ") }}
+            .text-body1.text-primary.text-bold Languages & Frameworks
+            .text-body2 {{ listToText(resumeFile.skills.frameworks, " | ") }}
 
           div
-            .text-body1.centerGradient Software
-            .text-body2 {{ listToText(Resume.skills.software, ", ") }}
+            .text-body1.text-primary.text-bold Software
+            .text-body2 {{ listToText(resumeFile.skills.software, " | ") }}
 
           div
-            .text-body1.centerGradient Education
-            .column.q-gutter-y-sm
-              div(v-for="edu in Resume.education")
-                .text-subtitle1 {{ edu.degree }} #[.text-subtitle2 {{ edu.locale }}]
+            .text-body1.text-primary.text-bold Education
+            .column.reverse.q-gutter-y-sm
+              .text-body2(v-for="edu in resumeFile.education") {{ edu.degree }} - #[span.text-caption {{ edu.locale }}]
 
           div
-            .text-subtitle1.text-primary Awards
-            .column.q-gutter-y-sm
-              div(v-for="award in Resume.awards")
-                .text-subtitle1 {{ award.name }} - #[.text-body2 {{ award.by }}]
+            .text-body1.text-primary.text-bold Awards
+            .column.reverse.q-gutter-y-sm
+              .text-body2(v-for="award in resumeFile.awards") {{ award.name }} - #[span.text-caption {{ award.by }}]
 
         .col.column.q-pl-md.q-gutter-y-xs
-          .text-h6.text-right.rtlGradient Work Experience
-          .column.q-gutter-y-xs(v-for="work in WorkExperience")
-            .text-body2.text-weight-bold.ltrGradient {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }}]
-            .text-caption.text-justify {{ listToTextAlt(work.responsibilities) }}
+          .text-h6.text-right.text-primary Work Experience
+          .column.q-gutter-y-xs(v-for="work in WorkExperienceByCategory")
+            .row
+              .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} ({{ work.time }})]
+            ul.column
+              li.text-body2(v-for="resp in work.responsibilities") {{ resp }}
 
 
 </template>
@@ -115,7 +116,8 @@ import { Options, Vue } from "vue-class-component";
 
 @Options({})
 export default class Resume extends Vue {
-  Resume = resume;
+  resumeFile = resume;
+  category = 'game';
 
   listToText(arr: Array<string>, separator = " | ") {
     return arr.toString().replace(/,/g, separator);
@@ -129,9 +131,11 @@ export default class Resume extends Vue {
     }
     return res;
   }
-
   get WorkExperience() {
-    return resume.work.splice(0, 6);
+    return Array.from(this.resumeFile.work).splice(0, 6);
+  }
+  get WorkExperienceByCategory() {
+    return Array.from(resume.work).filter(w => w.type.includes(this.category)).splice(0, 6)
   }
 }
 </script>
