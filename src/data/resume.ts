@@ -3,14 +3,14 @@ export default {
   name: "Carlos E. Orama De Jesus",
   subtitle: "Game, Web & Software Developer",
   email: "SolAZDev@gmail.com", number: "939-244-2231",
-  objective: "At least 5 years of experince in designing and engineering systems for software and videogames. With a knack for efficieny, and modulary and problem solving. With a keen eye for even the smallest details and possible solutions.",
+  objective: "At least 5 years of experience in designing and engineering systems for software and video games. With a knack for efficiently, and modularity and problem solving. With a keen eye for even the smallest details and possible solutions.",
   v: ["Over 3 years of experience in game development, and 3 years of web development", "Proficient "],
   i: ["Implemented Behavior Trees and Utility-based AI systems in Unity and C#", "Rapid Efficient Development & Prototyping and testing for multiple systems.",],
   c: ["Lead the development of at least 3 games, some of which have been released.", "Regular and effective back-and-forth conversations to find the most efficient way to solve problems."],
   skills: {
-    major: ["Strong Attention to Detail", "3D Modeling","3D Printing", "Modular Set & Level Design", "Video Editing", "Key-frame Animation", "Fully Bilingual (English & Spanish)",],
-    minor: ["UX & UI Design", "Code Documentation with Doxygen", "Story Writing", "Storyboarding", "Multi-phase Planning", "Agile", "Scrum", "Bug Reporting", "Continuous Integration"],
-    frameworks: ["C#", "Javascript", "TypeScript","Vue", "Quasar Framework", "Angular", "Node", "Pug/Jade", "Linux", "Bash", "FiSH",  "Entity Framework"],
+    major: ["Strong Attention to Detail", "3D Modeling",, "Modular Set & Level Design", "Video Editing", "Key-frame Animation", "Fully Bilingual (English & Spanish)",],
+    minor: [ "Code Documentation (Doxygen)","UX & UI Design", "Story Writing", "Storyboarding", "Multi-phase Planning", "Agile", "Scrum", "Bug Reporting", "Continuous Integration"],
+    frameworks: ["C#", "Javascript", "TypeScript","Vue", "Quasar Framework", "Angular", "NodeJS", "Pug/Jade", "Linux", "Bash", "FiSH",  "Entity Framework"],
     software: ["Unity", "VS Code", "Blender", "Material Maker", "Photoshop", "Illustrator", "Inkscape", "Krita", "GIMP", "Audacity", "Game Maker", "Doxygen", "Git", "JIRA", "GitHub"]
   },
   education: [{ locale: " Atlantic University College", years: "2011-2015", degree: "BA. Science of Video Game Design" }, {locale:"Microsoft", years:"2020", degree:"Azure Developer Associate"}],
