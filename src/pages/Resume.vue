@@ -1,12 +1,17 @@
 <template lang="pug">
 div
   .row.q-col-gutter-md.resumeFile.print-hide.q-px-xl
+    .absolute-top-right
     .col-12.col-md-4.col-lg-3.rc
       .row.q-col-gutter-sm
         .col-12.text-center.q-mt-lg
-          .text-h4.text-primary.text-center {{ resumeFile.name }}
+          .text-h4.text-primary.text-center(@click='printDiag = true') {{ resumeFile.name }}
+            q-tooltip Click to print!
           .text-h6.text-primary.text-center {{ resumeFile.subtitle }}
           .text-body1 {{ resumeFile.email }} - {{ resumeFile.number }}
+          //- q-btn(color='primary', icon='print',flat  @click='printDiag = true')
+
+
 
       q-space
       .lt-md.q-my-xl
@@ -108,6 +113,23 @@ div
             ul.column
               li.text-body2(v-for="resp in work.responsibilities") {{ resp }}
 
+  q-dialog.print-hide(v-model='printDiag', persistent)
+    q-card
+      q-card-section.column.q-gutter-y-md
+        .text-h6 Print Resume #[span.text-subtitle2 Select your resume options]
+        .row
+          .col-8.q-pr-md
+            .text-center Select the Field of Interest.
+            q-btn-group.text-center
+              q-btn(label='Video Games',@click='category = "game"' :color="(category == 'game' ? 'primary' : '')")
+              q-btn(label='Software',   @click='category = "software"' :color="(category == 'software' ? 'primary' : '')")
+              q-btn(label='Full Stack', @click='category = "backend"' :color="(category == 'backend' ? 'primary' : '')")
+          .col.q-pl-md
+            q-input.dark(v-model.number='printJobLimit', type='number', label='Max Number of Jobs' max=5)
+      q-card-actions(align='center')
+        q-btn(flat, label='Cancel', color='primary', v-close-popup)
+        q-btn(flat, label='Print', color='primary', @click="printResume()")
+
 
 </template>
 <script lang="ts">
@@ -118,10 +140,13 @@ import { Options, Vue } from "vue-class-component";
 export default class Resume extends Vue {
   resumeFile = resume;
   category = 'game';
-
+  printDiag = false;
+  printJobLimit = 5;
   listToText(arr: Array<string>, separator = " | ") {
     return arr.toString().replace(/,/g, separator);
   }
+
+  printResume() { print(); }
 
   listToTextAlt(arr: Array<string>, separator = " | ") {
     let res = ''
@@ -135,7 +160,7 @@ export default class Resume extends Vue {
     return Array.from(this.resumeFile.work).splice(0, 6);
   }
   get WorkExperienceByCategory() {
-    return Array.from(resume.work).filter(w => w.type.includes(this.category)).splice(0, 6)
+    return Array.from(resume.work).filter(w => w.type.includes(this.category)).splice(0, this.printJobLimit)
   }
 }
 </script>
@@ -189,8 +214,7 @@ export default class Resume extends Vue {
   text-align: center
   background: linear-gradient(90deg, transparentize($primary, 1) 0%, $primary 30%, $primary 65%, transparentize($primary, 1) 100%)
 
+.q-card
+  min-height: unset
 
-// .absolute-full
-//   background-color: white
-//   color: black
 </style>
