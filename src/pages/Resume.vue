@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   .row.q-col-gutter-md.resumeFile.print-hide.q-px-xl
-    .absolute-top-right
+
     .col-12.col-md-4.col-lg-3.rc
       .row.q-col-gutter-sm
         .col-12.text-center.q-mt-lg
@@ -11,9 +11,8 @@ div
           .text-body1 {{ resumeFile.email }} - {{ resumeFile.number }}
           //- q-btn(color='primary', icon='print',flat  @click='printDiag = true')
 
-
-
       q-space
+      
       .lt-md.q-my-xl
         .text-subtitle1.text-primary.smCmdL Current Work Objective
         .text-subtitle2.text-justify {{ resumeFile.objective }}
@@ -21,19 +20,19 @@ div
       .column.q-gutter-y-lg.q-mb-sm
         div
           .text-body1.text-primary.smCmdL Major Skills
-          .text-subtitle2 {{ listToText(resumeFile.skills.major) }}
+          .text-subtitle2.text-justify {{ listToText(resumeFile.skills.major) }}
 
         div
           .text-body1.text-primary.smCmdL Minor Skills
-          .text-subtitle2 {{ listToText(resumeFile.skills.minor) }}
+          .text-subtitle2.text-justify {{ listToText(resumeFile.skills.minor) }}
 
         div
           .text-body1.text-primary.smCmdL Languages & Frameworks
-          .text-subtitle2 {{ listToText(resumeFile.skills.frameworks) }}
+          .text-subtitle2.text-justify {{ listToText(resumeFile.skills.frameworks) }}
 
         div
           .text-body1.text-primary.smCmdL Software
-          .text-subtitle2 {{ listToText(resumeFile.skills.software) }}
+          .text-subtitle2.text-justify {{ listToText(resumeFile.skills.software) }}
 
         div
           .text-body1.text-primary.smCmdL Education
@@ -53,8 +52,8 @@ div
         .text-body1.text-justify {{ resumeFile.objective }}
 
       .text-h5.text-primary.q-mb-md.text-center Work Experience
-      .row.q-col-gutter-xs
-        .col-12.col-md-6.col-lg-4(v-for="work in WorkExperience")
+      .row.q-col-gutter-xs.bg-dark.rounded-borders.worokExp
+        .col-12.col-md-6.col-lg-4(v-for="work in filterOnMain?WorkExperienceByCategory:WorkExperience")
           q-card.no-shadow.q-card-experience
             q-card-section.q-pb-none
               .text-center
@@ -63,6 +62,11 @@ div
               .text-center.text-body2 Responsibilities
               ul.q-pl-sm.q-mt-xs.q-mb-none.text-justify.q-gutter-y-xs
                 li.text-subtitle2(v-for="resp in work.responsibilities") {{ resp }}
+
+
+
+  q-page-sticky(position='bottom-right', :offset='[18,18]') 
+    q-btn(color='primary', round, size="lg", icon='filter_list', @click='printDiag = true') 
 
   //- Print Version
   .print-only.absolute-full
@@ -113,24 +117,27 @@ div
             ul.column
               li.text-body2(v-for="resp in work.responsibilities") {{ resp }}
 
-  q-dialog.print-hide(v-model='printDiag', persistent)
+  q-dialog.print-hide(v-model='printDiag')
     q-card
       q-card-section.column.q-gutter-y-md
-        .text-h6 Print Resume #[span.text-subtitle2 Select your resume options]
-        .row
-          .col-8.q-pr-md
+        .text-center
+          .text-h6 Print Resume 
+          .text-caption Select your resume options
+        .column
+          .col-12.col-md-8.q-pa-sm.q-mx-auto
             .text-center Select the Field of Interest.
             q-btn-group.text-center
               q-btn(label='Video Games',@click='category = "game"' :color="(category == 'game' ? 'primary' : '')")
               q-btn(label='Software',   @click='category = "software"' :color="(category == 'software' ? 'primary' : '')")
               q-btn(label='Full Stack', @click='category = "backend"' :color="(category == 'backend' ? 'primary' : '')")
-          .col.q-pl-md
-            q-input.dark(v-model.number='printJobLimit', type='number', label='Max Number of Jobs' max=5)
+          .col.q-pa-sm.q-mx-auto
+            q-input.dark(v-model.number='printJobLimit', type='number', filled dark label='Max Number of Jobs (Print)' max=5)
       q-card-actions(align='center')
+        q-btn(flat, label='Print', color='primary', @click="filterOnMain=false; printResume()")
+        q-btn(flat, label='Toggle Filter', color='primary', @click="filterOnMain=!filterOnMain")
         q-btn(flat, label='Cancel', color='primary', v-close-popup)
-        q-btn(flat, label='Print', color='primary', @click="printResume()")
 
-
+  
 </template>
 <script lang="ts">
 import resume from "src/data/resume";
@@ -139,20 +146,23 @@ import { Options, Vue } from "vue-class-component";
 @Options({})
 export default class Resume extends Vue {
   resumeFile = resume;
-  category = 'game';
+  category = "game";
+  filterOnMain = false;
   printDiag = false;
   printJobLimit = 5;
   listToText(arr: Array<string>, separator = " | ") {
     return arr.toString().replace(/,/g, separator);
   }
 
-  printResume() { print(); }
+  printResume() {
+    print();
+  }
 
   listToTextAlt(arr: Array<string>, separator = " | ") {
-    let res = ''
+    let res = "";
     for (let i = 0; i < arr.length; i++) {
       const element = arr[i];
-      res += element + (i == arr.length - 1 ? '' : separator);
+      res += element + (i == arr.length - 1 ? "" : separator);
     }
     return res;
   }
@@ -160,7 +170,9 @@ export default class Resume extends Vue {
     return Array.from(this.resumeFile.work).splice(0, 6);
   }
   get WorkExperienceByCategory() {
-    return Array.from(resume.work).filter(w => w.type.includes(this.category)).splice(0, this.printJobLimit)
+    return Array.from(resume.work)
+      .filter((w) => w.type.includes(this.category))
+      .splice(0, this.filterOnMain ? 6 : this.printJobLimit);
   }
 }
 </script>
@@ -217,4 +229,6 @@ export default class Resume extends Vue {
 .q-card
   min-height: unset
 
+.worokExp
+  min-height: 65vh
 </style>

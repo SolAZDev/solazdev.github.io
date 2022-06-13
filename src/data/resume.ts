@@ -44,7 +44,7 @@ export default {
       position: "Jr. Software Developer",
       employer: "PRSoft, Inc",
       type:["backend", "software"],
-      time:"Contract",
+      time:"3mo Contract",
       responsibilities: [
         "Developed various new pages and segments of Angular based, PRCorp web app.",
         "Efficiently translated parts of the backend, from C# to F#, & developed new segments in F#, which included communicating with a PostgreSQL database.",
@@ -55,7 +55,7 @@ export default {
       position: "Full Stack Developer",
       employer: "IfIdea, LLC",
       type:["software", "backend"],
-      time:"Contract",
+      time:"9mo Contract",
       responsibilities: [
         "In charge of developing a Full Stack Ecosystem for clients. Which included Administrative and Employee apps",
         "Apps were developed with Angular & Ionic, while the database was made with MariaDB, along with a PHP Server using Slim Framework for communications.",
@@ -65,7 +65,7 @@ export default {
       position: "Lead Game Developer",
       employer: "Require Technology PR",
       type:["game"],
-      time:"Contract",
+      time:"9mo Contract",
       responsibilities: [
         "In charge of Development and Quality Assurance, and Documentation of Genial Skills Web, created with the Unity Game Engine.",
         "Developed various mini-games for multiple types of quizzes, an Avatar System, and Integrated an In-App Purchase system.",
@@ -77,7 +77,7 @@ export default {
       position: "Enviroment Designer & VR Interactive Programmer",
       employer: "SI3D Media",
       type:["game", "promotion"],
-      time:"Contract",
+      time:"3mo Contract",
       responsibilities: [
         "In charge of Design and Development for multiple VR Projects.",
         "Created VR commercials and promotional mini-games for clients. As well as assets that were used in production.",
@@ -88,7 +88,7 @@ export default {
       position: "Game Design Instructor",
       employer: "Mariano Abril Jr. High",
       type:["game"],
-      time:"Contract",
+      time:"3mo Contract",
       responsibilities: [
         "In charge of teaching and mentoring groups of students regarding their creative process.",
         "Taught the principles of 3D Modeling and Animation, using Blender. And the principles of programming in C# & JavaScript.",
