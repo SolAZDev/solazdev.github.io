@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+q-page
   .row.q-col-gutter-md.resumeFile.print-hide.q-px-xl
 
     .col-12.col-md-4.col-lg-3.rc
@@ -12,7 +12,7 @@ div
           //- q-btn(color='primary', icon='print',flat  @click='printDiag = true')
 
       q-space
-      
+
       .lt-md.q-my-xl
         .text-subtitle1.text-primary.smCmdL Current Work Objective
         .text-subtitle2.text-justify {{ resumeFile.objective }}
@@ -57,16 +57,17 @@ div
           q-card.no-shadow.q-card-experience
             q-card-section.q-pb-none
               .text-center
-                .text-h6.text-primary {{ work.position }} #[span.text-white.text-subtitle2 at {{ work.employer }}]
-            q-card-section.q-pt-none
-              .text-center.text-body2 Responsibilities
+                .text-h6.text-primary {{ work.position }} #[span.text-white.text-subtitle2 at {{ work.employer }} ]
+                .text-white.text-subtitle2 {{work.time}}
+            q-card-section.q-pt-md
+              .text-center.text-body2 Responsibilities & Achievements
               ul.q-pl-sm.q-mt-xs.q-mb-none.text-justify.q-gutter-y-xs
                 li.text-subtitle2(v-for="resp in work.responsibilities") {{ resp }}
 
 
 
-  q-page-sticky(position='bottom-right', :offset='[18,18]') 
-    q-btn(color='primary', round, size="lg", icon='filter_list', @click='printDiag = true') 
+  q-page-sticky(position='bottom-right', :offset='[18,18]')
+    q-btn(color='primary', round, size="lg", icon='filter_list', @click='printDiag = true')
 
   //- Print Version
   .print-only.absolute-full
@@ -121,7 +122,7 @@ div
     q-card
       q-card-section.column.q-gutter-y-md
         .text-center
-          .text-h6 Print Resume 
+          .text-h6 Print Resume
           .text-caption Select your resume options
         .column
           .col-12.col-md-8.q-pa-sm.q-mx-auto
@@ -137,7 +138,7 @@ div
         q-btn(flat, label='Toggle Filter', color='primary', @click="filterOnMain=!filterOnMain")
         q-btn(flat, label='Cancel', color='primary', v-close-popup)
 
-  
+
 </template>
 <script lang="ts">
 import resume from "src/data/resume";
