@@ -154,7 +154,7 @@ export default {
       responsibilities: [
         "In charge of Design and Development for multiple VR Projects using  C# & the Unity Game Engine",
         "Created VR commercials and promotional mini-games for clients. As well as assets that were used in production with the Animation system and Tweens.",
-        "Extensively tested ech project, Documenting bugs & oversights, inconsistencies, and implemented ways to circumvent them.",
+        "Extensively tested each project, Documenting bugs & oversights, inconsistencies, and implemented ways to circumvent them.",
       ],
     },
     {
