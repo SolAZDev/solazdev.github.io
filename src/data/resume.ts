@@ -116,7 +116,7 @@ export default {
       position: "Jr. Software Developer",
       employer: "PRSoft, Inc",
       type: ["backend", "software"],
-      time: "2019 - 3mo Contract",
+      time: "2019",
       responsibilities: [
         "Developed various new pages and segments of Angular based, PRCorp web app.",
         "Efficiently translated parts of the backend, from C# to F#, & developed new segments in F#, which included communicating with a PostgreSQL database.",
@@ -127,7 +127,7 @@ export default {
       position: "Full Stack Developer",
       employer: "IfIdea, LLC",
       type: ["software", "backend"],
-      time: "2018 - 9mo Contract",
+      time: "2018",
       responsibilities: [
         "Developed a Full Stack Ecosystem for clients. Which included Administrative and Employee apps",
         "Apps were developed with Angular & Ionic, while the database was made with MariaDB, along with a PHP Server using Slim Framework for communications.",
@@ -138,7 +138,7 @@ export default {
       position: "Lead Game Developer",
       employer: "Require Technology PR",
       type: ["game"],
-      time: "2018 - 9mo Contract",
+      time: "2018",
       responsibilities: [
         "In charge of Development and Quality Assurance, and Documentation of Genial Skills Web, created with the Unity Game Engine.",
         "Developed various mini-games for multiple types of quizzes, an Avatar System, and an In-App Purchase system using Unity's IAP API.",
@@ -150,7 +150,7 @@ export default {
       position: "Enviroment Designer & VR Interactive Programmer",
       employer: "SI3D Media",
       type: ["game", "promotion"],
-      time: "2016 - 3mo Contract",
+      time: "2016",
       responsibilities: [
         "In charge of Design and Development for multiple VR Projects using  C# & the Unity Game Engine",
         "Created VR commercials and promotional mini-games for clients. As well as assets that were used in production with the Animation system and Tweens.",
@@ -161,7 +161,7 @@ export default {
       position: "Game Design Instructor",
       employer: "Mariano Abril Jr. High",
       type: ["game"],
-      time: "2016 - 3mo Contract",
+      time: "2016",
       responsibilities: [
         "In charge of teaching and mentoring groups of students regarding their creative process.",
         "Taught students the principles of 3D Modeling and Animation, using Blender. And the principles of programming in C# & JavaScript.",

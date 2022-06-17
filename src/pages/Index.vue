@@ -19,23 +19,24 @@ q-page(padding)
             .col #[IconLink(link="https://twitter.com/SolAZDev", icon="fab fa-twitter" size="xl")]
             .col #[IconLink(link="https://www.linkedin.com/in/solazdev/", icon="fab fa-linkedin" size="xl")]
             .col #[IconLink(:link="'mailto:'+Data.email", icon="fas fa-at" size="xl")]
-
+  q-separator(dark)
+  GamesMenu
 
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-class-component'
-import IconLink from '../components/IconLink.vue';
-import * as info from '../data/data'
-
+import { Vue, Options } from "vue-class-component";
+import IconLink from "../components/IconLink.vue";
+import * as info from "../data/data";
+import GamesMenu from "../pages/GamesMenu.vue";
 @Options({
-  components: { IconLink }
+  components: { IconLink, GamesMenu },
 })
 export default class PageIndex extends Vue {
   Data = info.default;
   about = [
     "Hello! I'm Carlos  E. Orama, pen name; SolAZDev. I'm an Indie Game Developer and a Web Designer, with a passion for learning new technologies. I've specialized in, but not limited to, Gameplay Programming, Level Design for Games, Front End, Responsive Design, Server Communications for Web",
-    'My tools of choice include, but are not limited to several proven tools & frameworks such as; Blender, Unity3D, NodeJS, Angular, VueJS and more. You can see some of my works in the Games and Other Works section, as well as some of visual work on the Portfolio section'
-  ]
-};
+    "My tools of choice include, but are not limited to several proven tools & frameworks such as; Blender, Unity3D, NodeJS, Angular, VueJS and more. You can see some of my works in the Games and Other Works section, as well as some of visual work on the Portfolio section",
+  ];
+}
 </script>

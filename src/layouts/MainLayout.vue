@@ -19,33 +19,34 @@ q-layout(view="hHh lpR fFf")
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-class-component'
+import { Vue, Options } from "vue-class-component";
 
 @Options({})
 export default class MainLayout extends Vue {
-	leftDrawerOpen = false;
-	// essentialLinks = linksList;
-  items=[
-          {name:'home', label:'SolAZDev',to:'/', class:"brand"},
-          {name:'resume', label:'Resume',to:'/resume'},
-          {name:'vport', label:'Visual Works Portfolio',to:'/visuals'},
-          {name:'games', label:'Games',to:'/games'},
-          {name:'other', label:'Other works',to:'/other'},
-        ]
-        mounted(){
-          this.$q.dark.set(true)
-        }
-	toggleLeftDrawer () {
-		this.leftDrawerOpen = !this.leftDrawerOpen
-	}
-  activeTab="home";
+  leftDrawerOpen = false;
+  // essentialLinks = linksList;
+  items = [
+    { name: "home", label: "SolAZDev", to: "/", class: "brand" },
+    { name: "games", label: "Games", to: "/games" },
+    { name: "resume", label: "Resume", to: "/resume" },
+    { name: "vport", label: "Visual Works Portfolio", to: "/visuals" },
+    { name: "other", label: "Other works", to: "/other" },
+  ];
+  mounted() {
+    this.$q.dark.set(true);
+  }
+  toggleLeftDrawer() {
+    this.leftDrawerOpen = !this.leftDrawerOpen;
+  }
+  activeTab = "home";
 
-  get MidSmall(){return (this.$q.screen.sizes.sm+(this.$q.screen.sizes.md/4));}
-
-  get isSmall(){
-    return  this.$q.screen.lt.md;
+  get MidSmall() {
+    return this.$q.screen.sizes.sm + this.$q.screen.sizes.md / 4;
   }
 
+  get isSmall() {
+    return this.$q.screen.lt.md;
+  }
 }
 </script>
 <style lang="sass" scoped>
@@ -67,5 +68,4 @@ export default class MainLayout extends Vue {
 .menuText
   padding-top: 8px
   height:50px
-
 </style>

@@ -47,11 +47,11 @@ q-page
               .text-subtitle1 {{ award.name }} - #[small {{ award.by }}]
 
     .col-12.col-md-8.col-lg-9
-      div.container.gt-sm.q-mt-lg.q-mb-xl
+      //- div.container.gt-sm.q-mt-lg.q-mb-xl
         .text-h5.text-primary.text-center Summary & Qualifications
         .text-body1.text-justify {{ resumeFile.objective }}
 
-      .text-h5.text-primary.q-mb-md.text-center Work Experience
+      .q-mt-lg.text-h5.text-primary.q-mb-md.text-center Work Experience
       .row.q-col-gutter-xs.bg-dark.rounded-borders.worokExp
         .col-12.col-md-6.col-lg-4(v-for="work in filterOnMain?WorkExperienceByCategory:WorkExperience")
           q-card.no-shadow.q-card-experience
@@ -66,8 +66,13 @@ q-page
 
 
 
-  q-page-sticky(position='bottom-right', :offset='[18,18]')
-    q-btn(color='primary', round, size="lg", icon='filter_list', @click='printDiag = true')
+  q-page-sticky.print-hide(position='bottom-right', :offset='[45,18]' v-if="$q.screen.gt.sm")
+    q-fab(color='primary', icon='print', direction='up' size="md")
+      q-fab-action(color='primary', @click='PrepareAndPrint(3)', icon='dns' label="Full Stack")
+      q-fab-action(color='primary', @click='PrepareAndPrint(2)', icon='devices' label="Software")
+      q-fab-action(color='primary', @click='PrepareAndPrint(1)', icon='games' label="Video Games")
+
+    //- q-btn(color='primary', round, size="lg", icon='filter_list', @click='printDiag = true')
 
   //- Print Version
   .print-only.absolute-full
@@ -174,6 +179,20 @@ export default class Resume extends Vue {
     return Array.from(resume.work)
       .filter((w) => w.type.includes(this.category))
       .splice(0, this.filterOnMain ? 6 : this.printJobLimit);
+  }
+  PrepareAndPrint(kind: number) {
+    switch (kind) {
+      case 1:
+        this.category = "game";
+        break;
+      case 2:
+        this.category = "software";
+        break;
+      case 3:
+        this.category = "backend";
+        break;
+    }
+    print();
   }
 }
 </script>
