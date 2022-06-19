@@ -1,16 +1,17 @@
 <template lang="pug">
 q-page(padding)
   .text-center
-    .text-h5 SolAZDev
-    .text-subtitle1 Indie Game & Web Developer
-    br
+    //- .text-h5 SolAZDev
+    //- .text-subtitle1 Indie Game & Web Developer
+    //- br
     .row.q-col-gutter-md
-      .col-12.col-lg-8
+      .col-12.col-md-6.q-mx-auto
         q-video(:src="Data.reel" :ratio="16/9")
-      .col-12.col-lg-4
+      .col-12
         .text-h6 About
-        p.text-justify.text-body1 {{ about[0] }}
-        p.text-justify.text-body1 {{ about[1] }}
+        .row.justify-around
+          p.col-12.col-md-5.q-px-md.text-justify.text-body1 {{ about[0] }}
+          p.col-12.col-md-5.q-px-md.text-justify.text-body1 {{ about[1] }}
         br
         .text-h6.text-center Connect
           .row.iconList
@@ -19,7 +20,7 @@ q-page(padding)
             .col #[IconLink(link="https://twitter.com/SolAZDev", icon="fab fa-twitter" size="xl")]
             .col #[IconLink(link="https://www.linkedin.com/in/solazdev/", icon="fab fa-linkedin" size="xl")]
             .col #[IconLink(:link="'mailto:'+Data.email", icon="fas fa-at" size="xl")]
-  q-separator(dark)
+  
   GamesMenu
 
 </template>

@@ -5,17 +5,12 @@ q-page
     .col-12.col-md-4.col-lg-3.rc
       .row.q-col-gutter-sm
         .col-12.text-center.q-mt-lg
-          .text-h4.text-primary.text-center(@click='printDiag = true') {{ resumeFile.name }}
-            q-tooltip Click to print!
-          .text-h6.text-primary.text-center {{ resumeFile.subtitle }}
-          .text-body1 {{ resumeFile.email }} - {{ resumeFile.number }}
+          .text-h4.text-primary.text-center {{ resumeFile.name }}
+          .text-h6.text-primary.text-center {{YourNext}}
+          .text-body1 {{resumeFile.location}} - {{ resumeFile.email }} - {{ resumeFile.number }}
           //- q-btn(color='primary', icon='print',flat  @click='printDiag = true')
 
       q-space
-
-      .lt-md.q-my-xl
-        .text-subtitle1.text-primary.smCmdL Current Work Objective
-        .text-subtitle2.text-justify {{ resumeFile.objective }}
 
       .column.q-gutter-y-lg.q-mb-sm
         div
@@ -28,23 +23,23 @@ q-page
 
         div
           .text-body1.text-primary.smCmdL Languages & Frameworks
-          .text-subtitle2.text-justify {{ listToText(resumeFile.skills.frameworks) }}
+          .text-subtitle2.text-justify {{ objListToString(resumeFile.skills.frameworks) }}
 
         div
           .text-body1.text-primary.smCmdL Software
-          .text-subtitle2.text-justify {{ listToText(resumeFile.skills.software) }}
-
-        div
-          .text-body1.text-primary.smCmdL Education
-          .column.q-gutter-y-sm
-            div(v-for="edu in resumeFile.education")
-              .text-subtitle1 {{ edu.degree }} - #[small.text-subtitle2 {{ edu.locale }}]
+          .text-subtitle2.text-justify {{ objListToString(resumeFile.skills.software) }}
 
         div
           .text-subtitle1.text-primary.smCmdL Awards
           .column.q-gutter-y-sm
             div(v-for="award in resumeFile.awards")
               .text-subtitle1 {{ award.name }} - #[small {{ award.by }}]
+
+        div
+          .text-body1.text-primary.smCmdL Education
+          .column.q-gutter-y-sm
+            div(v-for="edu in resumeFile.education")
+              .text-subtitle1 {{ edu.degree }} - #[small.text-subtitle2 {{ edu.locale }}]
 
     .col-12.col-md-8.col-lg-9
       //- div.container.gt-sm.q-mt-lg.q-mb-xl
@@ -66,28 +61,30 @@ q-page
 
 
 
-  q-page-sticky.print-hide(position='bottom-right', :offset='[45,18]' v-if="$q.screen.gt.sm")
+  q-page-sticky.print-hide(position='bottom-right', :offset='[50,18]' v-if="$q.screen.gt.sm")
     q-fab(color='primary', icon='print', direction='up' size="md")
-      q-fab-action(color='primary', @click='PrepareAndPrint(3)', icon='dns' label="Full Stack")
+      q-fab-action(color='primary', @click='PrepareAndPrint(3)', icon='dns'     label="Full Stack")
       q-fab-action(color='primary', @click='PrepareAndPrint(2)', icon='devices' label="Software")
-      q-fab-action(color='primary', @click='PrepareAndPrint(1)', icon='games' label="Video Games")
+      q-fab-action(color='primary', @click='PrepareAndPrint(1)', icon='games'   label="Video Games")
 
     //- q-btn(color='primary', round, size="lg", icon='filter_list', @click='printDiag = true')
 
   //- Print Version
   .print-only.absolute-full
     .column.q-col-gutter-xs.q-pa-md
-      .row
-        .col-4.q-pr-sm.text-center
-          .text-h6.text-primary(style="font-size:1.35rem") {{ resumeFile.name }}
-          .text-subtitle1.text-primary {{ resumeFile.subtitle }}
-          .text-subtitle2 {{ resumeFile.email }} - {{ resumeFile.number }}
-          .text-subtitle2 SolAZDev.com
+      //- .row
         .col.q-pl-sm
-          .text-h6.text-right.text-primary.text-bold Summary & Qualifications
-          .text-caption {{ resumeFile.objective }}
+          .text-h6.text-right.text-primary.text-bold 
+          //- Summary & Qualifications
+          .text-caption 
+          //- {{ resumeFile.objective }}
       .row
         .col-4.column.q-gutter-y-md.q-mb-sm.q-pr-sm
+          .q-pr-sm.text-center
+            .text-h6.text-primary {{ resumeFile.name }}
+            .text-subtitle1.text-primary {{ YourNext }}
+            .text-subtitle2 {{ resumeFile.email }} - {{ resumeFile.number }}
+            .text-subtitle2 {{resumeFile.location}} - SolAZDev.com
           q-separator(spaced)
           div
             .text-body1.text-primary.text-bold Major Skills
@@ -99,27 +96,27 @@ q-page
 
           div
             .text-body1.text-primary.text-bold Languages & Frameworks
-            .text-body2 {{ listToText(resumeFile.skills.frameworks, " | ") }}
+            .text-body2 {{ objListToString(resumeFile.skills.frameworks, true) }}
 
           div
             .text-body1.text-primary.text-bold Software
-            .text-body2 {{ listToText(resumeFile.skills.software, " | ") }}
-
-          div
-            .text-body1.text-primary.text-bold Education
-            .column.reverse.q-gutter-y-sm
-              .text-body2(v-for="edu in resumeFile.education") {{ edu.degree }} - #[span.text-caption {{ edu.locale }}]
+            .text-body2 {{ objListToString(resumeFile.skills.software, true) }}
 
           div
             .text-body1.text-primary.text-bold Awards
             .column.reverse.q-gutter-y-sm
               .text-body2(v-for="award in resumeFile.awards") {{ award.name }} - #[span.text-caption {{ award.by }}]
 
+          div
+            .text-body1.text-primary.text-bold Education
+            .column.reverse.q-gutter-y-sm
+              .text-body2(v-for="edu in resumeFile.education") {{ edu.degree }} - #[span.text-caption {{ edu.locale }}]
+
         .col.column.q-pl-md.q-gutter-y-xs
           .text-h6.text-right.text-primary Work Experience
           .column.q-gutter-y-xs(v-for="work in WorkExperienceByCategory")
             .row
-              .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} ({{ work.time }})]
+              .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} - {{ work.time }}]
             ul.column
               li.text-body2(v-for="resp in work.responsibilities") {{ resp }}
 
@@ -159,19 +156,21 @@ export default class Resume extends Vue {
   listToText(arr: Array<string>, separator = " | ") {
     return arr.toString().replace(/,/g, separator);
   }
+  objListToString(obj: { name: string; type: string[] }[], filtered = false) {
+    let final = new Array<string>();
+    obj.forEach((o) => {
+      if (this.category == "" || !filtered) final.push(o.name);
+      else {
+        if (o.type.includes(this.category)) final.push(o.name);
+      }
+    });
+    return this.listToText(final);
+  }
 
   printResume() {
     print();
   }
 
-  listToTextAlt(arr: Array<string>, separator = " | ") {
-    let res = "";
-    for (let i = 0; i < arr.length; i++) {
-      const element = arr[i];
-      res += element + (i == arr.length - 1 ? "" : separator);
-    }
-    return res;
-  }
   get WorkExperience() {
     return Array.from(this.resumeFile.work).splice(0, 6);
   }
@@ -180,7 +179,26 @@ export default class Resume extends Vue {
       .filter((w) => w.type.includes(this.category))
       .splice(0, this.filterOnMain ? 6 : this.printJobLimit);
   }
+  get YourNext() {
+    let str = "";
+    switch (this.category) {
+      default:
+        str = "Your next Developer.";
+        break;
+      case "game":
+        str = "Your next Game Developer.";
+        break;
+      case "software":
+        str = "Your next Web & Software Developer.";
+        break;
+      case "backend":
+        str = "Your next Full Stack Developer.";
+        break;
+    }
+    return str;
+  }
   PrepareAndPrint(kind: number) {
+    console.log(kind);
     switch (kind) {
       case 1:
         this.category = "game";
@@ -189,10 +207,12 @@ export default class Resume extends Vue {
         this.category = "software";
         break;
       case 3:
-        this.category = "backend";
+        this.category = "backsend";
         break;
     }
-    print();
+    setTimeout(() => print(), 120);
+    setTimeout(() => (this.category = ""), 100);
+    // print();
   }
 }
 </script>
@@ -251,4 +271,8 @@ export default class Resume extends Vue {
 
 .worokExp
   min-height: 65vh
+
+.print-only
+  @page
+    margin: 0 !important
 </style>
