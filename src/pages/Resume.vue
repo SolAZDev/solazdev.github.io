@@ -62,6 +62,7 @@ q-page
 
 
   q-page-sticky.print-hide(position='bottom-right', :offset='[50,18]' v-if="$q.screen.gt.sm")
+    q-tooltip(anchor="center left" self="center right") Print - Set Margins to None! 
     q-fab(color='primary', icon='print', direction='up' size="md")
       q-fab-action(color='primary', @click='PrepareAndPrint(3)', icon='dns'     label="Full Stack")
       q-fab-action(color='primary', @click='PrepareAndPrint(2)', icon='devices' label="Software")
@@ -211,7 +212,7 @@ export default class Resume extends Vue {
         break;
     }
     setTimeout(() => print(), 120);
-    setTimeout(() => (this.category = ""), 100);
+    setTimeout(() => (this.category = ""), 150);
     // print();
   }
 }
