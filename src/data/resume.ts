@@ -74,7 +74,7 @@ export default {
   education: [
     {
       locale: " Atlantic University College",
-      years: "2011-2015",
+      years: "2015",
       degree: "BA. Science of Video Game Design",
     },
     {
