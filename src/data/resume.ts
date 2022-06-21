@@ -73,19 +73,19 @@ export default {
   },
   education: [
     {
-      locale: " Atlantic University College",
-      years: "2015",
-      degree: "BA. Science of Video Game Design",
-    },
-    {
       locale: "Microsoft",
       years: "2020",
       degree: "Azure Developer Associate (AZ-204)",
     },
+    {
+      locale: " Atlantic University College",
+      years: "2015",
+      degree: "BA. Science of Video Game Design",
+    },
   ],
   awards: [
-    { name: "Eagle Scout Rank", by: "Boy Scouts of America (T432 PR)" },
     { name: "Best Use of Theme", by: "Puerto Rico Global Game Jam 2018" },
+    { name: "Eagle Scout Rank", by: "Boy Scouts of America (T432 PR) (2014)" },
   ],
   work: [
     {
@@ -94,10 +94,10 @@ export default {
       time: "Oct 2021 - Current",
       type: ["game", "software"],
       responsibilities: [
-        "Recreated the studio's website with Vue and the Quasar Framework, resulting in significant reduction in load times down to a approximately 4~ seconds, and minimizing maintenance verbosity.",
+        "Recreated the studio's website with Vue and the Quasar Framework, resulting in significant reduction in load times, and minimizing maintenance verbosity.",
         // "Developed mobile apps "
         "Developed various Apps and Experiences for Clients, using Vue, the Quasar Framework, and the Unity Game Engine.",
-        "Established and Standardized and efficient development workflow for future app development using the Quasar Framework, easing the barrier to entry and allowing developers to achieve results faster.",
+        "Established and Standardized and efficient development workflow for future app development using the Quasar Framework, lowering the barrier to entry and allowing developers to achieve faster results.",
         "Continuously collaborated with coworkers from multiple departments to ensure smooth production and innovative techniques to further improve projects.",
       ],
     },
@@ -107,7 +107,7 @@ export default {
       type: ["backend", "software"],
       time: "May 2020 - Aug 2021",
       responsibilities: [
-        "Developed various parts of the SmartCare line of applications using Angular, which allows Medical Service Operators and Clients to easily connect, log medical records and book appointments.",
+        "Developed various parts of the SmartCare line of applications with Angular, which allows Medical Service Operators and Clients to easily connect, log medical records and book appointments.",
         // "Developed the core"
         // "Developed various pages and web components, and their backend functionality for the SmartCare line of products using Angular, C# & The Entity Framework",
         "Created a web-based, Remote Desktop Viewer using SingalR, which is now used for Technical Support by operators and clients.",
@@ -121,7 +121,7 @@ export default {
       type: ["backend", "software"],
       time: "2019",
       responsibilities: [
-        "Developed various new pages and segments of Angular based, PRCorp web app, which allow Tax Form companies to complete forms efficiently.",
+        "Developed various new pages and segments of AngularJS- based, PRCorp web app, which allow Tax Form companies to complete forms efficiently.",
         "Efficiently translated parts of the backend, from C# to F#, & developed new segments in F#, which included communicating with a PostgreSQL database, which overcomes cyclic dependencies in the tax forms.",
         "Extensively tested software to ensure there were no downtimes, or UI/UX inconsistencies.",
       ],
@@ -132,7 +132,7 @@ export default {
       type: ["software", "backend"],
       time: "2018",
       responsibilities: [
-        "Developed a Complete App Ecosystem, Which included Administrative and Employee apps that are now used in production in a client company.",
+        "Developed a Complete Ecosystem, Which included Administrative and Employee apps that are now part of a pipeline of a client.",
         "The Applications were developed with Angular & Ionic, which allowed for a responsive design, while easing development time.",
         "The Server was developed with PHP and included a MySQL database, which was tied together by the Slim Framework, which allowed for a simple REST API solution.",
         "Streamlined User Interfaces for both applications based on user feedback.",
@@ -146,18 +146,18 @@ export default {
       responsibilities: [
         "In charge of Development and Quality Assurance, and Documentation of Genial Skills Web, created with the Unity Game Engine.",
         "Developed various mini-games for multiple types of quizzes, an Avatar System, and an In-App Purchase system using Unity's IAP API.",
-        "Tested and Documented Bugs, Design Issues and Oversights, and implemented ways to circumvent with aid of feedback",
-        "With my contributions, the product has now been on the market.",
+        "Tested and Documented Bugs, Design Issues and Oversights, and implemented ways to circumvent them with coworker's of feedback",
+        "With my contributions, the product is now on the market, and used by many schools and families.",
       ],
     },
     {
-      position: "Enviroment Designer & VR Interactive Programmer",
+      position: "Environment Designer & VR Interactive Programmer",
       employer: "SI3D Media",
       type: ["game", "promotion"],
       time: "2016",
       responsibilities: [
         "In charge of Design and Development for multiple VR Projects using  C# & the Unity Game Engine",
-        "Created VR commercials and promotional mini-games for clients. As well as assets that were used in production with the Animation system and Tweens.",
+        "Created VR commercials and promotional mini-games for clients. As well as assets that were used in production with Unity's Animation System and Tweens.",
         "Extensively tested each project, Documenting bugs & oversights, inconsistencies, and implemented ways to circumvent them.",
       ],
     },

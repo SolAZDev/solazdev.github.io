@@ -18,7 +18,7 @@ q-page
             .text-h4.text-primary.text-center {{ resumeFile.name }}
             .text-h6.text-primary.text-center {{YourNext}}
             .text-body1 Available to work in the US
-            .text-body1 {{ resumeFile.email }} - {{ resumeFile.number }}
+            .text-body1 {{ resumeFile.email }} - SolAZDev.com
 
         q-space
 
