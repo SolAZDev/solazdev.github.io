@@ -153,7 +153,10 @@ export default {
         "Puzzle-like Platforming with traps that affects both the player and their thoughts.",
         "2 Decently Sized, 15-minute Levels",
       ],
-      collab:[],
+      collab:[
+        "Collaborated with 3 Artists, in the game jam.",
+        "Continously collaborated to find new ideas to implement"
+      ],
       media: [
         { type: MediaType.Image, description: "Depress/Blocked Mode", url: "/media/Projects/Games/PCD/PCD0.jpg" },
         { type: MediaType.Image, description: "Boss 1", url: "/media/Projects/Games/PCD/PCD1.jpg" },
