@@ -28,6 +28,7 @@ export interface GameInfo extends ProjectInfo {
   genre?: string
   platform: string,
   features?: string[]
+  collab?: string[]
   wishlist?: string[]
   plannedFeatures?: string[]
 }

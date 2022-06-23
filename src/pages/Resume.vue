@@ -4,12 +4,11 @@ q-page
     .column.q-gutter-y-md(v-if="$q.screen.gt.sm")
       .text-center.text-primary
         .text-h6 Print or Save as PDF 
-        .text-subtitle2 Please set Margins to None!
       .row.justify-center(style="height:5vh") 
         .col-2.text-center #[q-btn(color='primary', icon='games', label='Game Developer', @click='PrepareAndPrint(1)') ]
         .col-2.text-center #[q-btn(color='primary', icon='devices', label='Software Developer', @click='PrepareAndPrint(2)') ]
         .col-2.text-center #[q-btn(color='primary', icon='dns', label='Full Stack Developer', @click='PrepareAndPrint(3)') ]
-    q-separator.q-my-lg.q-mx-xl( inset, dark v-if="$q.screen.gt.sm")
+    q-separator.q-my-sm.q-mx-xl(dark, v-if="$q.screen.gt.sm")
 
     .row.q-col-gutter-md.resumeFile.q-px-xl.q-mb-lg
       .col-12.col-md-4.col-lg-3.rc
@@ -20,24 +19,20 @@ q-page
             .text-body1 Available to work in the US
             .text-body1 {{ resumeFile.email }} - SolAZDev.com
 
-        q-space
+        //- q-space
 
-        .column.q-gutter-y-lg.q-mb-sm
+        .column.q-gutter-y-lg.q-py-lg
           div
-            .text-body1.text-primary.smCmdL Major Skills
-            .text-subtitle2.text-justify {{ listToText(resumeFile.skills.major) }}
-
-          div
-            .text-body1.text-primary.smCmdL Minor Skills
-            .text-subtitle2.text-justify {{ listToText(resumeFile.skills.minor) }}
+            .text-body1.text-primary.smCmdL Skills
+            .text-subtitle2.text-justify {{ listToText(resumeFile.skills) }}
 
           div
             .text-body1.text-primary.smCmdL Languages & Frameworks
-            .text-subtitle2.text-justify {{ objListToString(resumeFile.skills.frameworks) }}
+            .text-subtitle2.text-justify {{ objListToString(resumeFile.frameworks) }}
 
           div
             .text-body1.text-primary.smCmdL Software
-            .text-subtitle2.text-justify {{ objListToString(resumeFile.skills.software) }}
+            .text-subtitle2.text-justify {{ objListToString(resumeFile.software) }}
 
           div
             .text-subtitle1.text-primary.smCmdL Awards
@@ -52,13 +47,9 @@ q-page
                 .text-subtitle1 {{ edu.degree }} - #[small.text-subtitle2 {{ edu.locale }} ({{edu.years}})]
 
       .col-12.col-md-8.col-lg-9
-        //- div.container.gt-sm.q-mt-lg.q-mb-xl
-          .text-h5.text-primary.text-center Summary & Qualifications
-          .text-body1.text-justify {{ resumeFile.objective }}
-
         .q-mt-lg.text-h5.text-primary.q-mb-md.text-center Work Experience
-        .row.q-col-gutter-xs.bg-dark.rounded-borders.worokExp
-          .col-12.col-md-6.col-lg-4(v-for="work in filterOnMain?WorkExperienceByCategory:WorkExperience")
+        .row.q-col-gutter-xs.bg-dark.rounded-borders.workExp
+          .col-12.col-lg-6(v-for="work in resumeFile.work")
             q-card.no-shadow.q-card-experience
               q-card-section.q-pb-none
                 .text-center
@@ -71,14 +62,7 @@ q-page
 
 
   //- Print Version
-  .print-only.absolute-full(style="margin-top:-2rem")
-    //- .column.q-col-gutter-xs.q-pa-md
-      //- .row
-        .col.q-pl-sm
-          .text-h6.text-right.text-primary.text-bold 
-          //- Summary & Qualifications
-          .text-caption 
-          //- {{ resumeFile.objective }}
+  .print-only(style="margin-top:-1rem")
     .row.q-px-md
       .col-4.column.q-gutter-y-md.q-mb-sm.q-pr-sm
         .q-pr-sm.text-center
@@ -86,37 +70,33 @@ q-page
           .text-subtitle1.text-primary {{ YourNext }}
           .text-subtitle2 {{ resumeFile.email }} - {{ resumeFile.number }}
           .text-subtitle2 Available to work in the US
-          .text-subtitle2 SolAZDev.com
-        q-separator(spaced)
+          .text-subtitle2 https://SolAZDev.com
+        //- q-space
         div
-          .text-body1.text-primary.text-bold Major Skills
-          .text-body2 {{ listToText(resumeFile.skills.major, " | ") }}
-
-        div
-          .text-body1.text-primary.text-bold Minor Skills
-          .text-body2 {{ listToText(resumeFile.skills.minor, " | ") }}
+          .text-body1.text-primary.text-bold Skills
+          .text-body2.text-justify {{ listToText(resumeFile.skills, " | ") }}
 
         div
           .text-body1.text-primary.text-bold Languages & Frameworks
-          .text-body2 {{ objListToString(resumeFile.skills.frameworks, true) }}
+          .text-body2.text-justify {{ objListToString(resumeFile.frameworks, true) }}
 
         div
           .text-body1.text-primary.text-bold Software
-          .text-body2 {{ objListToString(resumeFile.skills.software, true) }}
+          .text-body2.text-justify {{ objListToString(resumeFile.software, true) }}
 
         div
           .text-body1.text-primary.text-bold Awards
           .column.reverse.q-gutter-y-sm
-            .text-body2(v-for="award in resumeFile.awards") {{ award.name }} - #[span.text-caption {{ award.by }}]
+            .text-body2.text-justify(v-for="award in resumeFile.awards") {{ award.name }} - #[span.text-caption {{ award.by }}]
 
         div
           .text-body1.text-primary.text-bold Education
           .column.reverse.q-gutter-y-sm
-            .text-body2(v-for="edu in resumeFile.education") {{ edu.degree }} - #[span.text-caption {{ edu.locale }} ({{edu.years}})]
+            .text-body2.text-justify(v-for="edu in resumeFile.education") {{ edu.degree }} - #[span.text-caption {{ edu.locale }} ({{edu.years}})]
 
       .col.column.q-pl-md.q-gutter-y-xs
         .text-h6.text-right.text-primary Work Experience
-        .column.q-gutter-y-xs(v-for="work in WorkExperienceByCategory")
+        .column.wExp(v-for="work in WorkExperienceByCategory")
           .row
             .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} - {{ work.time }}]
           ul.column
@@ -251,6 +231,15 @@ export default class Resume extends Vue {
 .q-card
   min-height: unset
 
-.worokExp
+.workExp
   min-height: 65vh
+
+.print-only
+  .text-h6
+    font-size: 1.15rem
+  .text-subtitle2, .text-body2
+    font-size: 0.8rem
+  .wExp
+    .column
+      margin: 8px 0 !important
 </style>

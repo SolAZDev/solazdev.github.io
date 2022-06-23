@@ -2,7 +2,7 @@
 q-page(padding)
   .text-center
     .text-h6 Levels
-    .text-subtitle2 Various Levels I have designed. Click to Open full sized versions.
+    .text-subtitle2 Various Levels I have designed. Click to open the full version.
   .q-container
     .row.q-col-gutter-md.justify-center
       .col-12.col-md-6.col-lg-4(v-for="image in images")
@@ -16,14 +16,14 @@ q-page(padding)
 </template>
 
 <script lang="ts">
-import * as imgData from 'src/data/Levelsv1'
-import { Options, Vue } from 'vue-class-component';
+import * as imgData from "src/data/Levelsv1";
+import { Options, Vue } from "vue-class-component";
 
 @Options({})
 export default class Levels1 extends Vue {
-  images=[] as Array<unknown>
+  images = [] as Array<unknown>;
   mounted() {
-   this.images=imgData.default.LevelDesign1;
+    this.images = imgData.default.LevelDesign1;
   }
 }
 </script>

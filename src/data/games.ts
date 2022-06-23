@@ -18,6 +18,7 @@ export default {
         "Traditional Style Bullet Hell Bosses", "Multiple Secret Bosses",
         "Skill Trees to help you perfect your play style."
       ],
+      collab:[],
       media: [
         { type: MediaType.Frame, description: "UNIDOS Showcase Trailer", url: "https://www.youtube.com/embed/D20WPgCeqQU" },
         { type: MediaType.Image, description: "Maze", url: "/media/Projects/Games/TDP/TDP_Maze0.jpg" },
@@ -37,7 +38,7 @@ export default {
       id: "GSW",
       type: "Published Game",
       description: "Education Semi-Social Game, intended for Kindergartners to 9th Graders",
-      about: "Genial Skills Web is an Educational Semi-Social Game, intended for (at the time of development) Kindergartners to 9th Graders. I was assigned as Lead Game Developer for major part of it's development, and developed it's core; including, but not limited to, Server Comunications, the Avatar System, Multiple Maps, Multiple Minigames, Parsing HTML to Dialogue Quizzes, it's initial UI Design, among other things.",
+      about: "Genial Skills Web is an Educational Semi-Social Game, intended for (at the time of development) Kindergartners to 9th Graders. I was assigned as Lead Game Developer for major part of it's development, and developed it's core; including, but not limited to, Server Communication, the Avatar System, Multiple Maps, Multiple Minigames, Parsing HTML to Dialogue Quizzes, it's initial UI Design, among other things.",
       status: "Released",
       genre: "Educational",
       thumb: "Projects/Games/GSW/Title.png",
@@ -58,6 +59,7 @@ export default {
         "Multiple Minigames where players can earn silvers (currency)",
         "Pseudo Online Versus Mode"
       ],
+      collab:[],
       links: [
         { name: "Official Site", icon: "fas fa-globe", url: "https://www.genialskills.com/" },
         { name: "Google Play", icon: "fab fa-google-play", url: "https://play.google.com/store/apps/details?id=com.RequireTechnology.GenialSkillsWeb" }
@@ -78,6 +80,7 @@ export default {
         "Playable in somewhat short bursts, ideal for killing time",
         "Simple Graphics"
       ],
+      collab:[],
       media: [
         { type: MediaType.Image, description: "Stage 3a", url: "/media/Projects/Games/OHT/OHT0.png" },
         { type: MediaType.Image, description: "Stage 2", url: "/media/Projects/Games/OHT/OHT1.png" },
@@ -101,6 +104,7 @@ export default {
         "Touch Focused Controls",
         "Playable in 2, 5, and 10 minute bursts, perfect for killing time",
       ],
+      collab:[],
       media: [
         { type: MediaType.Image, description: "Best Case Scenario", url: "/media/Projects/Games/HECC/HECC0.png" },
         { type: MediaType.Image, description: "Rubble and Damage", url: "/media/Projects/Games/HECC/HECC1.png" },
@@ -125,6 +129,7 @@ export default {
         "One Large Open Level",
         "Retro Inspired, Simple Visuals",
       ],
+      collab:[],
       media: [
         { type: MediaType.Image, description: "Map Preview", url: "/media/Projects/Games/NSP/NSPScreenshot1.jpeg" },
         { type: MediaType.Image, description: "Hills", url: "/media/Projects/Games/NSP/NSPScreenshot2.png" },
@@ -148,6 +153,7 @@ export default {
         "Puzzle-like Platforming with traps that affects both the player and their thoughts.",
         "2 Decently Sized, 15-minute Levels",
       ],
+      collab:[],
       media: [
         { type: MediaType.Image, description: "Depress/Blocked Mode", url: "/media/Projects/Games/PCD/PCD0.jpg" },
         { type: MediaType.Image, description: "Boss 1", url: "/media/Projects/Games/PCD/PCD1.jpg" },

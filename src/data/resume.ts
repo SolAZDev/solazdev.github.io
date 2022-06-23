@@ -19,23 +19,20 @@ export default {
     "Lead the development of at least 3 games, some of which have been released.",
     "Regular and effective back-and-forth conversations to find the most efficient way to solve problems.",
   ],
-  skills: {
-    major: [
-      "Strong Attention to Detail",
-      // "3D Modeling",
-      // "Modular Set & Level Design",
-      "Video Editing",
-      // "Key-frame Animation",
-      "Fully Bilingual (English & Spanish)",
-    ],
-    minor: [
-      "Code Documentation (Doxygen)",
-      "UX & UI Design",
-      "Storyboarding",
-      "Multi-phase Planning",
-      "Agile",
-      "Scrum",
-      "Continuous Integration",
+  skills: [
+    "Strong Attention to Detail",
+    // "3D Modeling",
+    // "Modular Set & Level Design",
+    "Video Editing",
+    // "Key-frame Animation",
+    "Fully Bilingual (English & Spanish)",
+    "Code Documentation (Doxygen)",
+    "UX & UI Design",
+    "Storyboarding",
+    "Multi-phase Planning",
+    "Agile",
+    "Scrum",
+    "Continuous Integration",
     ],
     frameworks: [
       {name:"C#", type:['game','software','backend']},
@@ -70,7 +67,6 @@ export default {
       {name: "JIRA", type:['software','backend']},
       {name: "GitHub", type:['game','software','backend']},
     ],
-  },
   education: [
     {
       locale: "Microsoft",
@@ -107,11 +103,9 @@ export default {
       type: ["backend", "software"],
       time: "May 2020 - Aug 2021",
       responsibilities: [
-        "Developed various parts of the SmartCare line of applications with Angular, which allows Medical Service Operators and Clients to easily connect, log medical records and book appointments.",
-        // "Developed the core"
-        // "Developed various pages and web components, and their backend functionality for the SmartCare line of products using Angular, C# & The Entity Framework",
-        "Created a web-based, Remote Desktop Viewer using SingalR, which is now used for Technical Support by operators and clients.",
-        "Established and Standardized an efficient web development workflow for future projects using Pug and it's Mixins, which significantly decreased UI development time",
+        "Developed various parts of the SmartCare line of applications with Angular, which allows Medical Service Operators and their clients to easily connect, log medical records and book appointments.",
+        "Created a web-based, Remote Desktop Viewer using Angular & SignalR, which is now used for Technical Support said operators and clients.",
+        "Established and Standardized an efficient web development workflow for future projects using Pug and it's Mixins, which significantly decreased UI development by 2/3.",
         "Identified shortcomings and oversights, and developed solutions to circumvent them based on user and team feedback.",
       ],
     },
@@ -144,7 +138,7 @@ export default {
       type: ["game"],
       time: "2018",
       responsibilities: [
-        "In charge of Development and Quality Assurance, and Documentation of Genial Skills Web, created with the Unity Game Engine.",
+        "In charge of Development and Quality Assurance, and Documentation of Genial Skills Web, an  created with the Unity Game Engine.",
         "Developed various mini-games for multiple types of quizzes, an Avatar System, and an In-App Purchase system using Unity's IAP API.",
         "Tested and Documented Bugs, Design Issues and Oversights, and implemented ways to circumvent them with coworker's of feedback",
         "With my contributions, the product is now on the market, and used by many schools and families.",

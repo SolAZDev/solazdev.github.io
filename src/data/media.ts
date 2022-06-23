@@ -93,7 +93,7 @@ export default {
             name: "Genial Skills Web",
             id: "GSW",
             thumb: "Projects/GSW/Title.png",
-            about: "Genial Skills Web is an Education Semi-Social Game, intended for Kindergarden Students to 9th Graders. I worked on the initial Development of Genial Skills Web, and was in charge of the core functionality, such as Server Comunication, Dividing large ammounts of text into a dialogue, making the game entretaining amongs other things. I created Several Quiz Games and the first two minigames, along with the Avatar System, the mutliple scenes and how most of the game is managed.",
+            about: "Genial Skills Web is an Education Semi-Social Game, intended for Kindergarten Students to 9th Graders. I worked on the initial Development of Genial Skills Web, and was in charge of the core functionality, such as Server Communication, Dividing large amounts of text into a dialogue, making the game entertaining amongst other things. I created Several Quiz Games and the first two mini-games, along with the Avatar System, the multiple scenes and how most of the game is managed.",
             features: [
                 "Subscription to Science, Math, Spanish and English from 1st to 9th Grade*",
                 "Pseudo Versus Mode",
@@ -160,7 +160,7 @@ export default {
                     desc: "Initial Version Prototype"
                 }
             ],
-            status: "Jam Version released, PostJam planened*",
+            status: "Jam Version released, PostJam planned*",
             genre: "Casual, Adventure",
             platform: "PC, Android",
             links: [
@@ -171,7 +171,7 @@ export default {
             name: "HECC",
             id: "HECC",
             thumb: "Projects/HECC/Title.jpg",
-            about: "A game jam entry for the Global Game Jam 2020 (Theme: Repair), which took place the last weekend of January 2018. The game is inspired by the quakes that have affected Puerto Rico throughout Decemnber 2019 and January 2020. The Hazardous & Emergency Construction Company (HECC) is tasked with repairing as many buildings in a street as quick as possible, avoiding collapses.",
+            about: "A game jam entry for the Global Game Jam 2020 (Theme: Repair), which took place the last weekend of January 2018. The game is inspired by the quakes that have affected Puerto Rico throughout December 2019 and January 2020. The Hazardous & Emergency Construction Company (HECC) is tasked with repairing as many buildings in a street as quick as possible, avoiding collapses.",
             features: [
                 "Quick Gameplay with Quick Thinking",
                 "Balanced Gameplay that gets easier over time",
@@ -204,7 +204,7 @@ export default {
             name: "No Service Provider",
             id: "NSP",
             thumb: "Projects/NSP/Title.jpeg",
-            about: "A game jam entry for the Global Game Jam 2018, which took place over a weekend. The game was inspired by the direct aftermath of Hurricane Maria in Puerto Rico. Play as a remote robot trying to recover the pieces and return them to the comunication towers. <br><br> I was in charge of the level design (terrain), and modeling. We tried to aim for simplicity, using lowpoly models and using the Master System's color palette as texture.<br><br>This game won the \"Best Use of Theme\" award.",
+            about: "A game jam entry for the Global Game Jam 2018, which took place over a weekend. The game was inspired by the direct aftermath of Hurricane Maria in Puerto Rico. Play as a remote robot trying to recover the pieces and return them to the communication towers. <br><br> I was in charge of the level design (terrain), and modeling. We tried to aim for simplicity, using low poly models and using the Master System's color palette as texture.<br><br>This game won the \"Best Use of Theme\" award.",
             features: [
                 "One Large Open Level",
                 "Retro Inspired Visuals"
@@ -257,7 +257,7 @@ export default {
             genre: "Platformer, Puzzle",
             platform: "PC, WebGL",
             links: [
-                { name: "Gamejam Entry", url: "https://itch.io/jam/game-dev-network-blueberry-jam/rate/150549" },
+                { name: "Game jam Entry", url: "https://itch.io/jam/game-dev-network-blueberry-jam/rate/150549" },
                 { name: "Game (PC & Web)", url: "https://solazdev.itch.io/colordeath" }
             ]
         }
