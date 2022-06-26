@@ -86,12 +86,12 @@ q-page
 
         div
           .text-body1.text-primary.text-bold Awards
-          .column.reverse.q-gutter-y-sm
+          .column.q-gutter-y-sm
             .text-body2.text-justify(v-for="award in resumeFile.awards") {{ award.name }} - #[span.text-caption {{ award.by }}]
 
         div
           .text-body1.text-primary.text-bold Education
-          .column.reverse.q-gutter-y-sm
+          .column.q-gutter-y-sm
             .text-body2.text-justify(v-for="edu in resumeFile.education") {{ edu.degree }} - #[span.text-caption {{ edu.locale }} ({{edu.years}})]
 
       .col.column.q-pl-md.q-gutter-y-xs
