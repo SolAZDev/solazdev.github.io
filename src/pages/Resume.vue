@@ -1,6 +1,7 @@
 <template lang="pug">
 q-page
   .print-hide
+
     .column.q-gutter-y-md(v-if="$q.screen.gt.sm")
       .text-center.text-primary
         .text-h6 Print or Save as PDF 
@@ -10,18 +11,18 @@ q-page
         .col-2.text-center #[q-btn(color='primary', icon='dns', label='Full Stack Developer', @click='PrepareAndPrint(3)') ]
     q-separator.q-my-sm.q-mx-xl(dark, v-if="$q.screen.gt.sm")
 
-    .row.q-col-gutter-md.resumeFile.q-px-xl.q-mb-lg
+    .row.q-col-gutter-md.resumeFile.q-px-lg-xl.q-mb-lg-lg.q-px-xs-md
       .col-12.col-md-4.col-lg-3.column.q-pr-lg-md
         .row.q-col-gutter-sm
           .col-12.text-center.q-mt-lg
-            .text-h4.text-primary.text-center {{ resumeFile.name }}
-            .text-h6.text-primary.text-center {{YourNext}}
+            .text-h4.text-primary.text-center(:class="$q.screen.lt.md?'text-h6':''") {{ resumeFile.name }}
+            .text-h6.text-primary.text-center(:class="$q.screen.lt.md?'text-body1':''") {{YourNext}}
             .text-body1 Available to work in the US
             .text-body1 {{ resumeFile.email }} - SolAZDev.com
 
         //- q-space
 
-        .column.q-gutter-y-lg.q-py-lg-lg
+        .column.q-gutter-y-lg.q-py-lg-lg.q-mt-xs-sm.q-mt-md-none
           div
             .text-body1.text-primary.smCmdL Skills
             .text-subtitle2.text-justify {{ listToText(resumeFile.skills) }}
@@ -233,6 +234,14 @@ export default class Resume extends Vue {
 
 .workExp
   min-height: 65vh
+
+.q-gutter-y-lg
+  *
+    @media (max-width: $breakpoint-md-min)
+      margin-top: 8px !important
+      small
+        font-size:  70%
+
 
 .print-only
   .text-h6
