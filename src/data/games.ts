@@ -18,7 +18,12 @@ export default {
         "Traditional Style Bullet Hell Bosses", "Multiple Secret Bosses",
         "Skill Trees to help you perfect your play style."
       ],
-      collab:[],
+      devInfo:[
+        "Currently a Solo Project. Developed in Unity, with some helper tools/assets.",
+        "Enemies make use of Utility AI to dictate their complex behaviors",
+        "Textures are either hand painted in  Krita or Blender, or generated with Material Maker",
+        "Models and Animations are all done in Blender."
+      ],
       media: [
         { type: MediaType.Frame, description: "UNIDOS Showcase Trailer", url: "https://www.youtube.com/embed/D20WPgCeqQU" },
         { type: MediaType.Image, description: "Maze", url: "/media/Projects/Games/TDP/TDP_Maze0.jpg" },
@@ -59,7 +64,16 @@ export default {
         "Multiple Minigames where players can earn silvers (currency)",
         "Pseudo Online Versus Mode"
       ],
-      collab:[],
+      devInfo:[
+        "Collaborated in a group of 5. 4 programmers and 2 artists.",
+        "Imported artist's assets, and worked with them to ensure their art scales, animates and looks as they intended.",
+        "Developed the Base Quiz System, based on a generated dialogue tree. Said system also expands to",
+        "Developed a Layer-based Avatar System with Color modifiers with help of UnityUIExtensions.",
+        "Developed an endless platformer mini game using Unity's 2D Base Components.",
+        "Developed all network code using Unity's UnityWebRequest, and made use of Newtonsoft.Json for easy serialization.",
+        "Development was handled in Sprint, and used the SCRUM methodology, and later on a Kanban board was used to bug tracking.",
+        "The Entirety of the Game's code was documented, and later was made into a Manual using Doxygen."
+      ],
       links: [
         { name: "Official Site", icon: "fas fa-globe", url: "https://www.genialskills.com/" },
         { name: "Google Play", icon: "fab fa-google-play", url: "https://play.google.com/store/apps/details?id=com.RequireTechnology.GenialSkillsWeb" }
@@ -80,7 +94,12 @@ export default {
         "Playable in somewhat short bursts, ideal for killing time",
         "Simple Graphics"
       ],
-      collab:[],
+      devInfo:[
+        "Collaborated with Two Artists who also worked on animation.",
+        "The Entire Game was Developed in approximately 30~ hours.",
+        "The Level Rotation is done by slowly rotating the level object, an attempt was made to rotate gravity, but time did not allow.",
+        "The game makes extensive use of SimpleSwitch, which triggers UnityEvents on collision or interaction."
+      ],
       media: [
         { type: MediaType.Image, description: "Stage 3a", url: "/media/Projects/Games/OHT/OHT0.png" },
         { type: MediaType.Image, description: "Stage 2", url: "/media/Projects/Games/OHT/OHT1.png" },
@@ -91,7 +110,7 @@ export default {
     {
       name: "HECC",
       id: "HECC",
-      type: "Game Jam Entry",
+      type: "Game Jam Entry", 
       description: "Help repair the city while dealing with earthquakes!",
       about: "A game jam entry for the Global Game Jam 2020 (Theme: Repair), which took place the last weekend of January 2018. The game is inspired by the quakes that have affected Puerto Rico throughout Decemnber 2019 and January 2020. The Hazardous & Emergency Construction Company (HECC) is tasked with repairing as many buildings in a street as quick as possible, avoiding collapses.",
       status: "Released",
@@ -104,7 +123,11 @@ export default {
         "Touch Focused Controls",
         "Playable in 2, 5, and 10 minute bursts, perfect for killing time",
       ],
-      collab:[],
+      devInfo:[
+        "Collaborated with 2 Artists and 1 more programmer",
+        "Developed an expandable resource and resolve system using ScriptableObjects",
+        "Held meetings twice per day to assess progress, and the steps to follow, and what would be added and removed."
+      ],
       media: [
         { type: MediaType.Image, description: "Best Case Scenario", url: "/media/Projects/Games/HECC/HECC0.png" },
         { type: MediaType.Image, description: "Rubble and Damage", url: "/media/Projects/Games/HECC/HECC1.png" },
@@ -129,7 +152,12 @@ export default {
         "One Large Open Level",
         "Retro Inspired, Simple Visuals",
       ],
-      collab:[],
+      devInfo:[
+        "Collaborated with 2 other programmers, but we all wore different hats.",
+        "I wore the hat of Modeler, Animator, Audio Programmer and Level Designer.",
+        "Models and Animations were done in Blender"
+
+      ],
       media: [
         { type: MediaType.Image, description: "Map Preview", url: "/media/Projects/Games/NSP/NSPScreenshot1.jpeg" },
         { type: MediaType.Image, description: "Hills", url: "/media/Projects/Games/NSP/NSPScreenshot2.png" },
@@ -153,9 +181,10 @@ export default {
         "Puzzle-like Platforming with traps that affects both the player and their thoughts.",
         "2 Decently Sized, 15-minute Levels",
       ],
-      collab:[
-        "Collaborated with 3 Artists, in the game jam.",
-        "Continously collaborated to find new ideas to implement"
+      devInfo:[
+        "Collaborated with 3 Artists, in the game jam. Who were participating for their first time.",
+        "Regularly talked throughout the days to find new ideas to implement",
+        "Developed a SimpleSwitch which trigger a UnityEvent on collision, interaction, and on a timer.",
       ],
       media: [
         { type: MediaType.Image, description: "Depress/Blocked Mode", url: "/media/Projects/Games/PCD/PCD0.jpg" },

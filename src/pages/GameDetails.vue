@@ -14,46 +14,50 @@ q-page(padding v-if="game.name!=''")
           .absolute-bottom.custom-caption.text-center
             .text-h5 {{media.description}}
 
-    .col-12.col-lg-5
+    .col-12.col-lg-5.column.q-gutter-y-sm
       .text-h6.text-center.fade-bottom-edge About
-      .text-body1.text-justify {{game.about}}
+      p.text-body1.text-justify {{game.about}}
       .text-h6.text-center.fade-bottom-edge Features
       ul #[li.text-body1.text-justify(v-for="feat in game.features") {{ feat }}]
+      .text-h6.text-center.fade-bottom-edge(v-if="game.devInfo") Development Information
+      ul(v-if="game.devInfo") #[li.text-body1.text-justify(v-for="info in game.devInfo") {{ info }}]
       .text-h6.text-center.fade-bottom-edge More Information
-      .row.text-body1
-        .col-6.text-left Status
-        .col-6.text-right {{game.status}}
-        .col-6.text-left Genre
-        .col-6.text-right {{game.genre}}
-        .col-6.text-left Target Platforms
-        .col-6.text-right {{game.platform}}
-        .col-12.text-center(v-if="game.links!=null") Links
-          .row
-            .col(v-for="link in game.links")
-              IconLink(:link="link.url" size="lg" :icon="link.icon" :name="link.name")
+      .text-body1 Status : {{game.status}}
+      .text-body1 Genre : {{game.genre}}
+      .text-body1 Target Platforms : {{game.platform}}
+      .text-h6.text-center(v-if="game.links!=null") Links
+        .row.justify-center
+          .col(v-for="link in game.links")
+            IconLink(:link="link.url" size="md" :icon="link.icon" :name="link.name")
 </template>
 <script lang="ts">
 import { GameInfo, MediaType } from "src/data/models";
 import { Options, Vue } from "vue-class-component";
 import * as GameData from "../data/games";
-import IconLink from 'components/IconLink.vue'
+import IconLink from "components/IconLink.vue";
 
-@Options({components:{IconLink}})
+@Options({ components: { IconLink } })
 export default class GameDetails extends Vue {
   publicPath = "/media/";
   game = {} as unknown as GameInfo;
   mType = MediaType;
-  slide=""
+  slide = "";
   mounted() {
     this.game = GameData.default.Games.filter(
       (p) => p.id == this.$route.params.id.toString()
     )[0];
-    this.slide=this.game.media[0].description;
+    this.slide = this.game.media[0].description;
   }
-  get CarouselSize(){
-    if(this.$q.screen.lt.sm){return "35vh"}
-    if(this.$q.screen .lt.md){return "50vh"}
-    if(this.$q.screen.gt.md){return "65vh"}
+  get CarouselSize() {
+    if (this.$q.screen.lt.sm) {
+      return "35vh";
+    }
+    if (this.$q.screen.lt.md) {
+      return "50vh";
+    }
+    if (this.$q.screen.gt.md) {
+      return "65vh";
+    }
   }
 }
 </script>
@@ -68,4 +72,12 @@ export default class GameDetails extends Vue {
 //   @media (min-width: $breakpoint-lg-min)
 //     min-height: 60vh
 
+.text-justify
+  hyphens: none
+
+.statList
+  @media (min-width: $breakpoint-md-min)
+    width: 80% !important
+    .col-6
+      padding: 0 16px
 </style>

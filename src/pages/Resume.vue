@@ -11,7 +11,7 @@ q-page
     q-separator.q-my-sm.q-mx-xl(dark, v-if="$q.screen.gt.sm")
 
     .row.q-col-gutter-md.resumeFile.q-px-xl.q-mb-lg
-      .col-12.col-md-4.col-lg-3.rc
+      .col-12.col-md-4.col-lg-3.column.q-pr-lg-md
         .row.q-col-gutter-sm
           .col-12.text-center.q-mt-lg
             .text-h4.text-primary.text-center {{ resumeFile.name }}
@@ -21,7 +21,7 @@ q-page
 
         //- q-space
 
-        .column.q-gutter-y-lg.q-py-lg
+        .column.q-gutter-y-lg.q-py-lg-lg
           div
             .text-body1.text-primary.smCmdL Skills
             .text-subtitle2.text-justify {{ listToText(resumeFile.skills) }}
@@ -46,7 +46,7 @@ q-page
               div(v-for="edu in resumeFile.education")
                 .text-subtitle1 {{ edu.degree }} - #[small.text-subtitle2 {{ edu.locale }} ({{edu.years}})]
 
-      .col-12.col-md-8.col-lg-9
+      .col-12.col-md-8.col-lg-9.q-pl-lg-md
         .q-mt-lg.text-h5.text-primary.q-mb-md.text-center Work Experience
         .row.q-col-gutter-xs.bg-dark.rounded-borders.workExp
           .col-12.col-lg-6(v-for="work in resumeFile.work")
@@ -100,7 +100,7 @@ q-page
           .row
             .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} - {{ work.time }}]
           ul.column
-            li.text-body2(v-for="resp in work.responsibilities") {{ resp }}
+            li(v-for="resp in work.responsibilities") {{ resp }}
 
  
 </template>
@@ -241,5 +241,12 @@ export default class Resume extends Vue {
     font-size: 0.8rem
   .wExp
     .column
-      margin: 8px 0 !important
+      margin: 8px 0
+  ul
+    padding-left: 4px !important
+    margin-top: 4px !important
+    li
+      font-size: 0.8rem
+      text-align: justify
+      hyphens: none
 </style>

@@ -19,4 +19,3 @@ export default class GamesMenu extends Vue {
   Games = GameData.default.Games;
 }
 </script>
-<style lang="sass"></style>

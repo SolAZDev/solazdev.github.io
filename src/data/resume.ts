@@ -20,19 +20,19 @@ export default {
     "Regular and effective back-and-forth conversations to find the most efficient way to solve problems.",
   ],
   skills: [
-    "Strong Attention to Detail",
-    // "3D Modeling",
-    // "Modular Set & Level Design",
-    "Video Editing",
-    // "Key-frame Animation",
-    "Fully Bilingual (English & Spanish)",
+    "Agile",
+    "Scrum",
+    "Multi-phase Planning",
+    "Continuous Integration",
+    "Bilingual (English & Spanish)",
     "Code Documentation (Doxygen)",
     "UX & UI Design",
     "Storyboarding",
-    "Multi-phase Planning",
-    "Agile",
-    "Scrum",
-    "Continuous Integration",
+    "Video Editing",
+    // "Strong Attention to Detail",
+    // "3D Modeling",
+    // "Modular Set & Level Design",
+    // "Key-frame Animation",
     ],
     frameworks: [
       {name:"C#", type:['game','software','backend']},
@@ -90,9 +90,9 @@ export default {
       time: "Oct 2021 - Current",
       type: ["game", "software"],
       responsibilities: [
-        "Recreated the studio's website with Vue and the Quasar Framework, resulting in significant reduction in load times, and minimizing maintenance verbosity.",
+        "Recreated the studio's website with Vue and the Quasar Framework, resulting in significant reduction in load times, and minimizing verbosity.",
         // "Developed mobile apps "
-        "Developed various Apps and Experiences for Clients, using Vue, the Quasar Framework, and the Unity Game Engine.",
+        "Developed various Apps and Experiences for Clients, using Vue, the Quasar Framework, and the Unity Game Engine, some of which are now in production.",
         "Established and Standardized and efficient development workflow for future app development using the Quasar Framework, lowering the barrier to entry and allowing developers to achieve faster results.",
         "Continuously collaborated with coworkers from multiple departments to ensure smooth production and innovative techniques to further improve projects.",
       ],
@@ -106,7 +106,7 @@ export default {
         "Developed various parts of the SmartCare line of applications with Angular, which allows Medical Service Operators and their clients to easily connect, log medical records and book appointments.",
         "Created a web-based, Remote Desktop Viewer using Angular & SignalR, which is now used for Technical Support said operators and clients.",
         "Established and Standardized an efficient web development workflow for future projects using Pug and it's Mixins, which significantly decreased UI development by 2/3.",
-        "Identified shortcomings and oversights, and developed solutions to circumvent them based on user and team feedback.",
+        "Attended daily meetings with team mates to assess progress as well as shortcomings and find ways to circumvent them, allowing us to maintain a steady flow of new tasks on Azure DevOps Boards."
       ],
     },
     {
@@ -117,7 +117,7 @@ export default {
       responsibilities: [
         "Developed various new pages and segments of AngularJS- based, PRCorp web app, which allow Tax Form companies to complete forms efficiently.",
         "Efficiently translated parts of the backend, from C# to F#, & developed new segments in F#, which included communicating with a PostgreSQL database, which overcomes cyclic dependencies in the tax forms.",
-        "Extensively tested software to ensure there were no downtimes, or UI/UX inconsistencies.",
+        "Extensively tested software to ensure there were no downtimes, or UI/UX inconsistencies, any that could not be fixed would be reported for a future task in JIRA.",
       ],
     },
     {
@@ -128,8 +128,8 @@ export default {
       responsibilities: [
         "Developed a Complete Ecosystem, Which included Administrative and Employee apps that are now part of a pipeline of a client.",
         "The Applications were developed with Angular & Ionic, which allowed for a responsive design, while easing development time.",
-        "The Server was developed with PHP and included a MySQL database, which was tied together by the Slim Framework, which allowed for a simple REST API solution.",
-        "Streamlined User Interfaces for both applications based on user feedback.",
+        "The Server was developed with PHP and included a MySQL database, which was tied together by the Slim Framework as a REST API solution.",
+        "Streamlined User Interfaces for both applications based on user feedback. Any new features would be added onto future sprints in JIRA.",
       ],
     },
     {
