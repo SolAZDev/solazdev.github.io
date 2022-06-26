@@ -4,7 +4,7 @@ q-page(padding v-if="game.name!=''")
     .text-caption {{game.type}}
     .text-h4 {{game.name}}
     .text-caption {{game.description}}
-  .row.q-col-gutter-sm.q-pt-sm.q-pb-sm
+  .row.q-col-gutter-sm.q-py-sm
     .col-12.col-lg-7
       //- span Pictures Here
       q-carousel.text-white.shadow-1.rounded-borders(v-model='slide', swipeable, animated, navigation-icon='radio_button_unchecked', navigation, arrows, infinite, height="unset")
@@ -14,7 +14,7 @@ q-page(padding v-if="game.name!=''")
           .absolute-bottom.custom-caption.text-center
             .text-h5 {{media.description}}
 
-    .col-12.col-lg-5.column.q-gutter-y-sm
+    .col-12.col-lg-5.column.q-gutter-y-sm.q-px-xs-md.q-px-md-sm
       .text-h6.text-center.fade-bottom-edge About
       p.text-body1.text-justify {{game.about}}
       .text-h6.text-center.fade-bottom-edge Features
