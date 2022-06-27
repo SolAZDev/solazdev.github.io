@@ -75,28 +75,36 @@ q-page
         //- q-space
         div
           .text-body1.text-primary.text-bold Skills
+          .hLSeparator
           .text-body2.text-justify {{ listToText(resumeFile.skills, " | ") }}
 
         div
           .text-body1.text-primary.text-bold Languages & Frameworks
+          .hLSeparator
           .text-body2.text-justify {{ objListToString(resumeFile.frameworks, true) }}
 
         div
           .text-body1.text-primary.text-bold Software
+          .hLSeparator
           .text-body2.text-justify {{ objListToString(resumeFile.software, true) }}
 
         div
           .text-body1.text-primary.text-bold Awards
+          .hLSeparator
           .column.q-gutter-y-sm
             .text-body2.text-justify(v-for="award in resumeFile.awards") {{ award.name }} - #[span.text-caption {{ award.by }}]
 
         div
           .text-body1.text-primary.text-bold Education
+          .hLSeparator
           .column.q-gutter-y-sm
             .text-body2.text-justify(v-for="edu in resumeFile.education") {{ edu.degree }} - #[span.text-caption {{ edu.locale }} ({{edu.years}})]
+      
+      //- .vSeparator
 
       .col.column.q-pl-md.q-gutter-y-xs
-        .text-h6.text-right.text-primary Work Experience
+        .text-h6.text-right.text-primary Work Experience 
+        .hRSeparator
         .column.wExp(v-for="work in WorkExperienceByCategory")
           .row
             .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} - {{ work.time }}]
@@ -248,6 +256,7 @@ export default class Resume extends Vue {
     font-size: 1.15rem
   .text-subtitle2, .text-body2
     font-size: 0.8rem
+
   .wExp
     .column
       margin: 8px 0
@@ -258,4 +267,16 @@ export default class Resume extends Vue {
       font-size: 0.8rem
       text-align: justify
       hyphens: none
+
+.vSeparator
+  border: 1px solid transparentize($primary, .5)
+  margin: 5px 2px 1vh 0px !important
+
+.hRSeparator
+  border-bottom: 2px solid transparentize($primary, .5)
+  margin: -4px 0px 0px 5% !important
+
+.hLSeparator
+  border-bottom: 2px solid transparentize($primary, .5)
+  margin: -4px 5% 0px 0px !important
 </style>
