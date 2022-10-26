@@ -4,8 +4,8 @@ q-page
 
     .column.q-gutter-y-md(v-if="$q.screen.gt.sm")
       .text-center.text-primary
-        .text-h6 Print or Save as PDF 
-      .row.justify-center(style="height:5vh") 
+        .text-h6 Print or Save as PDF
+      .row.justify-center(style="height:5vh")
         .col-2.text-center #[q-btn(color='primary', icon='games', label='Game Developer', @click='PrepareAndPrint(1)') ]
         .col-2.text-center #[q-btn(color='primary', icon='devices', label='Software Developer', @click='PrepareAndPrint(2)') ]
         .col-2.text-center #[q-btn(color='primary', icon='dns', label='Full Stack ', @click='PrepareAndPrint(3)') ]
@@ -51,7 +51,7 @@ q-page
       .col-12.col-md-8.col-lg-9.q-pl-lg-md
         .q-mt-lg.text-h5.text-primary.q-mb-md.text-center Work Experience
         .row.q-col-gutter-xs.bg-dark.rounded-borders.workExp
-          .col-12.col-lg-6(v-for="work in PrepareJob(resumeFile.work)")
+          .col-12.col-lg-6(v-for="work in resumeFile.work")
             q-card.no-shadow.q-card-experience
               q-card-section.q-pb-none
                 .text-center
@@ -104,15 +104,15 @@ q-page
       //- .vSeparator
 
       .col.column.q-pl-md.q-gutter-y-xs
-        .text-h6.text-right.text-primary Work Experience 
+        .text-h6.text-right.text-primary Work Experience
         .hRSeparator
-        .column.wExp(v-for="work in PrepareJob(WorkExperienceByCategory)")
+        .column.wExp(v-for="work in WorkExperienceByCategory")
           .row
             .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} - {{ work.time }}]
           ul.column
-            li(v-for="resp in work.responsibilities" v-html="resp") 
+            li(v-for="resp in work.responsibilities" v-html="resp")
 
- 
+
 </template>
 <script lang="ts">
 import resume from "src/data/resume";
