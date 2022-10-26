@@ -8,7 +8,8 @@ q-page
       .row.justify-center(style="height:5vh") 
         .col-2.text-center #[q-btn(color='primary', icon='games', label='Game Developer', @click='PrepareAndPrint(1)') ]
         .col-2.text-center #[q-btn(color='primary', icon='devices', label='Software Developer', @click='PrepareAndPrint(2)') ]
-        .col-2.text-center #[q-btn(color='primary', icon='dns', label='Full Stack Developer', @click='PrepareAndPrint(3)') ]
+        .col-2.text-center #[q-btn(color='primary', icon='dns', label='Full Stack ', @click='PrepareAndPrint(3)') ]
+        .col-2.text-center #[q-btn(color='primary', icon='description', label='Everything', @click='PrepareAndPrint(0)') ]
     q-separator.q-my-sm.q-mx-xl(dark, v-if="$q.screen.gt.sm")
 
     .row.q-col-gutter-md.resumeFile.q-px-lg-xl.q-mb-lg-lg.q-px-xs-md
@@ -50,7 +51,7 @@ q-page
       .col-12.col-md-8.col-lg-9.q-pl-lg-md
         .q-mt-lg.text-h5.text-primary.q-mb-md.text-center Work Experience
         .row.q-col-gutter-xs.bg-dark.rounded-borders.workExp
-          .col-12.col-lg-6(v-for="work in resumeFile.work")
+          .col-12.col-lg-6(v-for="work in PrepareJob(resumeFile.work)")
             q-card.no-shadow.q-card-experience
               q-card-section.q-pb-none
                 .text-center
@@ -59,7 +60,7 @@ q-page
               q-card-section.q-pt-md
                 .text-center.text-body2 Responsibilities & Achievements
                 ul.q-pl-sm.q-mt-xs.q-mb-none.text-justify.q-gutter-y-xs
-                  li.text-subtitle2(v-for="resp in work.responsibilities") {{ resp }}
+                  li.text-subtitle2(v-for="resp in work.responsibilities" v-html="resp")
 
 
   //- Print Version
@@ -99,17 +100,17 @@ q-page
           .hLSeparator
           .column.q-gutter-y-sm
             .text-body2.text-justify(v-for="edu in resumeFile.education") {{ edu.degree }} - #[span.text-caption {{ edu.locale }} ({{edu.years}})]
-      
+
       //- .vSeparator
 
       .col.column.q-pl-md.q-gutter-y-xs
         .text-h6.text-right.text-primary Work Experience 
         .hRSeparator
-        .column.wExp(v-for="work in WorkExperienceByCategory")
+        .column.wExp(v-for="work in PrepareJob(WorkExperienceByCategory)")
           .row
             .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} - {{ work.time }}]
           ul.column
-            li(v-for="resp in work.responsibilities") {{ resp }}
+            li(v-for="resp in work.responsibilities" v-html="resp") 
 
  
 </template>
@@ -138,14 +139,8 @@ export default class Resume extends Vue {
     return this.listToText(final);
   }
 
-  printResume() {
-    print();
-  }
-
-  get WorkExperience() {
-    return Array.from(this.resumeFile.work).splice(0, 6);
-  }
   get WorkExperienceByCategory() {
+    if (this.category == '') return resume.work;
     return Array.from(resume.work)
       .filter((w) => w.type.includes(this.category))
       .splice(0, this.filterOnMain ? 6 : this.printJobLimit);
@@ -171,6 +166,9 @@ export default class Resume extends Vue {
   PrepareAndPrint(kind: number) {
     console.log(kind);
     switch (kind) {
+      case 0:
+        this.category = "";
+        break;
       case 1:
         this.category = "game";
         break;
@@ -184,6 +182,37 @@ export default class Resume extends Vue {
     setTimeout(() => print(), 120);
     setTimeout(() => (this.category = ""), 150);
     // print();
+  }
+
+  // Horrible, but test base for Resume Builder App
+  BoldenSkills(skills: Array<{ name: string, type: string[] }>, responsibilities: Array<string>) {
+    let fResp = Array.from(responsibilities)
+    skills.forEach(skill => {
+      let bolden = false;
+      fResp.forEach(resp => {
+        if (resp.includes(skill.name) || !bolden) {
+          resp = resp.replace(skill.name, "<b>" + skill.name + "</b>");
+          bolden = true;
+        }
+      })
+    })
+    return fResp
+  }
+
+  PrepareJob(work: Array<{
+    position: string;
+    employer: string;
+    time: string;
+    type: string[];
+    responsibilities: string[];
+  }>) {
+    let pWork = Array.from(work);
+    pWork.forEach(w => {
+      w.responsibilities = this.BoldenSkills(this.resumeFile.software, w.responsibilities);
+      w.responsibilities = this.BoldenSkills(this.resumeFile.frameworks, w.responsibilities);
+      // console.log(w.responsibilities);
+    })
+    return pWork;
   }
 }
 </script>
