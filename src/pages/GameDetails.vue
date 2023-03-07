@@ -6,7 +6,6 @@ q-page(padding v-if="game.name!=''")
     .text-caption {{game.description}}
   .row.q-col-gutter-sm.q-py-sm
     .col-12.col-lg-7
-      //- span Pictures Here
       q-carousel.text-white.shadow-1.rounded-borders(v-model='slide', swipeable, animated, navigation-icon='radio_button_unchecked', navigation, arrows, infinite, height="unset")
         q-carousel-slide.column.no-wrap(v-for="media in game.media" :key="media.description" :name="media.description")
           q-img(:src='media.url', :ratio='16/9', spinner-color='primary', spinner-size='82px' v-if="media.type==mType.Image")
@@ -28,49 +27,41 @@ q-page(padding v-if="game.name!=''")
       .text-h6.text-center(v-if="game.links!=null") Links
         .row.justify-center
           .col(v-for="link in game.links")
-            IconLink(:link="link.url" size="md" :icon="link.icon" :name="link.name")
+            //- IconLink(:link="link.url" size="md" :icon="link.icon" :name="link.name")
 </template>
-<script lang="ts">
-import { GameInfo, MediaType } from "src/data/models";
-import { Options, Vue } from "vue-class-component";
-import * as GameData from "../data/games";
-import IconLink from "components/IconLink.vue";
+<script lang="ts" setup>
+import type { GameInfo } from 'src/data/models';
+import { MediaType } from 'src/data/models';
+import * as GameData from '../data/games';
+import IconLink from 'components/IconLink.vue';
+import { computed, onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import { useQuasar } from 'quasar';
 
-@Options({ components: { IconLink } })
-export default class GameDetails extends Vue {
-  publicPath = "/media/";
-  game = {} as unknown as GameInfo;
-  mType = MediaType;
-  slide = "";
-  mounted() {
-    this.game = GameData.default.Games.filter(
-      (p) => p.id == this.$route.params.id.toString()
-    )[0];
-    this.slide = this.game.media[0].description;
-  }
-  get CarouselSize() {
-    if (this.$q.screen.lt.sm) {
-      return "35vh";
-    }
-    if (this.$q.screen.lt.md) {
-      return "50vh";
-    }
-    if (this.$q.screen.gt.md) {
-      return "65vh";
-    }
-  }
-}
+const $route = useRoute();
+const $q = useQuasar();
+const mType = MediaType;
+const publicPath = ref('/media/');
+const game = ref({} as unknown as GameInfo);
+const slide = ref('');
+
+onMounted(() => {
+  game.value = GameData.default.Games.filter(
+    (p) => p.id == $route.params.id.toString()
+  )[0];
+  slide.value = game.value.media[0].description;
+});
+
+const CarouselSize = computed(() => {
+  if ($q.screen.lt.sm) return '35vh';
+  if ($q.screen.lt.md) return '50vh';
+  if ($q.screen.gt.md) return '65vh';
+  return '50vh'; //Just Default to this.
+});
 </script>
-
 <style lang="sass">
 .header
   width: 100%
-
-// .q-carousel
-//   @media (max-width: $breakpoint-md-max)
-//     min-height: 25vh
-//   @media (min-width: $breakpoint-lg-min)
-//     min-height: 60vh
 
 .text-justify
   hyphens: none

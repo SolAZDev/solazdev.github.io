@@ -1,26 +1,14 @@
 <template lang="pug">
 a.text-primary(:href="link", target="_blank")
-  q-icon(:name="icon", :size="size")
+  q-icon(:name='icon', :size="size")
   .text-body1(v-if="name!=''") {{ name }}
 </template>
-
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-
-@Options({
-  props: {
-    link: String,
-    icon: String,
-    size: String,
-    name: String,
-  },
-})
-export default class IconLink extends Vue {
-  link!: string;
-  icon!: string;
-  size!: string;
-  name!: string;
-}
+<script lang="ts" setup>
+import { defineProps } from 'vue';
+const props = defineProps({
+  link: String,
+  icon: String,
+  size: String,
+  name: String,
+});
 </script>
-
-<style lang="sass" scoped></style>

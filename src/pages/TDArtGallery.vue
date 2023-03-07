@@ -9,10 +9,6 @@ q-page(padding)
         q-img(:src='"/media/"+render.thumb', spinner-color='primary', spinner-size='82px' @click="openViewer(render.id)", fit="cover")
           .absolute-bottom.text-subtitle1.text-center {{render.name}}
 
-    //- .gallery
-      .pics(v-for="render in renders")
-        //- a(:href='"/media/"+renders.', target="_blank")
-
 q-dialog(v-model="viewerOpen" full-width :full-height="$q.screen.lt.md")
   q-card.q-pb-none
     q-card-section.row.items-center.q-pb-none
@@ -35,27 +31,22 @@ q-dialog(v-model="viewerOpen" full-width :full-height="$q.screen.lt.md")
         .text-h6.text-center.fade-bottom-edge(v-if="renderInfo.features.length>0") More Information
         ul.q-pl-md(v-if="renderInfo.features.length>0") #[li.text-body1.text-justify(v-for="feat in renderInfo.features") {{ feat }}]
 </template>
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import * as Data from 'src/data/3dArt'
-import { RenderInfo } from 'src/data/models';
+<script lang="ts" setup>
+import type { RenderInfo } from 'src/data/models';
+import * as Data from 'src/data/3dArt';
+import { ref } from 'vue';
 
-@Options({})
-export default class TDArtGallery extends Vue {
-  renders=[] as Array<unknown>
-  renderInfo = {} as RenderInfo
-  viewerOpen=false;
-  publicPath="/media/"
-  slide="";
-  mounted() {
-   this.renders=Data.default.TDArt;
-  }
-  openViewer(id: string){
-    console.log(id);
-    this.renderInfo=Data.default.TDArt.filter(r=>r.id==id)[0];
-    this.slide=this.renderInfo.media[0].description;
-    this.viewerOpen=true;
-  }
+const renders = ref(Data.default.TDArt);
+const renderInfo = ref({} as RenderInfo);
+const viewerOpen = ref(false);
+const publicPath = ref('/media/');
+const slide = ref('');
+
+function openViewer(id: string) {
+  console.log(id);
+  renderInfo.value = Data.default.TDArt.filter((r) => r.id == id)[0];
+  slide.value = renderInfo.value.media[0].description;
+  viewerOpen.value = true;
 }
 </script>
 <style lang="sass" scoped>

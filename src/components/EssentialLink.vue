@@ -14,23 +14,21 @@
 
     <q-item-section>
       <q-item-label>{{ title }}</q-item-label>
-      <q-item-label caption>
-        {{ caption }}
-      </q-item-label>
+      <q-item-label caption>{{ caption }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
 
-<script lang="ts">
-import { Vue, prop, Options } from 'vue-class-component';
-
-class Props {
-  readonly title!: string;
-  readonly caption = prop({ default: '' });
-  readonly link = prop({ default: '#' });
-  readonly icon = prop({ default: '' });
+<script setup lang="ts">
+export interface EssentialLinkProps {
+  title: string;
+  caption?: string;
+  link?: string;
+  icon?: string;
 }
-
-@Options({})
-export default class EssentialLink extends Vue.with(Props) {}
+withDefaults(defineProps<EssentialLinkProps>(), {
+  caption: '',
+  link: '#',
+  icon: '',
+});
 </script>

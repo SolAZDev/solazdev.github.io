@@ -5,48 +5,38 @@ q-layout(view="hHh lpR fFf")
       q-btn(dense flat round icon="menu" @click="toggleLeftDrawer" v-if="$q.screen.lt.sm")
       q-toolbar-title.text-primary(@click="toggleLeftDrawer" v-if="$q.screen.lt.sm") SolAZDev
       .container(v-if="!$q.screen.lt.sm")
-        q-tabs.text-primary.text-left(v-model='tab')
+        q-tabs.text-primary.text-left(v-model='activeTab')
           q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
 
-  q-drawer.print-hide(v-model="leftDrawerOpen" side="left" overlay bordered width="50vw")
+  q-drawer.print-hide(v-model="leftDrawerOpen" side="left" overlay bordered)
     //- !-- drawer content --
     .text-h4.text-center.menuText.text-primary Menu
-    q-tabs.text-primary.text-left(v-model='tab' vertical)
+    q-tabs.text-primary.text-left(v-model='activeTab' vertical)
       q-route-tab(v-for="item in items" :name='item.name', :label='item.label', :to='item.to', no-caps)
 
   q-page-container.body-dark
     router-view
 </template>
+<script lang="ts" setup>
+import { useQuasar } from 'quasar';
+import { computed, onMounted, ref } from 'vue';
 
-<script lang="ts">
-import { Vue, Options } from "vue-class-component";
+const $q = useQuasar();
 
-@Options({})
-export default class MainLayout extends Vue {
-  leftDrawerOpen = false;
-  // essentialLinks = linksList;
-  items = [
-    { name: "home", label: "SolAZDev", to: "/", class: "brand" },
-    { name: "games", label: "Games", to: "/games" },
-    { name: "resume", label: "Resume", to: "/resume" },
-    { name: "vport", label: "Visual Works Portfolio", to: "/visuals" },
-    { name: "other", label: "Other works", to: "/other" },
-  ];
-  mounted() {
-    this.$q.dark.set(true);
-  }
-  toggleLeftDrawer() {
-    this.leftDrawerOpen = !this.leftDrawerOpen;
-  }
-  activeTab = "home";
+const leftDrawerOpen = ref(false);
+const activeTab = ref('home');
+const items = ref([
+  { name: 'home', label: 'SolAZDev', to: '/', class: 'brand' },
+  { name: 'games', label: 'Games', to: '/games' },
+  { name: 'resume', label: 'Resume', to: '/resume' },
+  { name: 'vport', label: 'Visual Works Portfolio', to: '/visuals' },
+  { name: 'other', label: 'Other works', to: '/other' },
+]);
 
-  get MidSmall() {
-    return this.$q.screen.sizes.sm + this.$q.screen.sizes.md / 4;
-  }
+onMounted(() => $q.dark.set(true));
 
-  get isSmall() {
-    return this.$q.screen.lt.md;
-  }
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
 <style lang="sass" scoped>

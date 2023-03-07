@@ -1,0 +1,7 @@
+{
+  "appId": "dev.solazdev.website",
+  "appName": "SolAZDev",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www"
+}

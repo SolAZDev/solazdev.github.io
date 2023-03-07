@@ -106,114 +106,129 @@ q-page
       .col.column.q-pl-md.q-gutter-y-xs
         .text-h6.text-right.text-primary Work Experience
         .hRSeparator
-        .column.wExp(v-for="work in WorkExperienceByCategory")
-          .row
-            .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} - {{ work.time }}]
-          ul.column
-            li(v-for="resp in work.responsibilities" v-html="resp")
+        .column.wExp.q-gutter-y-md(v-for="work in WorkExperienceByCategory")
+          div
+            .row
+              .col.text-body2.text-weight-bold.text-primary {{ work.position }} #[span.text-weight-regular.text-caption at {{ work.employer }} - {{ work.time }}]
+            ul.column
+              li(v-for="resp in work.responsibilities" v-html="resp")
 
 
 </template>
-<script lang="ts">
-import resume from "src/data/resume";
-import { Options, Vue } from "vue-class-component";
+<script lang="ts" setup>
+import resume from 'src/data/resume';
+import { computed, ref } from 'vue';
 
-@Options({})
-export default class Resume extends Vue {
-  resumeFile = resume;
-  category = "game";
-  filterOnMain = false;
-  printDiag = false;
-  printJobLimit = 5;
-  listToText(arr: Array<string>, separator = " | ") {
-    return arr.toString().replace(/,/g, separator);
+const resumeFile = ref(resume);
+const category = ref('game');
+const filterOnMain = ref(false);
+const printDiag = ref(false);
+const printJobLimit = 5;
+
+const WorkExperienceByCategory = computed(() => {
+  if (category.value == '') return resume.work;
+  return Array.from(resume.work)
+    .filter((w) => w.type.includes(category.value))
+    .splice(0, filterOnMain.value ? 6 : printJobLimit);
+});
+
+const YourNext = computed(() => {
+  let str = '';
+  switch (category.value) {
+    default:
+      str = 'Passionate Developer.';
+      break;
+    case 'game':
+      str = 'Passionate Game Developer.';
+      break;
+    case 'software':
+      str = 'Passionate Web & Software Developer.';
+      break;
+    case 'backend':
+      str = 'Passionate Full Stack Developer.';
+      break;
   }
-  objListToString(obj: { name: string; type: string[] }[], filtered = false) {
-    let final = new Array<string>();
-    obj.forEach((o) => {
-      if (this.category == "" || !filtered) final.push(o.name);
-      else {
-        if (o.type.includes(this.category)) final.push(o.name);
+  return str;
+});
+
+function listToText(arr: Array<string>, separator = ' | ') {
+  return arr.toString().replace(/,/g, separator);
+}
+
+function objListToString(
+  obj: { name: string; type: string[] }[],
+  filtered = false
+) {
+  let final = new Array<string>();
+  obj.forEach((o) => {
+    if (category.value == '' || !filtered) final.push(o.name);
+    else {
+      if (o.type.includes(category.value)) final.push(o.name);
+    }
+  });
+  return listToText(final);
+}
+
+function PrepareAndPrint(kind: number) {
+  console.log(kind);
+  switch (kind) {
+    case 0:
+      category.value = '';
+      break;
+    case 1:
+      category.value = 'game';
+      break;
+    case 2:
+      category.value = 'software';
+      break;
+    case 3:
+      category.value = 'backend';
+      break;
+  }
+  setTimeout(() => print(), 120);
+  setTimeout(() => (category.value = ''), 150);
+  // print();
+}
+
+function BoldenSkills(
+  skills: Array<{ name: string; type: string[] }>,
+  responsibilities: Array<string>
+) {
+  let fResp = Array.from(responsibilities);
+  skills.forEach((skill) => {
+    let bolden = false;
+    fResp.forEach((resp) => {
+      if (resp.includes(skill.name) || !bolden) {
+        resp = resp.replace(skill.name, '<b>' + skill.name + '</b>');
+        bolden = true;
       }
     });
-    return this.listToText(final);
-  }
+  });
+  return fResp;
+}
 
-  get WorkExperienceByCategory() {
-    if (this.category == '') return resume.work;
-    return Array.from(resume.work)
-      .filter((w) => w.type.includes(this.category))
-      .splice(0, this.filterOnMain ? 6 : this.printJobLimit);
-  }
-  get YourNext() {
-    let str = "";
-    switch (this.category) {
-      default:
-        str = "Passionate Developer.";
-        break;
-      case "game":
-        str = "Passionate Game Developer.";
-        break;
-      case "software":
-        str = "Passionate Web & Software Developer.";
-        break;
-      case "backend":
-        str = "Passionate Full Stack Developer.";
-        break;
-    }
-    return str;
-  }
-  PrepareAndPrint(kind: number) {
-    console.log(kind);
-    switch (kind) {
-      case 0:
-        this.category = "";
-        break;
-      case 1:
-        this.category = "game";
-        break;
-      case 2:
-        this.category = "software";
-        break;
-      case 3:
-        this.category = "backend";
-        break;
-    }
-    setTimeout(() => print(), 120);
-    setTimeout(() => (this.category = ""), 150);
-    // print();
-  }
-
-  // Horrible, but test base for Resume Builder App
-  BoldenSkills(skills: Array<{ name: string, type: string[] }>, responsibilities: Array<string>) {
-    let fResp = Array.from(responsibilities)
-    skills.forEach(skill => {
-      let bolden = false;
-      fResp.forEach(resp => {
-        if (resp.includes(skill.name) || !bolden) {
-          resp = resp.replace(skill.name, "<b>" + skill.name + "</b>");
-          bolden = true;
-        }
-      })
-    })
-    return fResp
-  }
-
-  PrepareJob(work: Array<{
+function PrepareJob(
+  work: Array<{
     position: string;
     employer: string;
     time: string;
     type: string[];
     responsibilities: string[];
-  }>) {
-    let pWork = Array.from(work);
-    pWork.forEach(w => {
-      w.responsibilities = this.BoldenSkills(this.resumeFile.software, w.responsibilities);
-      w.responsibilities = this.BoldenSkills(this.resumeFile.frameworks, w.responsibilities);
-      // console.log(w.responsibilities);
-    })
-    return pWork;
-  }
+  }>
+) {
+  let pWork = Array.from(work);
+  pWork.forEach((w) => {
+    w.responsibilities = BoldenSkills(
+      resumeFile.value.software,
+      w.responsibilities
+    );
+    w.responsibilities = BoldenSkills(
+      resumeFile.value.frameworks,
+      w.responsibilities
+    );
+    // console.log(w.responsibilities);
+  });
+  return pWork;
 }
 </script>
 <style lang="sass">
@@ -270,7 +285,7 @@ export default class Resume extends Vue {
   min-height: unset
 
 .workExp
-  min-height: 65vh
+  // min-height: 65vh
 
 .q-gutter-y-lg
   *

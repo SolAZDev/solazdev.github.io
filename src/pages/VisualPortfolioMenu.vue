@@ -8,24 +8,19 @@ q-page(padding)
       .col-12.col-md-6 #[ThumbnailCard(name="Level Design" link="/visuals/levels" :image="LevelDesignThumbnail")]
       .col-12.col-md-6 #[ThumbnailCard(name="3D Models & Renders" link="/visuals/renders" :image="RenderThumbnail")]
 </template>
-
-<script lang="ts">
-// import { Component, Vue } from 'vue-property-decorator'
+<script lang="ts" setup>
 import ThumbnailCard from 'components/ThumbnailCard.vue';
+import { computed } from 'vue';
 import * as TData from '../data/thumbnails';
-import { Options, Vue } from 'vue-class-component';
 
-@Options({
-  components:{ThumbnailCard}
-})
-export default class VisualPortfolioMenu extends Vue {
-  get LevelDesignThumbnail(){
-    return TData.default.LevelDesign[(Math.floor(Math.random()*TData.default.LevelDesign.length))]
-  }
-  get RenderThumbnail(){
-    return TData.default.Renders[(Math.floor(Math.random()*TData.default.Renders.length))]
-  }
-}
+const LevelDesignThumbnail = computed(() => {
+      return '/media/'+TData.default.LevelDesign[
+        Math.floor(Math.random() * TData.default.LevelDesign.length)
+      ];
+    });
+    const RenderThumbnail = computed(() => {
+      return '/media/'+TData.default.Renders[
+        Math.floor(Math.random() * TData.default.Renders.length)
+  ];
+});
 </script>
-
-<style lang="sass"></style>
