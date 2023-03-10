@@ -40,7 +40,7 @@ const Data = ref(info.default);
 
 const isItGDC = computed(() => {
   const date = new Date();
-  return date.getMonth() + 1 == 3 && date.getDate() > 9 && date.getDate() < 29; 
+  return date.getMonth() + 1 == 3 && date.getDate() >= 9 && date.getDate() < 29; 
 });
 </script>
 <style lang="sass" scoped>
