@@ -14,6 +14,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'games/:id', name: 'SolAZDev - Game Info', component: () => import('pages/GameDetails.vue') },
       { path: 'other/', name: 'SolAZDev - Other Projects', component: () => import('pages/OtherProjects.vue') },
       { path: 'other/:id', name: 'SolAZDev - Project Info', component: () => import('pages/ProjectDetails.vue') },    
+      {path: 'card', name: "SolAZDev - Card", component:()=>import('components/GDCCard.vue')}
     ],
   },
 
