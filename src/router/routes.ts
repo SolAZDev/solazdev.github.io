@@ -6,9 +6,9 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', name: 'SolAZDev - Home', component: () => import('pages/IndexPage.vue') },
-      { path: 'resume', name: 'SolAZDev - Resume', component: () => import('pages/Resume.vue') },
+      { path: 'resume', name: 'SolAZDev - Resume', component: () => import('src/pages/ResumePage.vue') },
       { path: 'visuals', name: 'SolAZDev - Visual Works', component: () => import('pages/VisualPortfolioMenu.vue') },
-      { path: 'visuals/levels', name: 'SolAZDev - Level Design', component: () => import('src/pages/Levels.vue') },
+      { path: 'visuals/levels', name: 'SolAZDev - Level Design', component: () => import('src/pages/LevelDesign.vue') },
       { path: 'visuals/renders', name: 'SolAZDev - 3D Artwork', component: () => import('pages/TDArtGallery.vue') },
       { path: 'games', name: 'SolAZDev - Games', component: () => import('pages/GamesMenu.vue') },
       { path: 'games/:id', name: 'SolAZDev - Game Info', component: () => import('pages/GameDetails.vue') },
