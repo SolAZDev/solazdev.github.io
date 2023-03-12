@@ -26,7 +26,7 @@ q-page
         IconLink(:link="'mailto:'+Data.email", icon="fas fa-at" size="lg")
 
     .q-my-md.q-mx-md
-      GDCCard(v-if="isItGDC || $q.screen.lt.xl")
+      GDCCard(v-if="isItGDC || $q.screen.lt.lg")
 
   GamesMenu(style="min-height: 0px")
 </template>
