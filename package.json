@@ -1,7 +1,7 @@
 {
   "name": "solazdev",
   "version": "0.0.1",
-  "description": "SolAZDev's website -- Vue3+Vite Remake",
+  "description": "SolAZDev's Official Website",
   "productName": "SolAZDev",
   "author": "SolAZDev <SolAZDev@gmail.com>",
   "private": true,
