@@ -1,4 +1,4 @@
 export default {
-  reel: 'https://www.youtube.com/embed/T7E0Ic_mhvU',
+  reel: 'https://player.vimeo.com/video/807351856',
   email: 'SolAZDev@gmail.com',
 };
