@@ -8,7 +8,7 @@ q-card.text-center.q-mx-auto.cardBorder(style="border-radius: 16px")
       .text-subtitle2 7 Years of Experience
   q-card-section
     q-avatar.cardBorder(size='40vw')
-        img(src="~assets/propic.jpg")
+        img(src="~assets/BsjrRPECcWkLAhEJHsNAkmue.jpg")
   q-card-section
     .text-subtitle2 Developer of The Dreamer's Princess
     .text-subtitle2 Linux Enthusiast, Keto Man
