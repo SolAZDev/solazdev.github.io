@@ -1,7 +1,6 @@
 <template lang="pug">
 q-page
   .print-hide
-
     .column.q-gutter-y-md(v-if="$q.screen.gt.sm")
       .text-center.text-primary
         .text-h6 Print or Save as PDF
@@ -51,7 +50,7 @@ q-page
       .col-12.col-md-8.col-lg-9.q-pl-lg-md
         .q-mt-lg.text-h5.text-primary.q-mb-md.text-center Work Experience
         .row.q-col-gutter-xs.bg-dark.rounded-borders.workExp
-          .col-12.col-lg-6(v-for="work in resumeFile.work")
+          .col-12.col-lg-6(v-for="work in (isItGDC?WorkExperienceByCategory:resumeFile.work)")
             q-card.no-shadow.q-card-experience
               q-card-section.q-pb-none
                 .text-center
@@ -117,13 +116,20 @@ q-page
 </template>
 <script lang="ts" setup>
 import resume from 'src/data/resume';
-import { computed, ref } from 'vue';
+import { computed, ref ,onMounted} from 'vue';
 
 const resumeFile = ref(resume);
 const category = ref('game');
 const filterOnMain = ref(false);
 const printDiag = ref(false);
 const printJobLimit = 5;
+
+const isItGDC = computed(() => {
+  const date = new Date();
+  return date.getMonth() + 1 == 3 && date.getDate() >= 9 && date.getDate() < 29; 
+});
+
+onMounted(()=>{category.value=(isItGDC.value?'game':'');})
 
 const WorkExperienceByCategory = computed(() => {
   if (category.value == '') return resume.work;

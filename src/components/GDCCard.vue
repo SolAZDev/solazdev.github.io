@@ -13,11 +13,12 @@ q-card.text-center.q-mx-auto.cardBorder(style="border-radius: 16px")
     .text-subtitle2 Developer of The Dreamer's Princess
     .text-subtitle2 Linux Enthusiast, Keto Man
   q-card-section.row.q-mx-auto.justify-around.q-px-md
-    IconButton(link="http://github.com/SolAZDev", icon="fab fa-github" size="4vw")
-    IconButton(link="https://twitter.com/SolAZDev", icon="fab fa-twitter" size="4vw")
-    IconButton(link="https://solazdev.itch.io/", icon="fab fa-itch-io" size="4vw")
-    IconButton(link="https://www.linkedin.com/in/solazdev/", icon="fab fa-linkedin" size="4vw")
-    IconButton(:link="'mailto:'+Data.email", icon="fas fa-at" size="4vw")
+    IconButton(:name="''", link="http://github.com/SolAZDev", icon="fab fa-github" size="4vw")
+    IconButton(:name="''", link="https://twitter.com/SolAZDev", icon="fab fa-twitter" size="4vw")
+    IconButton(:name="''", link="https://solazdev.itch.io/", icon="fab fa-itch-io" size="4vw")
+    IconButton(:name="''", link="https://www.linkedin.com/in/solazdev/", icon="fab fa-linkedin" size="4vw")
+    IconButton(:name="''", :link="'mailto:'+Data.email", icon="fas fa-at" size="4vw")
+    IconButton(:name="''", link="#/Resume", icon="fas fa-file-contract" size="4vw")
   q-card-section.q-px-lg
     q-video(:src="Data.reel" :ratio="16/9" v-if="$q.screen.lt.md" style="min-height:60vw")
 </template>
