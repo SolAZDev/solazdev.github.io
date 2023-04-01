@@ -126,7 +126,8 @@ const printJobLimit = 5;
 
 const isItGDC = computed(() => {
   const date = new Date();
-  return date.getMonth() + 1 == 3 && date.getDate() >= 9 && date.getDate() < 29; 
+  //Extended GDC Period (3 More Weeks?!)
+  return (date.getMonth()+1>2 && date.getMonth()+1<5) && (date.getDate()>=9 || date.getDate()<=15)
 });
 
 onMounted(()=>{category.value=(isItGDC.value?'game':'');})
@@ -142,16 +143,16 @@ const YourNext = computed(() => {
   let str = '';
   switch (category.value) {
     default:
-      str = 'Passionate Developer.';
+      str = 'Passionate Developer';
       break;
     case 'game':
-      str = 'Passionate Game Developer.';
+      str = 'Passionate Game Developer';
       break;
     case 'software':
-      str = 'Passionate Web & Software Developer.';
+      str = 'Passionate Web & Software Developer';
       break;
     case 'backend':
-      str = 'Passionate Full Stack Developer.';
+      str = 'Passionate Full Stack Developer';
       break;
   }
   return str;

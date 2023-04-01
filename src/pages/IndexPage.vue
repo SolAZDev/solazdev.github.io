@@ -26,7 +26,7 @@ q-page
         IconLink(:link="'mailto:'+Data.email", icon="fas fa-at" size="lg")
 
     .q-my-md.q-mx-md
-      GDCCard(v-if="isItGDC || $q.screen.lt.lg")
+      GDCCard(v-if="isItGDC && $q.screen.lt.lg")
 
   GamesMenu(style="min-height: 0px")
 </template>
@@ -40,7 +40,8 @@ const Data = ref(info.default);
 
 const isItGDC = computed(() => {
   const date = new Date();
-  return date.getMonth() + 1 == 3 && date.getDate() >= 9 && date.getDate() < 29; 
+  //Extended GDC Period (3 More Weeks?!)
+  return (date.getMonth()+1>2 && date.getMonth()+1<5) && (date.getDate()>=9 || date.getDate()<=15)
 });
 </script>
 <style lang="sass" scoped>
