@@ -6,7 +6,7 @@ export default {
   email: 'SolAZDev@gmail.com',
   number: '939-244-2231',
   objective:
-    'At least 5 years of experience in designing and engineering systems for software and video games. With a knack for efficiently, and modularity and problem solving. With a keen eye for even the smallest details and possible solutions.',
+    'At least 5 years of experience in designing and engineering systems for software and video games, and a knack for efficiently, and modularity and problem solving. With a keen eye for even the smallest details and possible solutions.',
   v: [
     'Over 3 years of experience in game development, and 3 years of web development',
     'Proficient ',
@@ -41,8 +41,8 @@ export default {
     { name: 'Vue', type: ['game', 'software', 'backend'] },
     { name: 'Quasar Framework', type: ['software', 'backend'] },
     { name: 'Angular', type: ['game', 'software', 'backend'] },
-    { name: 'NodeJS', type: ['software', 'backend'] },
-    { name: 'Pug/Jade', type: ['software', 'backend'] },
+    { name: 'NodeJS', type: ['game', 'software', 'backend'] },
+    { name: 'Pug/Jade', type: ['game', 'software', 'backend'] },
     { name: 'HTML', type: ['game', 'software', 'backend'] },
     { name: 'CSS', type: ['game', 'software', 'backend'] },
     { name: 'Linux', type: ['game', 'software', 'backend'] },
@@ -52,6 +52,7 @@ export default {
   ],
   software: [
     { name: 'Unity', type: ['game'] },
+    { name: 'Godot', type: ['game', 'software'] },
     { name: 'VS Code', type: ['game', 'software', 'backend'] },
     { name: 'Blender', type: ['game'] },
     { name: 'Material Maker', type: ['game'] },
@@ -91,10 +92,10 @@ export default {
       type: ['game', 'software'],
       responsibilities: [
         'Recreated the studio\'s website with Vue and the Quasar Framework, resulting in significant reduction in load times, and minimizing verbosity.',
-        'Developed various Apps, Games, Simulations and Experiences for Clients, using Vue, Quasar Framework, and the Unity Game Engine, some of which are now in production.',
-        'Established and Standardized and efficient development workflow for future app development using the Quasar Framework, lowering the barrier to entry and allowing developers to achieve faster results.',
+        'Developed client Apps, Games, Simulations and Experiences, using the Quasar Framework, and the Unity Game Engine, some of which are now in used publicly.',
+        'Established a Standard and efficient development workflow for future app development using the Quasar Framework, which has a lower barrier to entry and achives faster results',
         'Continuously collaborated with coworkers from multiple departments to ensure smooth production and innovative techniques to further improve projects.',
-        'Maintained and Published Apps to the Google Play Store and Apple App Store',
+        'Maintained and Published client\'s /Apps to the Google Play Store and Apple App Store',
       ],
     },
     {
@@ -141,7 +142,7 @@ export default {
       type: ['game'],
       time: '2018',
       responsibilities: [
-        'In charge of Development and Quality Assurance, and Documentation of Genial Skills Web, a F2P Educational Game created with the Unity Game Engine.',
+        'In charge of Development, Quality Assurance, and Documentation of Genial Skills Web, a F2P Online Educational Game created with the Unity Game Engine.',
         'Developed various mini-games for multiple types of quizzes, an Avatar System, and an In-App Purchase system using Unity\'s IAP API.',
         'Tested and Documented Bugs, Design Issues and Oversights, and implemented ways to circumvent them with coworker\'s of feedback',
         'With my contributions, the product is now on the market, and used by many schools and families.',
