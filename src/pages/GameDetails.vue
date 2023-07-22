@@ -27,7 +27,7 @@ q-page(padding v-if="game.name!=''")
       .text-h6.text-center(v-if="game.links!=null") Links
         .row.justify-center
           .col(v-for="link in game.links")
-            //- IconLink(:link="link.url" size="md" :icon="link.icon" :name="link.name")
+            IconLink(:link="link.url" size="md" :icon="link.icon" :name="link.name")
 </template>
 <script lang="ts" setup>
 import type { GameInfo } from 'src/data/models';
