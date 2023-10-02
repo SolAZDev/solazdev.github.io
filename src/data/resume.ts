@@ -86,9 +86,22 @@ export default {
   ],
   work: [
     {
+      position: 'Software Developer II',
+      employer: 'Wovenware/Maxar',
+      time: 'Jan 2023 - Aug 2023',
+      type: ['software', 'backend'],
+      responsibilities: [ //TODO: FIX THIS
+        'Developed and Documented a Java based Backend, which was used in Maxar\'s Discover platform.',
+        'Created a straightforward and simple purchase system using Recurly as part of the Java backend.',
+        'Developed parts of Maxar\'s Discover Next (DNX) Application using Vue, ensuring usability and performance in various devices',
+        'Optimized existing parts of Maxar\'s Discover Next (DNX) Application, drastically improving performance where delays and slowdowns were previously expected.',
+        'Simplified and further streamlined the use previously expensive server transactions, and heavy objects to further optimize Maxar\'s Discover Service.'
+      ],
+    },
+    {
       position: 'General Programmer',
       employer: 'Gladius Studios',
-      time: 'Oct 2021 - Current',
+      time: 'Oct 2021 - Nov 2022',
       type: ['game', 'software'],
       responsibilities: [
         'Recreated the studio\'s website with Vue and the Quasar Framework, resulting in significant reduction in load times, and minimizing verbosity.',
