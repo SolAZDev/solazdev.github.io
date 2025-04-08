@@ -93,7 +93,7 @@ export default {
       responsibilities: [ //TODO: FIX THIS2
         'Programmed parts of a Chat bot that was made in Microsoft\'s Visual Copilot Studio, which was deployed for a brief time in the client\'s customer assitance page.',
         'Created, deployed and maintained an Azure-based backend server written in C# and SQL, which was used in the released MPC App which allowed customers to request medical appointment, and has improved customer engagement by 30%.',
-        'Recreated the company\'s in-house campaign messaging system, turned into a NodeJS Function App, and a Postgres database, with Twilio and Sendgrid as middlewares, which boosted messaging and user engagement by 65%.'
+        'Recreated the company\'s in-house campaign messaging system, turned into a NodeJS Function App, and a Postgres database, with Twilio and Sendgrid as middlewares, which boosted messaging and user engagement by 65%.',
         'Provided detailed reports, on regular SCRUM meetings, and Sprint Reports.'
         ]
   	},
