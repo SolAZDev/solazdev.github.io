@@ -20,13 +20,12 @@ export default {
     'Regular and effective back-and-forth conversations to find the most efficient way to solve problems.',
   ],
   skills: [
-    'Agile',
-    'Scrum',
-    'Multi-phase Planning',
-    'Continuous Integration',
     'Bilingual (English & Spanish)',
-    'Code Documentation (Doxygen)',
-    'UX & UI Design',
+    'Agile & Scrum',
+    // 'Multi-phase Planning',
+    'Continuous Integration & Deployment',
+    // 'Code Documentation (Doxygen)',
+    'UI/UX Design',
     'Storyboarding',
     'Video Editing',
     // 'Strong Attention to Detail',
@@ -36,6 +35,8 @@ export default {
   ],
   frameworks: [
     { name: 'C#', type: ['game', 'software', 'backend'] },
+    { name: 'SQL', type: ['software', 'backend'] },
+    { name: 'Postgres', type: ['software', 'backend'] },
     { name: 'Javascript', type: ['game', 'software', 'backend'] },
     { name: 'TypeScript', type: ['game', 'software', 'backend'] },
     { name: 'Vue', type: ['game', 'software', 'backend'] },
@@ -49,6 +50,7 @@ export default {
     { name: 'Bash', type: ['software', 'backend'] },
     { name: 'FiSH', type: ['software', 'backend'] },
     { name: 'C# Entity Framework', type: ['software', 'backend'] },
+    { name: 'Microsoft Azure', type: ['software', 'backend'] },
   ],
   software: [
     { name: 'Unity', type: ['game'] },
@@ -66,7 +68,8 @@ export default {
     { name: 'Doxygen', type: ['software', 'backend'] },
     { name: 'Git', type: ['git', 'software', 'backend'] },
     { name: 'JIRA', type: ['software', 'backend'] },
-    { name: 'GitHub', type: ['game', 'software', 'backend'] },
+    { name: 'Microsoft DevOps', type: ['software', 'backend'] },
+    // { name: 'GitHub', type: ['game', 'software', 'backend'] },
   ],
   education: [
     {

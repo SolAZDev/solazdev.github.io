@@ -119,9 +119,8 @@ import resume from 'src/data/resume';
 import { computed, ref ,onMounted} from 'vue';
 
 const resumeFile = ref(resume);
-const category = ref('game');
+const category = ref('');
 const filterOnMain = ref(false);
-const printDiag = ref(false);
 const printJobLimit = 5;
 
 const isItGDC = computed(() => {
@@ -239,6 +238,13 @@ function PrepareJob(
 }
 </script>
 <style lang="sass">
+@use 'sass:color';
+// $fullBlue: transparentize($primary, 1)
+// $halfBlue: transparentize($primary, .5)
+
+$fullBlue: color.scale($primary, $alpha: -100%)
+$halfBlue: color.scale($primary, $alpha: -50% )
+
 .leftRow
   @media (min-width: $breakpoint-md-min)
     border-right: 1px solid $primary
@@ -275,18 +281,18 @@ function PrepareJob(
   color: white
   padding-left: 1rem
   background: rgb(23,178,255)
-  background: linear-gradient(90deg, $primary 35%, transparentize($primary, 1) 90%)
+  background: linear-gradient(90deg, $primary 35%, $fullBlue 90%)
 
 .rtlGradient
   color: white
   padding-right: 1rem
   background: $primary
-  background: linear-gradient(270deg, $primary 35%, transparentize($primary, 1) 80%)
+  background: linear-gradient(270deg, $primary 35%, $fullBlue 80%)
 
 .centerGradient
   color: white
   text-align: center
-  background: linear-gradient(90deg, transparentize($primary, 1) 0%, $primary 30%, $primary 65%, transparentize($primary, 1) 100%)
+  background: linear-gradient(90deg, $fullBlue 0%, $primary 30%, $primary 65%, $fullBlue 100%)
 
 .q-card
   min-height: unset
@@ -315,19 +321,19 @@ function PrepareJob(
     padding-left: 4px !important
     margin-top: 4px !important
     li
-      font-size: 0.8rem
+      font-size: 0.7rem
       text-align: justify
       hyphens: none
 
 .vSeparator
-  border: 1px solid transparentize($primary, .5)
+  border: 1px solid $halfBlue
   margin: 5px 2px 1vh 0px !important
 
 .hRSeparator
-  border-bottom: 2px solid transparentize($primary, .5)
+  border-bottom: 2px solid $halfBlue
   margin: -4px 0px 0px 5% !important
 
 .hLSeparator
-  border-bottom: 2px solid transparentize($primary, .5)
+  border-bottom: 2px solid $halfBlue
   margin: -4px 5% 0px 0px !important
 </style>
