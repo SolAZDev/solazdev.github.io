@@ -1,22 +1,13 @@
 <template lang="pug">
 q-page
-  .print-hide
-    .column.q-gutter-y-md(v-if="$q.screen.gt.sm")
-      .text-center.text-primary
-        .text-h6 Print or Save as PDF
-      .row.justify-center(style="height:5vh")
-        .col-2.text-center #[q-btn(color='primary', icon='games', label='Game Developer', @click='PrepareAndPrint(1)') ]
-        .col-2.text-center #[q-btn(color='primary', icon='devices', label='Software Developer', @click='PrepareAndPrint(2)') ]
-        .col-2.text-center #[q-btn(color='primary', icon='dns', label='Full Stack ', @click='PrepareAndPrint(3)') ]
-        .col-2.text-center #[q-btn(color='primary', icon='description', label='Everything', @click='PrepareAndPrint(0)') ]
-    q-separator.q-my-sm.q-mx-xl(dark, v-if="$q.screen.gt.sm")
+  .print-hide.q-pb-xl
 
     .row.q-col-gutter-md.resumeFile.q-px-lg-xl.q-mb-lg-lg.q-px-xs-md
       .col-12.col-md-4.col-lg-3.column.q-pr-lg-md
         .row.q-col-gutter-sm
           .col-12.text-center.q-mt-lg
             .text-h4.text-primary.text-center(:class="$q.screen.lt.md?'text-h6':''") {{ resumeFile.name }}
-            .text-h6.text-primary.text-center(:class="$q.screen.lt.md?'text-body1':''") {{YourNext}}
+            //- .text-h6.text-primary.text-center(:class="$q.screen.lt.md?'text-body1':''")
             .text-body1 Available to work in the US
             .text-body1 {{ resumeFile.email }} - SolAZDev.com
 
@@ -62,13 +53,23 @@ q-page
                   li.text-subtitle2(v-for="resp in work.responsibilities" v-html="resp")
 
 
+    q-page-sticky(position='top-right', :offset='[18,18]', expand, v-if="$q.screen.gt.sm")
+      q-btn-dropdown(icon="filter_alt", color='primary' rounded fab-mini)
+        q-list.q-mt-sm
+          q-item(clickable v-for='type of categories')
+            q-item-section(avatar) #[q-checkbox(left-label, v-model='selectedCategory' :val='type' :checked-icon='type.icon')]
+            q-item-section #[q-item-label {{capitalize(type.name)}}]
+          q-item(clickable, v-close-popup @click="Print()")
+            q-item-section.items-center(avatar) #[q-icon(name='print')]
+            q-item-section Print
+
   //- Print Version
-  .print-only(style="margin-top:-1rem")
+  .print-only(style="margin-top:-2rem")
     .row.q-px-md
       .col-4.column.q-gutter-y-md.q-mb-sm.q-pr-sm
         .q-pr-sm.text-center
           .text-h6.text-primary {{ resumeFile.name }}
-          .text-subtitle1.text-primary {{ YourNext }}
+          //- .text-subtitle1.text-primary {{ YourNext }}
           .text-subtitle2 {{ resumeFile.email }} - {{ resumeFile.number }}
           .text-subtitle2 Available to work in the US
           .text-subtitle2 https://SolAZDev.com
@@ -117,45 +118,38 @@ q-page
 <script lang="ts" setup>
 import resume from 'src/data/resume';
 import { computed, ref ,onMounted} from 'vue';
+import {format } from 'quasar';
 
 const resumeFile = ref(resume);
-const category = ref('');
+const selectedCategory = ref([] as any[]);
 const filterOnMain = ref(false);
 const printJobLimit = 5;
-
+const categories = resume.categories;
 const isItGDC = computed(() => {
   const date = new Date();
   //Extended GDC Period (3 More Weeks?!)
   return (date.getMonth()+1>2 && date.getMonth()+1<5) && (date.getDate()>=9 || date.getDate()<=15)
 });
 
-onMounted(()=>{category.value=(isItGDC.value?'game':'');})
+function capitalize(str:string):string {return format.capitalize(str);}
+function Print():void { setTimeout(() => { print(); }, 120);}
+
+// onMounted(()=>{category.value=(isItGDC.value?'game':'');})
 
 const WorkExperienceByCategory = computed(() => {
-  if (category.value == '') return resume.work;
-  return Array.from(resume.work)
-    .filter((w) => w.type.includes(category.value))
-    .splice(0, filterOnMain.value ? 6 : printJobLimit);
+  if (selectedCategory.value.length==0) return resume.work;
+  const work: any[] = [];
+  resume.work.forEach(w=>{
+    selectedCategory.value.forEach(type=>{
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      if(w.type.includes(type.name) && !work.includes(w)){work.push(w);}
+    })
+  })
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return work;
 });
 
-const YourNext = computed(() => {
-  let str = '';
-  switch (category.value) {
-    default:
-      str = 'Passionate Developer';
-      break;
-    case 'game':
-      str = 'Passionate Game Developer';
-      break;
-    case 'software':
-      str = 'Passionate Web & Software Developer';
-      break;
-    case 'backend':
-      str = 'Passionate Full Stack Developer';
-      break;
-  }
-  return str;
-});
+// });
 
 function listToText(arr: Array<string>, separator = ' | ') {
   return arr.toString().replace(/,/g, separator);
@@ -167,33 +161,15 @@ function objListToString(
 ) {
   let final = new Array<string>();
   obj.forEach((o) => {
-    if (category.value == '' || !filtered) final.push(o.name);
+    if (selectedCategory.value.length==0 || !filtered) final.push(o.name);
     else {
-      if (o.type.includes(category.value)) final.push(o.name);
+      // eslint-disable-next-line
+      categories.forEach(cat=>{
+        if (o.type.includes(cat.name)) final.push(o.name);
+      })
     }
   });
   return listToText(final);
-}
-
-function PrepareAndPrint(kind: number) {
-  console.log(kind);
-  switch (kind) {
-    case 0:
-      category.value = '';
-      break;
-    case 1:
-      category.value = 'game';
-      break;
-    case 2:
-      category.value = 'software';
-      break;
-    case 3:
-      category.value = 'backend';
-      break;
-  }
-  setTimeout(() => print(), 120);
-  setTimeout(() => (category.value = ''), 150);
-  // print();
 }
 
 function BoldenSkills(
@@ -331,7 +307,7 @@ $halfBlue: color.scale($primary, $alpha: -50% )
 
 .hRSeparator
   border-bottom: 2px solid $halfBlue
-  margin: -4px 0px 0px 5% !important
+  margin: 0px 0px 0px 5% !important
 
 .hLSeparator
   border-bottom: 2px solid $halfBlue
