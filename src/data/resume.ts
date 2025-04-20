@@ -99,7 +99,7 @@ export default {
         "Developed, deployed and maintained the backend server, C# REST API & SQL database of the now released MPC App, which allowed consumers to request medical appointments, improving customer engagement by 30%.",
         "Created a new in-house campaign messaging micro-service system, using NodeJS for the backend, and Postgres for the database, using Twilio's API as a middleware, boosting user engagement by 65%",
         "Created parts of a Chat bot that was made in Microsoft's Visual Copilot Studio, which was deployed for a brief time in the client's customer assistance page.",
-        "Provided detailed reports, on regular SCRUM meetings, and Sprint Reports.",
+        // "Provided detailed reports, on regular SCRUM meetings, and Sprint Reports.",
       ],
     },
     {
