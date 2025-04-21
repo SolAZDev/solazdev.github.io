@@ -165,7 +165,7 @@ function objListToString(
     else {
       // eslint-disable-next-line
       categories.forEach(cat=>{
-        if (o.type.includes(cat.name)) final.push(o.name);
+        if (o.type.includes(cat.name) && !final.includes(o.name)) final.push(o.name);
       })
     }
   });
