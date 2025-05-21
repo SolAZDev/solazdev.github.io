@@ -40,6 +40,7 @@ export default {
     { name: "Javascript", type: ["game", "software", "backend"] },
     { name: "TypeScript", type: ["game", "software", "backend"] },
     { name: "Java", type: ["software", "backend"] },
+    { name: "Fluentbit", type: ["software", "backend"] },
     { name: "Vue", type: ["game", "software", "backend"] },
     { name: "Quasar Framework", type: ["game", "software", "backend"] },
     { name: "Angular", type: ["game", "software", "backend"] },
@@ -51,6 +52,7 @@ export default {
     { name: "Bash", type: ["software", "backend"] },
     { name: "FiSH", type: ["software", "backend"] },
     { name: "C# Entity Framework", type: ["software", "backend"] },
+    { name: "Docker", type: ["software", "backend"] },
     { name: "Microsoft Azure", type: ["game", "software", "backend"] },
   ],
   software: [
@@ -59,8 +61,7 @@ export default {
     { name: "VS Code", type: ["game", "software", "backend"] },
     { name: "Blender", type: ["game"] },
     { name: "Material Maker", type: ["game"] },
-    { name: "Photoshop", type: [""] },
-    { name: "Illustrator", type: [""] },
+    { name: "Adobe Creative Suite", type: [""] },
     { name: "Inkscape", type: [""] },
     { name: "Krita", type: [""] },
     { name: "GIMP", type: [""] },
@@ -90,15 +91,18 @@ export default {
   ],
   work: [
     {
-      position: "Backend Developer II",
+      position: "Software Developer II",
       employer: "Alpine Health Technologies",
       time: "November 2023",
       type: ["software", "backend"],
       responsibilities: [
         //TODO: FIX THIS2
-        "Developed, deployed and maintained the backend server, C# REST API & SQL database of the now released MPC App, which allowed consumers to request medical appointments, improving customer engagement by 30%.",
-        "Created a new in-house campaign messaging micro-service system, using NodeJS for the backend, and Postgres for the database, using Twilio's API as a middleware, boosting user engagement by 65%",
-        "Created parts of a Chat bot that was made in Microsoft's Visual Copilot Studio, which was deployed for a brief time in the client's customer assistance page.",
+        "Worked closely with head of development and project architect to create the company's flagship product, Lynx, and it's new tech stack, and microservices.",
+        "Developed, deployed and maintained a backend of a Medical Appointment system, made with C#, SQL, it's used between a clinic network it's client mobile app.",
+        "Mentored and guided fellow developers in adapting new tech-stacks and provided code reviews and extensive documentation, minimizing training time.",
+        // "Developed, deployed and maintained the backend server, C# REST API & SQL database of the now released MPC App, which allowed consumers to request medical appointments, improving customer engagement by 30%.",
+        // "Created a new in-house campaign messaging micro-service system, using NodeJS for the backend, and Postgres for the database, using Twilio's API as a middleware, boosting user engagement by 65%",
+        // "Created parts of a Chat bot that was made in Microsoft's Visual Copilot Studio, which was deployed for a brief time in the client's customer assistance page.",
         // "Provided detailed reports, on regular SCRUM meetings, and Sprint Reports.",
       ],
     },
@@ -144,7 +148,7 @@ export default {
       ],
     },
     {
-      position: "Jr. Software Developer",
+      position: "Full Stack Developer",
       employer: "PRSoft, Inc",
       type: ["backend", "software"],
       time: "2019",

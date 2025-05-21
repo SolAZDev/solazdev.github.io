@@ -297,7 +297,7 @@ $halfBlue: color.scale($primary, $alpha: -50% )
     padding-left: 4px !important
     margin-top: 4px !important
     li
-      font-size: 0.7rem
+      font-size: 0.65rem
       text-align: justify
       hyphens: none
 
